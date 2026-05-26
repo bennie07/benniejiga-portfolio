@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Base styles */
+        .qa-checklist {
+            font-family: Arial, sans-serif;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .qa-checklist h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .qa-checklist h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        
+        .qa-checklist h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        
+        .qa-checklist p {
+            margin-bottom: 15px;
+        }
+        
+        .qa-checklist hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+        
+        /* Table styles */
+        .qa-checklist table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        .qa-checklist th {
+            background-color: #f2f2f2;
+            text-align: left;
+            padding: 12px 8px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+        
+        .qa-checklist td {
+            padding: 12px 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        /* Checkbox styles */
+        .qa-checklist input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        
+        /* List styles */
+        .qa-checklist ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .qa-checklist li {
+            margin-bottom: 5px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .qa-checklist table {
+                font-size: 12px;
+            }
+            
+            .qa-checklist th, .qa-checklist td {
+                padding: 8px 4px;
+            }
+            
+            /* Make tables scrollable horizontally on small screens */
+            .table-container {
+                overflow-x: auto;
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* For very small screens */
+        @media (max-width: 480px) {
+            .qa-checklist table {
+                font-size: 11px;
+            }
+        }
+        
+        /* Footer */
+        .qa-footer {
+            text-align: center;
+            font-style: italic;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="qa-checklist">
+        <h1>Quality Assurance Testing Checklist</h1>
+        <h2>E-Learning Course Testing Framework</h2>
+        
+        <p><strong>Designer:</strong> Bennie Ejiga<br>
+        <strong>Project:</strong> Data Security Compliance Training<br>
+        <strong>Version:</strong> 1.0<br>
+        <strong>Date:</strong> March 28, 2025</p>
+        
+        <hr>
+        
+        <h2>Purpose of This Checklist</h2>
+        
+        <p>This comprehensive QA testing checklist ensures thorough evaluation of all aspects of e-learning products before launch. It serves as a structured framework to:</p>
+        
+        <ul>
+            <li>Verify content accuracy and instructional integrity</li>
+            <li>Validate technical functionality across platforms</li>
+            <li>Confirm accessibility compliance</li>
+            <li>Ensure consistent user experience</li>
+            <li>Document testing process and outcomes</li>
+            <li>Identify and address issues before deployment</li>
+        </ul>
+        
+        <p>Use this checklist as a guide throughout the testing process, customizing sections as needed for specific project requirements.</p>
+        
+        <hr>
+        
+        <h2>Testing Process Overview</h2>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Focus</th>
+                        <th>Testers</th>
+                        <th>Timing</th>
+                        <th>Documentation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Alpha Testing</strong></td>
+                        <td>Functional verification</td>
+                        <td>• Development team<br>• Subject matter experts<br>• Instructional designers</td>
+                        <td>After initial development, before external review</td>
+                        <td>• Issue logs<br>• Technical verification report<br>• SME content review form</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Beta Testing</strong></td>
+                        <td>User experience and functionality</td>
+                        <td>• Target audience representatives<br>• Stakeholders<br>• Learning team</td>
+                        <td>After alpha corrections, before final production</td>
+                        <td>• User feedback forms<br>• Performance data<br>• User experience report</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Final QA</strong></td>
+                        <td>Comprehensive verification</td>
+                        <td>• QA specialists<br>• Project manager<br>• Client representatives</td>
+                        <td>After beta corrections, before launch</td>
+                        <td>• Final QA signoff<br>• Issue resolution documentation<br>• Launch readiness report</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>1. Content and Instructional Design Testing</h2>
+        
+        <h3>1.1 Content Accuracy and Alignment</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.1.1</td>
+                        <td>Content aligns with defined learning objectives</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.2</td>
+                        <td>All facts, figures, and statistics are verified for accuracy</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.3</td>
+                        <td>Subject matter expert has reviewed and approved content</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.4</td>
+                        <td>Content follows approved organizational policies and procedures</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.5</td>
+                        <td>All references and sources are properly cited</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.6</td>
+                        <td>Content is up-to-date with current industry standards and regulations</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.7</td>
+                        <td>All regulatory/compliance claims have been verified</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.8</td>
+                        <td>Content is free from contradictions or inconsistencies</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.9</td>
+                        <td>Terminology is used consistently throughout the course</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.1.10</td>
+                        <td>All required content topics are included</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>1.2 Language and Text Quality</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.2.1</td>
+                        <td>Text is free from spelling errors</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.2</td>
+                        <td>Grammar and punctuation are correct</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.3</td>
+                        <td>Writing style is appropriate for target audience</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.4</td>
+                        <td>Reading level is appropriate for audience</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.5</td>
+                        <td>Text formatting is consistent</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.6</td>
+                        <td>Technical terms are defined or explained</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.7</td>
+                        <td>Acronyms are spelled out on first use</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.8</td>
+                        <td>Content is culturally appropriate and inclusive</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.9</td>
+                        <td>Tone is consistent with organizational voice</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.2.10</td>
+                        <td>All placeholder text has been replaced</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>1.3 Instructional Design Elements</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.3.1</td>
+                        <td>Introduction clearly communicates purpose and relevance</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.2</td>
+                        <td>Content is sequenced logically</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.3</td>
+                        <td>Adequate practice opportunities are provided</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.4</td>
+                        <td>Feedback is meaningful and instructionally sound</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.5</td>
+                        <td>Content chunking is appropriate</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.6</td>
+                        <td>Instructions for activities are clear and complete</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.7</td>
+                        <td>Learning strategies are appropriate for objectives</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.8</td>
+                        <td>Interactions support learning objectives</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.9</td>
+                        <td>Adequate knowledge checks are included</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1.3.10</td>
+                        <td>Summary/conclusion reinforces key points</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>2. Assessment and Feedback Testing</h2>
+        
+        <h3>2.1 Assessment Technical Functionality</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2.1.1</td>
+                        <td>All assessment items function correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.2</td>
+                        <td>Correct answers are properly scored</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.3</td>
+                        <td>Incorrect answers are properly scored</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.4</td>
+                        <td>Question randomization functions correctly (if applicable)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.5</td>
+                        <td>Assessment results are accurately calculated</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.6</td>
+                        <td>Assessment results are properly reported to LMS</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.7</td>
+                        <td>Retry functionality works correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.8</td>
+                        <td>Time limits function correctly (if applicable)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.9</td>
+                        <td>Assessment items appear as designed on all devices</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.1.10</td>
+                        <td>Assessment data is properly tracked and stored</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>2.2 Assessment Design Quality</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2.2.1</td>
+                        <td>Assessment items align with learning objectives</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.2</td>
+                        <td>Questions are clear and unambiguous</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.3</td>
+                        <td>Distractors are plausible</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.4</td>
+                        <td>All questions have correct answers marked</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.5</td>
+                        <td>Feedback for correct answers is appropriate</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.6</td>
+                        <td>Feedback for incorrect answers is instructive</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.7</td>
+                        <td>Assessment difficulty is appropriate</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.8</td>
+                        <td>Questions are free from unintentional clues</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.9</td>
+                        <td>Scenario-based questions have sufficient context</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2.2.10</td>
+                        <td>Passing threshold is appropriate and clearly communicated</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>3. Technical Functionality Testing</h2>
+        
+        <h3>3.1 Navigation and User Interface</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3.1.1</td>
+                        <td>All navigation controls function correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.2</td>
+                        <td>Progress tracking displays correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.3</td>
+                        <td>Menu functionality works as expected</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.4</td>
+                        <td>Bookmarking/resume functionality works correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.5</td>
+                        <td>Course exits properly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.6</td>
+                        <td>Back button behavior functions as expected</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.7</td>
+                        <td>Page transitions function smoothly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.8</td>
+                        <td>User interface is consistent throughout</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.9</td>
+                        <td>Scrolling functions correctly on all screens</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.1.10</td>
+                        <td>Interactive elements have appropriate states (hover, active, etc.)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>3.2 Multimedia Elements</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3.2.1</td>
+                        <td>All images display correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.2</td>
+                        <td>Audio plays correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.3</td>
+                        <td>Video plays correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.4</td>
+                        <td>Audio/video controls function properly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.5</td>
+                        <td>Animations function as designed</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.6</td>
+                        <td>Interactive elements respond correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.7</td>
+                        <td>Closed captions display correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.8</td>
+                        <td>Media quality is acceptable</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.9</td>
+                        <td>Media is appropriately sized</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.2.10</td>
+                        <td>Media loads within acceptable time frame</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>3.3 Cross-Platform Compatibility</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3.3.1</td>
+                        <td>Functions correctly in Chrome</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Version:</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.2</td>
+                        <td>Functions correctly in Firefox</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Version:</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.3</td>
+                        <td>Functions correctly in Edge</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Version:</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.4</td>
+                        <td>Functions correctly in Safari</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Version:</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.5</td>
+                        <td>Functions correctly on iOS devices</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Devices tested:</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.6</td>
+                        <td>Functions correctly on Android devices</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Devices tested:</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.7</td>
+                        <td>Functions correctly on Windows tablets</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Devices tested:</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.8</td>
+                        <td>Displays correctly on standard desktop resolution</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Resolution(s):</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.9</td>
+                        <td>Displays correctly on tablet resolution</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Resolution(s):</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.10</td>
+                        <td>Displays correctly on mobile resolution</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Resolution(s):</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>3.4 LMS Integration</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3.4.1</td>
+                        <td>Course launches correctly from LMS</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.2</td>
+                        <td>Completion status reports correctly to LMS</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.3</td>
+                        <td>Bookmarking/resume works with LMS</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.4</td>
+                        <td>Assessment results report correctly to LMS</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.5</td>
+                        <td>SCORM/xAPI/AICC calls function properly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.6</td>
+                        <td>Time tracking reports correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.7</td>
+                        <td>Course metadata displays correctly in LMS</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.8</td>
+                        <td>Multiple attempts function correctly (if applicable)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.9</td>
+                        <td>Course exits properly to LMS</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3.4.10</td>
+                        <td>Course performs within LMS timeout parameters</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>4. Accessibility Testing</h2>
+        
+        <h3>4.1 Screen Reader Compatibility</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4.1.1</td>
+                        <td>Text content is properly read by screen readers</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.2</td>
+                        <td>Images have appropriate alt text</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.3</td>
+                        <td>Navigation can be completed via screen reader</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.4</td>
+                        <td>Form elements are properly labeled</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.5</td>
+                        <td>Tables have appropriate headers and structure</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.6</td>
+                        <td>ARIA attributes are used appropriately</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.7</td>
+                        <td>Focus order is logical</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.8</td>
+                        <td>Interactive elements are announced properly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.9</td>
+                        <td>Dynamic content changes are announced</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.1.10</td>
+                        <td>Error messages are accessible to screen readers</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>4.2 WCAG 2.1 AA Compliance</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4.2.1</td>
+                        <td>Color contrast meets WCAG 2.1 AA standards</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.2</td>
+                        <td>Content is accessible without reliance on color</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.3</td>
+                        <td>Text can be resized up to 200% without loss of content</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.4</td>
+                        <td>All functionality is available via keyboard</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.5</td>
+                        <td>No keyboard traps exist</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.6</td>
+                        <td>Content structure follows heading hierarchy</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.7</td>
+                        <td>Link purpose can be determined from text</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.8</td>
+                        <td>Time-based media has alternatives (captions, transcripts)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.9</td>
+                        <td>Content displays and functions correctly in landscape and portrait orientations</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.2.10</td>
+                        <td>Input error messages identify and describe errors</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>4.3 Inclusive Design Features</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4.3.1</td>
+                        <td>Font selection supports readability</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.2</td>
+                        <td>Audio content has volume controls</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.3</td>
+                        <td>No content flashes more than three times per second</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.4</td>
+                        <td>Touch targets are adequately sized</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.5</td>
+                        <td>Content is usable with zoom/magnification</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.6</td>
+                        <td>Sufficient time is provided for interactions</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.7</td>
+                        <td>Users can pause, stop, or hide moving content</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.8</td>
+                        <td>Language of content is programmatically identified</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.9</td>
+                        <td>Content is free from language that could trigger seizures</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4.3.10</td>
+                        <td>Alternative paths provided for complex interactions</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		
+		<hr>
+        
+        <h2>5. Performance and Security Testing</h2>
+        
+        <h3>5.1 Performance Testing</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5.1.1</td>
+                        <td>Initial loading time is within acceptable limits</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Target: < 5 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>5.1.2</td>
+                        <td>Page transition time is acceptable</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td>Target: < 2 seconds</td>
+                    </tr>
+                    <tr>
+                        <td>5.1.3</td>
+                        <td>Media loads efficiently</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.1.4</td>
+                        <td>Course performs well on minimum required devices</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.1.5</td>
+                        <td>Course performs well with limited bandwidth</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.1.6</td>
+                        <td>CPU usage remains at acceptable levels</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.1.7</td>
+                        <td>Memory usage remains at acceptable levels</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.1.8</td>
+                        <td>No memory leaks occur during extended use</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.1.9</td>
+                        <td>Offline functionality works as designed (if applicable)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.1.10</td>
+                        <td>Performance is consistent across multiple sessions</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>5.2 Security and Data Handling</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5.2.1</td>
+                        <td>User data is securely handled</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.2</td>
+                        <td>Personal information is appropriately protected</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.3</td>
+                        <td>Secure communication protocols are used (HTTPS)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.4</td>
+                        <td>Authentication works correctly (if applicable)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.5</td>
+                        <td>Authorization controls function properly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.6</td>
+                        <td>No sensitive data appears in URLs</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.7</td>
+                        <td>Session handling is secure</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.8</td>
+                        <td>Data storage complies with organizational policies</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.9</td>
+                        <td>Error messages don't reveal sensitive information</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5.2.10</td>
+                        <td>Data collection complies with privacy regulations</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>6. User Experience Testing</h2>
+        
+        <h3>6.1 General User Experience</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6.1.1</td>
+                        <td>Navigation is intuitive</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.2</td>
+                        <td>Course structure is clear to users</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.3</td>
+                        <td>Interactive elements are easily identifiable</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.4</td>
+                        <td>Instructions are clear and sufficient</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.5</td>
+                        <td>Error recovery is straightforward</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.6</td>
+                        <td>User progress is clearly indicated</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.7</td>
+                        <td>Response time meets user expectations</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.8</td>
+                        <td>Interface is consistent with organizational standards</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.9</td>
+                        <td>Content is engaging and relevant to users</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.1.10</td>
+                        <td>Overall user satisfaction meets targets</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>6.2 Visual Design Quality</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6.2.1</td>
+                        <td>Visual design is consistent throughout</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.2</td>
+                        <td>Layout is balanced and organized</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.3</td>
+                        <td>Typography is appropriate and readable</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.4</td>
+                        <td>Color scheme is appropriate and consistent</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.5</td>
+                        <td>Visual hierarchy guides attention appropriately</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.6</td>
+                        <td>Images and graphics are high quality</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.7</td>
+                        <td>Visual elements support learning objectives</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.8</td>
+                        <td>White space is used effectively</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.9</td>
+                        <td>Branding elements are correctly implemented</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6.2.10</td>
+                        <td>Visual design supports usability</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>7. Documentation and Resource Testing</h2>
+        
+        <h3>7.1 Supporting Materials</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7.1.1</td>
+                        <td>User guide/instructions are accurate and complete</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.2</td>
+                        <td>All downloadable resources work correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.3</td>
+                        <td>Supplementary materials support learning objectives</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.4</td>
+                        <td>References and citations are accurate</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.5</td>
+                        <td>Links to external resources function correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.6</td>
+                        <td>Glossary terms are accurate and complete</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.7</td>
+                        <td>Help/support resources are accessible</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.8</td>
+                        <td>Technical requirements are clearly documented</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.9</td>
+                        <td>Print materials display/print correctly</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.1.10</td>
+                        <td>Resource file sizes are appropriate</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		
+		<h3>7.2 Administrative Documentation</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Test Item</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                        <th>N/A</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7.2.1</td>
+                        <td>Installation/deployment instructions are accurate</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.2</td>
+                        <td>Administrator guide is complete</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.3</td>
+                        <td>LMS integration instructions are accurate</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.4</td>
+                        <td>Technical specifications are documented</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.5</td>
+                        <td>Known issues and limitations are documented</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.6</td>
+                        <td>Troubleshooting guide is provided</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.7</td>
+                        <td>Support contact information is accurate</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.8</td>
+                        <td>Maintenance requirements are documented</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.9</td>
+                        <td>Version history is maintained</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7.2.10</td>
+                        <td>Copyright and licensing information is included</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>Issue Documentation and Resolution</h2>
+        
+        <h3>Issue Tracking Log</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue ID</th>
+                        <th>Description</th>
+                        <th>Severity</th>
+                        <th>Identified By</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Resolution</th>
+                        <th>Verified By</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>Issue Severity Definitions</h3>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Severity Level</th>
+                        <th>Definition</th>
+                        <th>Response Time</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Critical</strong></td>
+                        <td>Prevents course completion or causes data loss</td>
+                        <td>Immediate</td>
+                        <td>Assessment doesn't record score; course crashes and loses progress</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High</strong></td>
+                        <td>Major functionality impaired but workaround exists</td>
+                        <td>24 hours</td>
+                        <td>Video doesn't play but transcript available; navigation requires multiple attempts</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium</strong></td>
+                        <td>Functionality issue with straightforward workaround</td>
+                        <td>3 days</td>
+                        <td>Minor display issues; non-critical interaction doesn't work as expected</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Low</strong></td>
+                        <td>Cosmetic issues or minor inconsistencies</td>
+                        <td>Next release</td>
+                        <td>Typos; minor visual alignment issues; enhancements</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>Final Approval</h2>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Signature</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>QA Specialist</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instructional Designer</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Subject Matter Expert</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Manager</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Client Representative</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <h2>Test Environment Documentation</h2>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Environment</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Testing Periods</strong></td>
+                        <td>Alpha: [Date Range]<br>Beta: [Date Range]<br>Final QA: [Date Range]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LMS Platforms Tested</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Browsers Tested</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Devices Tested</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assistive Technologies Tested</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Testing Tools Used</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Testing Team</strong></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr>
+        
+        <p class="qa-footer">© 2025 Bennie Ejiga | Professional Instructional Designer</p>
+    </div>
+</body>
+</html>

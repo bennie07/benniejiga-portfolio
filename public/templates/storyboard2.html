@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Training</title>
+    <style>
+        /* Base styles */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #4a90e2;
+            --accent-color: #ff6b6b;
+            --background-color: #f5f7fa;
+            --text-color: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .screen {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .screen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        
+        .screen-title {
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+        
+        .screen-id {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .split-screen {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .split-screen-left, 
+        .split-screen-right {
+            flex: 1 1 300px;
+        }
+        
+        .checklist-item, 
+        .scenario-card, 
+        .flowchart-step {
+            background-color: var(--background-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-item:hover, 
+        .scenario-card:hover, 
+        .flowchart-step:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .checklist-item.active {
+            border-left-color: var(--primary-color);
+            background-color: rgba(74, 144, 226, 0.1);
+        }
+        
+        .tab-container {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .tabs {
+            display: flex;
+            background-color: #f1f1f1;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            background-color: #ddd;
+        }
+        
+        .tab.active {
+            background-color: white;
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .card:hover .card-inner {
+            transform: rotateY(10deg);
+        }
+        
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+        }
+        
+        .options {
+            list-style-type: none;
+        }
+        
+        .option {
+            background-color: var(--background-color);
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background-color: #e6e6e6;
+        }
+        
+        .option.selected {
+            border-color: var(--secondary-color);
+            background-color: rgba(74, 144, 226, 0.1);
+        }
+        
+        .feedback {
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #004494;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #3a80d2;
+        }
+        
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .split-screen {
+                flex-direction: column;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>E-Learning Module: Detecting and Responding to Phishing Attempts</h1>
+            <p><strong>Designer:</strong> Bennie Ejiga | <strong>Version:</strong> 1.0 | <strong>Date:</strong> March 26, 2025</p>
+        </header>
+        
+        <!-- Screen 1: Title Screen -->
+        <section class="screen" id="title-screen">
+            <div class="screen-header">
+                <h2 class="screen-title">Detecting and Responding to Phishing Attempts</h2>
+                <span class="screen-id">ID: 1.0</span>
+            </div>
+            <div class="split-screen">
+                <div class="split-screen-left">
+                    <h3>Protecting Our Organization from Social Engineering</h3>
+                    <p>Welcome to 'Detecting and Responding to Phishing Attempts.' In this module, you'll learn how to identify suspicious communications and take appropriate action to protect our organization's data.</p>
+                    <a href="#objectives" class="btn">Start</a>
+                </div>
+                <div class="split-screen-right">
+                    <img src="https://place-hold.it/400x300/0056b3/ffffff&text=Office+Setting" alt="Office setting with person at computer" style="max-width:100%; border-radius:8px;">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Screen 2: Learning Objectives -->
+        <section class="screen" id="objectives">
+            <div class="screen-header">
+                <h2 class="screen-title">Learning Objectives</h2>
+                <span class="screen-id">ID: 1.1</span>
+            </div>
+            <h3>In this module, you will:</h3>
+            <ul style="list-style-type: none; margin: 20px 0;">
+                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <span style="background-color: var(--primary-color); border-radius: 50%; width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center; color: white; margin-right: 10px;">1</span>
+                    Identify common indicators of phishing attempts
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <span style="background-color: var(--primary-color); border-radius: 50%; width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center; color: white; margin-right: 10px;">2</span>
+                    Determine the appropriate response to suspicious communications
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <span style="background-color: var(--primary-color); border-radius: 50%; width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center; color: white; margin-right: 10px;">3</span>
+                    Execute the proper reporting procedure
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <span style="background-color: var(--primary-color); border-radius: 50%; width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center; color: white; margin-right: 10px;">4</span>
+                    Apply precautionary measures to prevent data compromise
+                </li>
+            </ul>
+            <a href="#phishing-overview" class="btn">Next</a>
+        </section>
+        
+        <!-- Screen 3: Phishing Overview -->
+        <section class="screen" id="phishing-overview">
+            <div class="screen-header">
+                <h2 class="screen-title">Phishing Overview</h2>
+                <span class="screen-id">ID: 1.2</span>
+            </div>
+            <div class="split-screen">
+                <div class="split-screen-left">
+                    <img src="https://place-hold.it/400x300/4a90e2/ffffff&text=Phishing+Concept" alt="Phishing concept illustration" style="max-width:100%; border-radius:8px;">
+                </div>
+                <div class="split-screen-right">
+                    <h3>What is Phishing?</h3>
+                    <p>Phishing is a type of social engineering attack that attempts to steal sensitive information by disguising as a trustworthy entity.</p>
+                    
+                    <h4>Key Facts:</h4>
+                    <ul>
+                        <li>90% of data breaches involve phishing</li>
+                        <li>Costs organizations an average of $4.65 million per breach</li>
+                        <li>Increasingly sophisticated and targeted</li>
+                        <li>Everyone is a potential target</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#objectives" class="btn btn-secondary">Back</a>
+                <a href="#phishing-types" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 4: Types of Phishing Attacks -->
+        <section class="screen" id="phishing-types">
+            <div class="screen-header">
+                <h2 class="screen-title">Types of Phishing Attacks</h2>
+                <span class="screen-id">ID: 1.3</span>
+            </div>
+            <h3>Common Types of Phishing Attacks</h3>
+            <p>Select each tab to learn more about different phishing types.</p>
+            
+            <div class="tab-container">
+                <div class="tabs">
+                    <div class="tab active" data-tab="tab1">Email Phishing</div>
+                    <div class="tab" data-tab="tab2">Spear Phishing</div>
+                    <div class="tab" data-tab="tab3">Smishing (SMS)</div>
+                    <div class="tab" data-tab="tab4">Vishing (Voice)</div>
+                </div>
+                
+                <div class="tab-content active" id="tab1">
+                    <div class="split-screen">
+                        <div class="split-screen-left">
+                            <h3>Email Phishing</h3>
+                            <p>Mass email campaigns designed to steal credentials or deliver malware. Often contain urgent messages, suspicious links, or attachments.</p>
+                            <ul>
+                                <li>Most common type of phishing</li>
+                                <li>Uses mass email campaigns</li>
+                                <li>Creates artificial urgency</li>
+                                <li>Often contains suspicious links or attachments</li>
+                            </ul>
+                        </div>
+                        <div class="split-screen-right">
+                            <img src="https://place-hold.it/400x300/4a90e2/ffffff&text=Email+Phishing" alt="Email phishing illustration" style="max-width:100%; border-radius:8px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab2">
+                    <div class="split-screen">
+                        <div class="split-screen-left">
+                            <h3>Spear Phishing</h3>
+                            <p>Targeted attacks aimed at specific individuals or organizations. Customized with personal information to increase credibility.</p>
+                            <ul>
+                                <li>Highly targeted to specific individuals</li>
+                                <li>Uses personal information to build trust</li>
+                                <li>Often researches victims on social media</li>
+                                <li>Higher success rate than generic phishing</li>
+                            </ul>
+                        </div>
+                        <div class="split-screen-right">
+                            <img src="https://place-hold.it/400x300/4a90e2/ffffff&text=Spear+Phishing" alt="Spear phishing illustration" style="max-width:100%; border-radius:8px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab3">
+                    <div class="split-screen">
+                        <div class="split-screen-left">
+                            <h3>Smishing (SMS Phishing)</h3>
+                            <p>Phishing attempts delivered via text messages. Often contain shortened URLs and urgent requests.</p>
+                            <ul>
+                                <li>Delivered through text/SMS messages</li>
+                                <li>Often contains shortened URLs</li>
+                                <li>Exploits mobile device limitations</li>
+                                <li>Commonly impersonates banks, delivery services</li>
+                            </ul>
+                        </div>
+                        <div class="split-screen-right">
+                            <img src="https://place-hold.it/400x300/4a90e2/ffffff&text=SMS+Phishing" alt="SMS phishing illustration" style="max-width:100%; border-radius:8px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab4">
+                    <div class="split-screen">
+                        <div class="split-screen-left">
+                            <h3>Vishing (Voice Phishing)</h3>
+                            <p>Phone-based phishing that uses social engineering to obtain sensitive information or install malware through callback requests.</p>
+                            <ul>
+                                <li>Uses phone calls to extract information</li>
+                                <li>Often impersonates technical support</li>
+                                <li>Creates scenarios requiring immediate action</li>
+                                <li>May direct victims to malicious websites</li>
+                            </ul>
+                        </div>
+                        <div class="split-screen-right">
+                            <img src="https://place-hold.it/400x300/4a90e2/ffffff&text=Voice+Phishing" alt="Voice phishing illustration" style="max-width:100%; border-radius:8px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#phishing-overview" class="btn btn-secondary">Back</a>
+                <a href="#phishing-indicators" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 5: Phishing Indicators Interactive -->
+        <section class="screen" id="phishing-indicators">
+            <div class="screen-header">
+                <h2 class="screen-title">Phishing Indicators</h2>
+                <span class="screen-id">ID: 1.4</span>
+            </div>
+            <h3>Spot the Warning Signs</h3>
+            <p>Click on each suspicious element in this email to learn about phishing indicators.</p>
+            
+            <div style="position: relative; margin: 30px 0; border: 1px solid #ddd; padding: 20px; background-color: #fff; max-width: 800px;">
+                <div style="border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 15px;">
+                    <div><strong>From:</strong> <span id="sender-hotspot" class="hotspot">IT Support &lt;support@mail-techs-service.com&gt;</span></div>
+                    <div><strong>To:</strong> employee@yourcompany.com</div>
+                    <div><strong>Subject:</strong> <span id="subject-hotspot" class="hotspot">URGENT: Immediate Action Required - Password Reset</span></div>
+                </div>
+                
+                <div style="padding: 15px 0;">
+                    <p><span id="greeting-hotspot" class="hotspot">Dear Valued Employee,</span></p>
+                    <p>We have detected suspicious login attempts on your account. <span id="urgency-hotspot" class="hotspot">Your password must be reset within the next 30 minutes to prevent account lockout.</span></p>
+                    <p>Please click on the following link to reset your password immediately: <span id="link-hotspot" class="hotspot"><a href="#" style="color: blue; text-decoration: underline;">https://portal.yourcompany.com/reset</a></span></p>
+                    <p><span id="grammar-hotspot" class="hotspot">Failure to reset immediately result in account suspension and you're access to company resources will be revoked.</span></p>
+                    <p>Regards,<br>IT Support Team</p>
+                </div>
+            </div>
+            
+            <div id="indicator-details" style="background-color: #f1f8fe; border-left: 4px solid var(--primary-color); padding: 15px; margin-top: 20px; display: none;">
+                <h4 id="indicator-title">Indicator Details</h4>
+                <p id="indicator-description">Select an element in the email to see details about the phishing indicator.</p>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#phishing-types" class="btn btn-secondary">Back</a>
+                <a href="#email-assessment" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 6: Email Assessment Exercise -->
+        <section class="screen" id="email-assessment">
+            <div class="screen-header">
+                <h2 class="screen-title">Email Assessment Exercise</h2>
+                <span class="screen-id">ID: 1.5</span>
+            </div>
+            <h3>Is This Email Legitimate or Phishing?</h3>
+            <p>Review this email carefully. Decide if it's legitimate or a phishing attempt, then rate your confidence level.</p>
+            
+            <div class="split-screen">
+                <div class="split-screen-left">
+                    <div style="border: 1px solid #ddd; padding: 20px; background-color: #fff;">
+                        <div style="border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 15px;">
+                            <div><strong>From:</strong> HR Department &lt;hr@yourcompany.com&gt;</div>
+                            <div><strong>To:</strong> employee@yourcompany.com</div>
+                            <div><strong>Subject:</strong> Annual Benefits Enrollment Period</div>
+                        </div>
+                        
+                        <div style="padding: 15px 0;">
+                            <p>Hello Team,</p>
+                            <p>This is a reminder that our annual benefits enrollment period begins next Monday, April 3rd. During this two-week window, you can make changes to your benefits package for the upcoming fiscal year.</p>
+                            <p>To review your options, please log in to the HR portal using your company credentials at <a href="#" style="color: blue; text-decoration: underline;">https://benefits.yourcompany.com</a></p>
+                            <p>If you have any questions, please contact me directly or attend one of our information sessions scheduled for next week.</p>
+                            <p>Best regards,<br>Jennifer Smith<br>Human Resources Director</p>
+                        </div>
+                    </div>
+                    <button id="zoom-email" class="btn btn-secondary" style="margin-top: 10px;">Zoom</button>
+                </div>
+                
+                <div class="split-screen-right">
+                    <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+                        <h4>Your Decision</h4>
+                        <div style="display: flex; gap: 10px; margin: 20px 0;">
+                            <button class="btn decision-btn" data-decision="legitimate">Legitimate</button>
+                            <button class="btn decision-btn" data-decision="phishing">Phishing</button>
+                        </div>
+                        
+                        <h4>Confidence Level</h4>
+                        <div style="margin: 20px 0;">
+                            <input type="range" min="1" max="5" value="3" class="slider" id="confidence-slider">
+                            <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                                <span>Not Sure</span>
+                                <span>Very Confident</span>
+                            </div>
+                        </div>
+                        
+                        <button id="submit-assessment" class="btn" style="width: 100%;">Submit</button>
+                    </div>
+                    
+                    <div id="assessment-feedback" class="feedback" style="margin-top: 20px;">
+                        <h4>Feedback</h4>
+                        <p id="feedback-text"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#phishing-indicators" class="btn btn-secondary">Back</a>
+                <a href="#response-protocol" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 7: Response Protocol Flowchart -->
+        <section class="screen" id="response-protocol">
+            <div class="screen-header">
+                <h2 class="screen-title">Response Protocol Flowchart</h2>
+                <span class="screen-id">ID: 1.6</span>
+            </div>
+            <h3>Phishing Response Protocol</h3>
+            <p>Follow these steps when you encounter a suspicious email.</p>
+            
+            <div style="max-width: 800px; margin: 30px auto;">
+                <div class="flowchart-step" data-step="1">
+                    <h4>1. Identify Suspicious Communication</h4>
+                    <p>Look for common phishing indicators such as unexpected emails, urgent language, suspicious links, etc.</p>
+                </div>
+                
+                <div style="display: flex; justify-content: center; margin: 10px 0;">
+                    <div style="width: 2px; height: 30px; background-color: var(--primary-color);"></div>
+                </div>
+                
+                <div style="text-align: center; background-color: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <h4>Decision Point</h4>
+                    <p>"Is the sender verified AND content expected?"</p>
+                    <div style="display: flex; justify-content: space-around; margin-top: 15px;">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div>Yes</div>
+                            <div style="width: 2px; height: 30px; background-color: green; margin: 5px 0;"></div>
+                            <div style="background-color: #d4edda; padding: 10px; border-radius: 5px; width: 150px;">Proceed with normal action</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div>No / Unsure</div>
+                            <div style="width: 2px; height: 30px; background-color: var(--accent-color); margin: 5px 0;"></div>
+                            <div style="width: 2px; height: 20px; background-color: var(--accent-color);"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flowchart-step" data-step="2">
+                    <h4>2. Do Not Click Links or Open Attachments</h4>
+                    <p>Clicking links or attachments in phishing emails may install malware or compromise credentials.</p>
+                </div>
+                
+                <div style="display: flex; justify-content: center; margin: 10px 0;">
+                    <div style="width: 2px; height: 30px; background-color: var(--primary-color);"></div>
+                </div>
+                
+                <div class="flowchart-step" data-step="3">
+                    <h4>3. Do Not Reply or Forward (except to security)</h4>
+                    <p>Don't engage with the sender or forward to colleagues unless specifically instructed by security.</p>
+                </div>
+                
+                <div style="display: flex; justify-content: center; margin: 10px 0;">
+                    <div style="width: 2px; height: 30px; background-color: var(--primary-color);"></div>
+                </div>
+                
+                <div class="flowchart-step" data-step="4">
+                    <h4>4. Report to Security Team</h4>
+                    <p>Use the approved reporting method to alert the security team about the suspicious communication.</p>
+                </div>
+                
+                <div style="display: flex; justify-content: center; margin: 10px 0;">
+                    <div style="width: 2px; height: 30px; background-color: var(--primary-color);"></div>
+                </div>
+                
+                <div class="flowchart-step" data-step="5">
+                    <h4>5. Delete Email After Confirmation</h4>
+                    <p>Only delete the suspicious email after receiving confirmation from the security team.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="btn btn-secondary">Download Protocol</a>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#email-assessment" class="btn btn-secondary">Back</a>
+                <a href="#reporting-simulation" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 8: Reporting Simulation -->
+        <section class="screen" id="reporting-simulation">
+            <div class="screen-header">
+                <h2 class="screen-title">Reporting Simulation</h2>
+                <span class="screen-id">ID: 1.7</span>
+            </div>
+            <h3>Practice Reporting a Phishing Attempt</h3>
+            <p>Follow the correct procedure to report this phishing email. Use the email client interface to take the appropriate actions.</p>
+            
+            <div style="border: 1px solid #ddd; background-color: #fff; border-radius: 8px; max-width: 800px; margin: 20px auto; overflow: hidden;">
+                <div style="background-color: #f0f0f0; padding: 10px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center;">
+                    <div>Company Email</div>
+                    <div>
+                        <span style="margin-right: 10px; cursor: pointer;">⚙️</span>
+                        <span style="cursor: pointer;">?</span>
+                    </div>
+                </div>
+                
+                <div style="padding: 20px;">
+                    <div style="border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 15px;">
+                        <div><strong>From:</strong> PayPal Services &lt;security-alert@paypa1-update.com&gt;</div>
+                        <div><strong>To:</strong> employee@yourcompany.com</div>
+                        <div><strong>Subject:</strong> ALERT: Unusual activity detected on your account</div>
+                    </div>
+                    
+                    <div style="padding: 15px 0;">
+                        <p>Dear Customer,</p>
+                        <p>We have detected unusual activity on your PayPal account. Your account has been temporarily limited until we can verify your identity.</p>
+                        <p>To restore full access to your account, please verify your information by clicking on the link below:</p>
+                        <p><a href="#" style="color: blue; text-decoration: underline;">https://paypal-secure-login.com/verify</a></p>
+                        <p>If you don't verify your account within 24 hours, your account will be permanently suspended.</p>
+                        <p>Regards,<br>PayPal Security Team</p>
+                    </div>
+                </div>
+                
+                <div style="background-color: #f0f0f0; padding: 10px; border-top: 1px solid #ddd; display: flex; justify-content: space-around;">
+                    <button class="action-btn" data-action="reply">Reply</button>
+                    <button class="action-btn" data-action="forward">Forward</button>
+                    <button class="action-btn" data-action="delete">Delete</button>
+                    <button class="action-btn" data-action="report" style="background-color: var(--primary-color); color: white; border: none; padding: 5px 10px; border-radius: 4px;">Report Phishing</button>
+                </div>
+            </div>
+            
+            <div id="reporting-feedback" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 20px; display: none;">
+                <h4>Feedback</h4>
+                <p id="reporting-feedback-text"></p>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#response-protocol" class="btn btn-secondary">Back</a>
+                <a href="#preventative-measures" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 9: Preventative Measures -->
+        <section class="screen" id="preventative-measures">
+            <div class="screen-header">
+                <h2 class="screen-title">Preventative Measures</h2>
+                <span class="screen-id">ID: 1.8</span>
+            </div>
+            <h3>Preventative Measures: Your Security Shield</h3>
+            <p>While knowing how to identify and respond to phishing is essential, taking preventative measures creates a stronger security shield. Select each item to learn more about these important preventative measures.</p>
+            
+            <div class="split-screen">
+                <div class="split-screen-left">
+                    <div class="checklist-item" data-item="1">
+                        <h4>✓ Keep software and systems updated</h4>
+                    </div>
+                    <div class="checklist-item" data-item="2">
+                        <h4>✓ Use strong, unique passwords</h4>
+                    </div>
+                    <div class="checklist-item" data-item="3">
+                        <h4>✓ Enable multi-factor authentication</h4>
+                    </div>
+                    <div class="checklist-item" data-item="4">
+                        <h4>✓ Verify sender identity before taking action</h4>
+                    </div>
+                    <div class="checklist-item" data-item="5">
+                        <h4>✓ Hover over links before clicking</h4>
+                    </div>
+                    <div class="checklist-item" data-item="6">
+                        <h4>✓ Be suspicious of unexpected attachments</h4>
+                    </div>
+                    <div class="checklist-item" data-item="7">
+                        <h4>✓ Report all suspicious communications</h4>
+                    </div>
+                </div>
+                
+                <div class="split-screen-right">
+                    <div id="measure-details" style="background-color: #f1f8fe; border: 1px solid #ddd; padding: 20px; border-radius: 8px; height: 100%;">
+                        <h4>Select a preventative measure</h4>
+                        <p>Click on any item from the list to see detailed information.</p>
+                        <img id="measure-image" src="https://place-hold.it/400x200/4a90e2/ffffff&text=Security+Shield" alt="Security shield" style="max-width: 100%; margin-top: 20px; border-radius: 8px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#reporting-simulation" class="btn btn-secondary">Back</a>
+                <a href="#phishing-scenarios" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 10: Common Phishing Scenarios -->
+        <section class="screen" id="phishing-scenarios">
+            <div class="screen-header">
+                <h2 class="screen-title">Common Phishing Scenarios</h2>
+                <span class="screen-id">ID: 1.9</span>
+            </div>
+            <h3>Real-World Phishing Scenarios</h3>
+            <p>Let's examine some common real-world phishing scenarios you might encounter. Each of these represents tactics frequently used by attackers. Flip each card to learn about the scenario, what red flags to watch for, and the appropriate response.</p>
+            
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>"Urgent: Password Reset Required"</h4>
+                            <img src="https://place-hold.it/150x100/4a90e2/ffffff&text=Password+Reset" alt="Password reset email" style="margin: 10px 0;">
+                            <p>Click to flip</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Password Reset Phishing</h4>
+                            <p><strong>Red Flags:</strong> Urgency, threatening tone, generic greeting, suspicious link</p>
+                            <p><strong>Response:</strong> Verify with IT through official channels, don't click the link</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>"Invoice Attached for Review"</h4>
+                            <img src="https://place-hold.it/150x100/4a90e2/ffffff&text=Invoice" alt="Invoice email" style="margin: 10px 0;">
+                            <p>Click to flip</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Fake Invoice Phishing</h4>
+                            <p><strong>Red Flags:</strong> Unexpected invoice, suspicious attachment, pressure to open quickly</p>
+                            <p><strong>Response:</strong> Verify with finance team, don't open attachment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>"Your Package Delivery Status"</h4>
+                            <img src="https://place-hold.it/150x100/4a90e2/ffffff&text=Package" alt="Package delivery email" style="margin: 10px 0;">
+                            <p>Click to flip</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>Package Delivery Phishing</h4>
+                            <p><strong>Red Flags:</strong> Generic notification, suspicious link, request for payment details</p>
+                            <p><strong>Response:</strong> Check tracking directly on official carrier website</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>"HR: Update Your Benefits Information"</h4>
+                            <img src="https://place-hold.it/150x100/4a90e2/ffffff&text=HR+Benefits" alt="HR benefits email" style="margin: 10px 0;">
+                            <p>Click to flip</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>HR Impersonation Phishing</h4>
+                            <p><strong>Red Flags:</strong> Suspicious sender domain, requests personal information, unfamiliar portal</p>
+                            <p><strong>Response:</strong> Contact HR directly through official channels</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h4>"IT: Suspicious Activity Detected"</h4>
+                            <img src="https://place-hold.it/150x100/4a90e2/ffffff&text=IT+Security" alt="IT security email" style="margin: 10px 0;">
+                            <p>Click to flip</p>
+                        </div>
+                        <div class="card-back">
+                            <h4>IT Support Impersonation</h4>
+                            <p><strong>Red Flags:</strong> Request for credentials, outside normal process, creates fear</p>
+                            <p><strong>Response:</strong> Contact IT support through official helpdesk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button id="view-all-scenarios" class="btn btn-secondary">View All</button>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#preventative-measures" class="btn btn-secondary">Back</a>
+                <a href="#knowledge-check" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 11: Knowledge Check -->
+        <section class="screen" id="knowledge-check">
+            <div class="screen-header">
+                <h2 class="screen-title">Knowledge Check</h2>
+                <span class="screen-id">ID: 1.10</span>
+            </div>
+            <h3>Knowledge Check</h3>
+            <p>Let's check your understanding with a few questions. Select the best answer for each question.</p>
+            
+            <div class="quiz-container">
+                <div id="quiz-progress" style="margin-bottom: 20px; background-color: #f0f0f0; height: 10px; border-radius: 5px;">
+                    <div style="background-color: var(--primary-color); height: 100%; width: 20%; border-radius: 5px;"></div>
+                </div>
+                
+                <div class="question" id="question-1">
+                    <h4>Question 1 of 5</h4>
+                    <p>Which of the following is NOT a common indicator of a phishing attempt?</p>
+                    <ul class="options">
+                        <li class="option" data-option="A">Misspelled domain name</li>
+                        <li class="option" data-option="B">Urgent call to action</li>
+                        <li class="option" data-option="C">Company logo in the email</li>
+                        <li class="option" data-option="D">Request for personal information</li>
+                    </ul>
+                    <button id="submit-question" class="btn" style="margin-top: 20px;">Submit</button>
+                    
+                    <div class="feedback" id="question-1-feedback">
+                        <h4>Feedback</h4>
+                        <p id="question-1-feedback-text"></p>
+                        <button id="next-question" class="btn" style="margin-top: 10px;">Next Question</button>
+                    </div>
+                </div>
+                
+                <!-- Additional questions would be here but hidden initially -->
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#phishing-scenarios" class="btn btn-secondary">Back</a>
+                <a href="#challenge-scenario" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 12: Final Challenge Scenario -->
+        <section class="screen" id="challenge-scenario">
+            <div class="screen-header">
+                <h2 class="screen-title">Final Challenge Scenario</h2>
+                <span class="screen-id">ID: 1.11</span>
+            </div>
+            <h3>Putting It All Together: Email Security Challenge</h3>
+            <p>Now let's put everything you've learned into practice with a challenging scenario. You'll make decisions at key points, and the scenario will adapt based on your choices.</p>
+            
+            <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>Scenario Introduction</h4>
+                <p>It's Monday morning, and you've just received an urgent email appearing to be from the CFO asking for immediate wire transfer information. What do you do?</p>
+                
+                <div style="margin-top: 20px;">
+                    <img src="https://place-hold.it/600x300/4a90e2/ffffff&text=Office+Scene" alt="Office scene with person at computer" style="max-width: 100%; border-radius: 8px;">
+                </div>
+                
+                <div id="scenario-options" style="margin-top: 20px;">
+                    <h4>What would you do?</h4>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px;">
+                        <button class="btn scenario-option" data-option="1">Reply to the email asking for more details</button>
+                        <button class="btn scenario-option" data-option="2">Call the CFO directly to verify the request</button>
+                        <button class="btn scenario-option" data-option="3">Process the wire transfer as requested - it's from the CFO</button>
+                        <button class="btn scenario-option" data-option="4">Report the email as suspicious using the proper protocol</button>
+                    </div>
+                </div>
+                
+                <div id="scenario-feedback" style="margin-top: 20px; display: none;">
+                    <h4>Decision Outcome</h4>
+                    <p id="scenario-feedback-text"></p>
+                    <div id="next-decision" style="margin-top: 15px; display: none;">
+                        <button class="btn">Continue</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#knowledge-check" class="btn btn-secondary">Back</a>
+                <a href="#summary" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 13: Summary and Key Takeaways -->
+        <section class="screen" id="summary">
+            <div class="screen-header">
+                <h2 class="screen-title">Summary and Key Takeaways</h2>
+                <span class="screen-id">ID: 1.12</span>
+            </div>
+            <h3>Protecting Our Organization: Key Takeaways</h3>
+            
+            <div class="split-screen">
+                <div class="split-screen-left">
+                    <div style="background-color: #f1f8fe; padding: 20px; border-radius: 8px;">
+                        <h4>Key Points:</h4>
+                        <ul style="list-style-type: none; margin-top: 15px;">
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                <span style="color: var(--primary-color); margin-right: 10px;">✓</span>
+                                Phishing remains the most common attack vector
+                            </li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                <span style="color: var(--primary-color); margin-right: 10px;">✓</span>
+                                Always verify sender identity and message legitimacy
+                            </li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                <span style="color: var(--primary-color); margin-right: 10px;">✓</span>
+                                Never click suspicious links or open unexpected attachments
+                            </li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                <span style="color: var(--primary-color); margin-right: 10px;">✓</span>
+                                Report all suspicious communications immediately
+                            </li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                <span style="color: var(--primary-color); margin-right: 10px;">✓</span>
+                                Follow the security incident response procedure
+                            </li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                                <span style="color: var(--primary-color); margin-right: 10px;">✓</span>
+                                Stay vigilant - you are our first line of defense
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="split-screen-right">
+                    <img src="https://place-hold.it/400x300/0056b3/ffffff&text=Security+Shield" alt="Security shield graphic" style="max-width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+            
+            <div class="navigation" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="#challenge-scenario" class="btn btn-secondary">Back</a>
+                <a href="#resources-conclusion" class="btn">Next</a>
+            </div>
+        </section>
+        
+        <!-- Screen 14: Resources and Conclusion -->
+        <section class="screen" id="resources-conclusion">
+            <div class="screen-header">
+                <h2 class="screen-title">Resources and Conclusion</h2>
+                <span class="screen-id">ID: 1.13</span>
+            </div>
+            <h3>Congratulations! You've Completed the Module</h3>
+            
+            <div class="split-screen">
+                <div class="split-screen-left">
+                    <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+                        <h4>Resources:</h4>
+                        <ul style="list-style-type: none; margin-top: 15px;">
+                            <li style="margin-bottom: 10px;">
+                                <a href="#" style="color: var(--primary-color); text-decoration: none; display: flex; align-items: center;">
+                                    <span style="margin-right: 10px;">📄</span> Security Incident Response Procedure
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="#" style="color: var(--primary-color); text-decoration: none; display: flex; align-items: center;">
+                                    <span style="margin-right: 10px;">🖼️</span> Phishing Examples Gallery
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="#" style="color: var(--primary-color); text-decoration: none; display: flex; align-items: center;">
+                                    <span style="margin-right: 10px;">📱</span> Quick Reference Guide (Downloadable)
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="#" style="color: var(--primary-color); text-decoration: none; display: flex; align-items: center;">
+                                    <span style="margin-right: 10px;">👥</span> IT Security Team Contact Information
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="#" style="color: var(--primary-color); text-decoration: none; display: flex; align-items: center;">
+                                    <span style="margin-right: 10px;">🔔</span> Reporting Tool Link
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <p><strong>Completion Message:</strong></p>
+                        <p>You have successfully completed the Phishing Awareness training module. Remember, security is everyone's responsibility.</p>
+                    </div>
+                </div>
+                
+                <div class="split-screen-right">
+                    <div style="background-color: #f1f8fe; border: 2px dashed var(--primary-color); padding: 20px; border-radius: 8px; text-align: center;">
+                        <h4 style="color: var(--primary-color);">Certificate of Completion</h4>
+                        <div style="margin: 20px 0;">
+                            <p>This certifies that</p>
+                            <p style="font-size: 24px; font-family: 'Montserrat', sans-serif; margin: 10px 0;">Employee Name</p>
+                            <p>has successfully completed</p>
+                            <p style="font-weight: bold; margin: 10px 0;">Phishing Awareness Training</p>
+                            <p>Date: March 27, 2025</p>
+                        </div>
+                        <button class="btn">Download Certificate</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-around; margin-top: 30px;">
+                <a href="#" class="btn">Return to Course Menu</a>
+                <a href="#" class="btn btn-secondary">Give Feedback</a>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Card flip functionality
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+        
+        // Hotspot functionality
+        const hotspotDetails = {
+            'sender-hotspot': {
+                title: 'Suspicious Sender Address',
+                description: 'The sender email domain "mail-techs-service.com" does not match our IT department\'s official domain. Always verify the actual email address, not just the display name.'
+            },
+            'subject-hotspot': {
+                title: 'Urgency and Fear Tactics',
+                description: 'Creating a sense of urgency with words like "URGENT" and "Immediate Action Required" is a common tactic to pressure recipients into taking hasty actions without proper verification.'
+            },
+            'greeting-hotspot': {
+                title: 'Generic Greeting',
+                description: 'Legitimate corporate communications typically address you by name. "Dear Valued Employee" indicates the sender doesn\'t know who you are, suggesting a mass phishing campaign.'
+            },
+            'urgency-hotspot': {
+                title: 'Time Pressure',
+                description: 'Setting arbitrary deadlines ("within the next 30 minutes") is designed to create panic and prevent you from taking time to verify the legitimacy of the request.'
+            },
+            'link-hotspot': {
+                title: 'Suspicious Link',
+                description: 'While the link text shows a legitimate URL, hovering over it would reveal a different destination. Always hover over links to see the actual URL before clicking.'
+            },
+            'grammar-hotspot': {
+                title: 'Grammar and Spelling Errors',
+                description: 'Professional communications should be properly edited. Errors like "result in account suspension and you\'re access" indicate a potentially fraudulent message.'
+            }
+        };
+        
+        document.querySelectorAll('.hotspot').forEach(hotspot => {
+            hotspot.style.backgroundColor = '#ffffcc';
+            hotspot.style.padding = '2px 4px';
+            hotspot.style.cursor = 'pointer';
+            
+            hotspot.addEventListener('click', () => {
+                const details = hotspotDetails[hotspot.id];
+                document.getElementById('indicator-details').style.display = 'block';
+                document.getElementById('indicator-title').textContent = details.title;
+                document.getElementById('indicator-description').textContent = details.description;
+            });
+        });
+        
+        // Checklist item functionality
+        const measureDetails = {
+            '1': {
+                title: 'Keep software and systems updated',
+                description: 'Regular updates patch security vulnerabilities that could be exploited by phishing attacks. Enable automatic updates for operating systems, browsers, and security software.',
+                image: 'https://place-hold.it/400x200/4a90e2/ffffff&text=Software+Updates'
+            },
+            '2': {
+                title: 'Use strong, unique passwords',
+                description: 'Create complex passwords that combine uppercase, lowercase, numbers, and symbols. Use different passwords for different accounts and consider a password manager.',
+                image: 'https://place-hold.it/400x200/4a90e2/ffffff&text=Strong+Passwords'
+            },
+            '3': {
+                title: 'Enable multi-factor authentication',
+                description: 'MFA adds an extra layer of security by requiring additional verification beyond your password, such as a code sent to your phone or biometric verification.',
+                image: 'https://place-hold.it/400x200/4a90e2/ffffff&text=Multi-Factor+Authentication'
+            },
+            '4': {
+                title: 'Verify sender identity before taking action',
+                description: 'Always confirm the identity of email senders, especially for messages requesting action. Check email addresses carefully and verify through official channels if unsure.',
+                image: 'https://place-hold.it/400x200/4a90e2/ffffff&text=Identity+Verification'
+            },
+            '5': {
+                title: 'Hover over links before clicking',
+                description: 'Before clicking any link, hover your cursor over it to preview the actual URL destination. If the link looks suspicious or doesn\'t match the expected website, don\'t click.',
+                image: 'https://place-hold.it/400x200/4a90e2/ffffff&text=Link+Verification'
+            },
+            '6': {
+                title: 'Be suspicious of unexpected attachments',
+                description: 'Never open attachments you weren\'t expecting, even if they appear to come from a known sender. Verify with the sender through another channel before opening.',
+                image: 'https://place-hold.it/400x200/4a90e2/ffffff&text=Attachment+Safety'
+            },
+            '7': {
+                title: 'Report all suspicious communications',
+                description: 'Promptly report any suspicious emails or messages following your organization\'s reporting procedure. Your vigilance helps protect everyone.',
+                image: 'https://place-hold.it/400x200/4a90e2/ffffff&text=Reporting+Procedure'
+            }
+        };
+        
+        document.querySelectorAll('.checklist-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all items
+                document.querySelectorAll('.checklist-item').forEach(i => i.classList.remove('active'));
+                
+                // Add active class to clicked item
+                item.classList.add('active');
+                
+                // Update details panel
+                const itemId = item.getAttribute('data-item');
+                const details = measureDetails[itemId];
+                
+                document.getElementById('measure-details').innerHTML = `
+                    <h4>${details.title}</h4>
+                    <p>${details.description}</p>
+                    <img src="${details.image}" alt="${details.title}" style="max-width: 100%; margin-top: 20px; border-radius: 8px;">
+                `;
+            });
+        });
+    </script>
+</body>
+</html>

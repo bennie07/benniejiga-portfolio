@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Item Bank</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        h1 {
+            font-size: 28px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #3498db;
+            margin: 30px 0 20px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin: 25px 0 15px;
+            color: #34495e;
+        }
+        
+        p, ul, table {
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .item-container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .item-header {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin: -15px -15px 15px -15px;
+            border-bottom: 1px solid #ddd;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .metadata-table {
+            font-size: 13px;
+        }
+        
+        .status-approved {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            table, .table-responsive {
+                overflow-x: auto;
+                display: block;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+                font-size: 13px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Assessment Item Bank</h1>
+        <h2>Data Security Compliance Training</h2>
+        
+        <div>
+            <p><strong>Designer:</strong> Bennie Ejiga</p>
+            <p><strong>Client:</strong> Financial Services Organization</p>
+            <p><strong>Date:</strong> March 26, 2025</p>
+            <p><strong>Version:</strong> 1.0</p>
+        </div>
+        
+        <h2>Assessment Item Bank Overview</h2>
+        
+        <p>This assessment item bank contains a comprehensive collection of assessment items aligned with the learning objectives of the Data Security Compliance Training program. Each assessment item includes detailed metadata for tracking, analysis, and continuous improvement.</p>
+        
+        <p>The bank is organized by module and learning objective, with items categorized by:</p>
+        <ul>
+            <li>Question type</li>
+            <li>Cognitive level (Bloom's Taxonomy)</li>
+            <li>Difficulty level</li>
+            <li>Performance domain</li>
+            <li>Item usage statistics</li>
+        </ul>
+        
+        <p>This structure enables strategic assessment design, adaptive testing capabilities, and detailed performance analysis.</p>
+        
+        <h2>Assessment Item Metadata Structure</h2>
+        
+        <div class="table-responsive">
+            <table class="metadata-table">
+                <thead>
+                    <tr>
+                        <th>Metadata Field</th>
+                        <th>Description</th>
+                        <th>Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Item ID</strong></td>
+                        <td>Unique identifier for each assessment item</td>
+                        <td>Format: MOD#-OBJ#-TYPE-###</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning Objective</strong></td>
+                        <td>The specific learning objective the item assesses</td>
+                        <td>Reference to numbered learning objective</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Question Type</strong></td>
+                        <td>Format of the assessment item</td>
+                        <td>Multiple-choice, True/False, Matching, Drag & Drop, Scenario, Short Answer, Simulation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cognitive Level</strong></td>
+                        <td>Bloom's Taxonomy level targeted</td>
+                        <td>Remember, Understand, Apply, Analyze, Evaluate, Create</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Difficulty</strong></td>
+                        <td>Assessed difficulty of the item</td>
+                        <td>1 (Easy), 2 (Moderate), 3 (Difficult), 4 (Advanced)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance Domain</strong></td>
+                        <td>Primary domain being assessed</td>
+                        <td>Knowledge, Skill, Attitude, Behavior</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Keywords</strong></td>
+                        <td>Searchable terms for item retrieval</td>
+                        <td>List of relevant terms for categorization</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Discrimination Index</strong></td>
+                        <td>How well the item distinguishes between high and low performers</td>
+                        <td>Range: -1.0 to 1.0 (below 0.3 flagged for review)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>P-Value</strong></td>
+                        <td>Percentage of learners answering correctly</td>
+                        <td>Range: 0-1.0 (below 0.3 or above 0.9 flagged for review)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Usage Count</strong></td>
+                        <td>Number of times item has been used</td>
+                        <td>Numeric value with date range</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Last Review Date</strong></td>
+                        <td>Date item was last reviewed</td>
+                        <td>MM/DD/YYYY</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Review Status</strong></td>
+                        <td>Current review status of the item</td>
+                        <td>Approved, Under Review, Needs Revision, Retired</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Module 1 -->
+        <h2>Module 1: Regulatory Landscape</h2>
+        
+        <h3>Learning Objective 1.1: Identify the key regulations governing financial data security</h3>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD1-OBJ1-MC-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Multiple Choice</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Which regulation requires financial institutions to explain their information-sharing practices to customers and protect sensitive data?</td>
+                </tr>
+                <tr>
+                    <td><strong>Options</strong></td>
+                    <td>
+                        A. General Data Protection Regulation (GDPR)<br>
+                        B. Gramm-Leach-Bliley Act (GLBA)<br>
+                        C. Payment Card Industry Data Security Standard (PCI DSS)<br>
+                        D. Sarbanes-Oxley Act (SOX)
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answer</strong></td>
+                    <td>B. Gramm-Leach-Bliley Act (GLBA)</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>The Gramm-Leach-Bliley Act (GLBA) specifically requires financial institutions to explain information-sharing practices to customers and protect sensitive data. GDPR is EU regulation for data protection, PCI DSS focuses on payment card security, and SOX addresses corporate financial disclosures.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Remember</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>1 (Easy)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>GLBA, regulations, financial institutions, information-sharing</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.42</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.76</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>342</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>01/15/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD1-OBJ1-MC-002</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Multiple Choice</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Under which regulation must organizations report a data breach to affected individuals within 72 hours of becoming aware of it?</td>
+                </tr>
+                <tr>
+                    <td><strong>Options</strong></td>
+                    <td>
+                        A. Sarbanes-Oxley Act<br>
+                        B. Payment Card Industry Data Security Standard<br>
+                        C. General Data Protection Regulation<br>
+                        D. Health Insurance Portability and Accountability Act
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answer</strong></td>
+                    <td>C. General Data Protection Regulation</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>The General Data Protection Regulation (GDPR) requires organizations to report certain types of data breaches to the relevant supervisory authority within 72 hours of becoming aware of the breach. None of the other regulations specify this exact timeframe.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Remember</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>GDPR, data breach, reporting requirements, 72 hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.51</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.62</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>296</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>01/15/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD1-OBJ1-TF-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>True/False</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>The Payment Card Industry Data Security Standard (PCI DSS) applies only to organizations that process more than 1 million card transactions annually.</td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answer</strong></td>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>False. PCI DSS applies to any organization that stores, processes, or transmits payment card data, regardless of the number of transactions. The compliance validation requirements may vary based on transaction volume, but the standard itself applies to all organizations handling payment card data.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Remember</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>PCI DSS, compliance, payment card, transactions</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.38</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.58</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>247</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>01/20/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD1-OBJ1-MAT-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Matching</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Match each regulation with its primary focus.</td>
+                </tr>
+                <tr>
+                    <td><strong>Items</strong></td>
+                    <td>
+                        1. General Data Protection Regulation (GDPR)<br>
+                        2. Gramm-Leach-Bliley Act (GLBA)<br>
+                        3. Payment Card Industry Data Security Standard (PCI DSS)<br>
+                        4. Sarbanes-Oxley Act (SOX)<br>
+                        5. State Data Breach Notification Laws
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Matches</strong></td>
+                    <td>
+                        A. Protection of payment card data<br>
+                        B. Consumer financial privacy<br>
+                        C. Individual privacy rights and data protection<br>
+                        D. Corporate financial reporting and disclosures<br>
+                        E. Requirements for notifying affected consumers of data breaches
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answers</strong></td>
+                    <td>1-C, 2-B, 3-A, 4-D, 5-E</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>GDPR focuses on individual privacy rights and data protection. GLBA addresses consumer financial privacy. PCI DSS specifically targets protection of payment card data. SOX focuses on corporate financial reporting and disclosures. State Data Breach Notification Laws establish requirements for notifying affected consumers about data breaches.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Understand</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>regulations, GDPR, GLBA, PCI DSS, SOX, data breach notification, matching</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.49</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.71</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>218</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>01/20/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Learning Objective 1.2: Explain the organization's compliance obligations under each regulation</h3>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD1-OBJ2-SA-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Short Answer</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Explain our organization's three primary obligations under the Gramm-Leach-Bliley Act (GLBA) Safeguards Rule.</td>
+                </tr>
+                <tr>
+                    <td><strong>Model Answer</strong></td>
+                    <td>
+                        Under the GLBA Safeguards Rule, our organization has three primary obligations:<br><br>
+                        1. Develop, implement, and maintain a comprehensive information security program that contains administrative, technical, and physical safeguards appropriate to our size, complexity, and the nature of our activities.<br><br>
+                        2. Regularly assess and address the risks to customer information in each relevant area of our operations, particularly in three areas: employee training and management; information systems; and detecting, preventing and responding to attacks, intrusions, or other system failures.<br><br>
+                        3. Evaluate and adjust the program in light of relevant circumstances, including changes in business operations or the results of security testing and monitoring.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Scoring Rubric</strong></td>
+                    <td>
+                        3 points: Complete answer identifying all three obligations with specific details<br>
+                        2 points: Identifies all three obligations but lacks specific details<br>
+                        1 point: Identifies only one or two obligations<br>
+                        0 points: Incorrect or irrelevant answer
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Understand</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>3 (Difficult)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>GLBA, Safeguards Rule, security program, risk assessment, information security</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.62</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.53</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>156</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>01/25/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD1-OBJ2-SC-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Scenario-Based</td>
+                </tr>
+                <tr>
+                    <td><strong>Scenario</strong></td>
+                    <td>
+                        Your team has just been informed that the organization will begin offering services to customers in the European Union next quarter. You are responsible for ensuring GDPR compliance for your department.<br><br>
+                        Your department regularly collects customer names, addresses, financial account information, and transaction history. You also track customer website behavior for marketing purposes and use an automated system for credit decisions.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Based on the scenario, which THREE compliance obligations will your department need to address under GDPR?</td>
+                </tr>
+                <tr>
+                    <td><strong>Options</strong></td>
+                    <td>
+                        A. Obtain explicit consent for tracking website behavior<br>
+                        B. Create separate databases for EU and non-EU customers<br>
+                        C. Ensure systems allow for data portability when requested<br>
+                        D. Prepare to explain automated decision logic when required<br>
+                        E. Translate all customer agreements into EU languages<br>
+                        F. Implement 24-hour customer service for EU customers<br>
+                        G. Establish processes for right to erasure (right to be forgotten) requests
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answer</strong></td>
+                    <td>A, C, D, G (any three of these four)</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>Under GDPR, the department needs to: obtain explicit consent for tracking behaviors (A); ensure data portability (C); explain automated decision logic (D); and establish processes for right to erasure requests (G). Options B, E, and F are not specific GDPR requirements.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Apply</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>3 (Difficult)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge/Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>GDPR, compliance, EU customers, consent, data portability, automated decisions, right to erasure</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.58</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.47</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>189</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>01/25/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Module 2 -->
+        <h2>Module 2: Data Classification</h2>
+        
+        <h3>Learning Objective 2.1: Differentiate between the four levels of data classification</h3>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD2-OBJ1-MC-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Multiple Choice</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Which of the following characteristics distinguishes Confidential data from Restricted data in our classification system?</td>
+                </tr>
+                <tr>
+                    <td><strong>Options</strong></td>
+                    <td>
+                        A. Confidential data requires encryption while Restricted data does not<br>
+                        B. Confidential data can be shared on a need-to-know basis while Restricted data requires explicit approval for each recipient<br>
+                        C. Confidential data is limited to financial information while Restricted data includes personal information<br>
+                        D. Confidential data has retention requirements while Restricted data can be deleted at any time
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answer</strong></td>
+                    <td>B. Confidential data can be shared on a need-to-know basis while Restricted data requires explicit approval for each recipient</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>In our classification system, both Restricted and Confidential data require protection, but they differ in sharing restrictions. Confidential data can be shared on a need-to-know basis within the organization, while Restricted data requires explicit approval for each recipient. Both types require encryption, can include various information types, and have retention requirements.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Analyze</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>data classification, Restricted, Confidential, sharing restrictions, need-to-know</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.47</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.68</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>312</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/05/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD2-OBJ1-DD-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Drag & Drop</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Drag each data example to its appropriate classification level.</td>
+                </tr>
+                <tr>
+                    <td><strong>Items</strong></td>
+                    <td>
+                        1. Marketing brochure approved for distribution<br>
+                        2. Customer transaction records<br>
+                        3. Employee performance reviews<br>
+                        4. Authentication credentials and passwords<br>
+                        5. Internal process documentation<br>
+                        6. Press release scheduled for tomorrow<br>
+                        7. Network security configuration details<br>
+                        8. Organizational chart
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Categories</strong></td>
+                    <td>
+                        A. Restricted<br>
+                        B. Confidential<br>
+                        C. Internal<br>
+                        D. Public
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answers</strong></td>
+                    <td>A: 4, 7<br>B: 2, 3<br>C: 5, 8<br>D: 1, 6</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>Restricted (highest sensitivity): Authentication credentials and security configurations<br>Confidential: Customer records and employee performance information<br>Internal: Process documentation and organizational information not approved for external sharing<br>Public: Marketing materials and press releases approved for distribution</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Analyze</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>data classification, examples, Restricted, Confidential, Internal, Public</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.52</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.64</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>298</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/05/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Learning Objective 2.2: Classify example data accurately using the organization's framework</h3>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD2-OBJ2-SC-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Scenario-Based</td>
+                </tr>
+                <tr>
+                    <td><strong>Scenario</strong></td>
+                    <td>
+                        You receive an email containing a spreadsheet with the following data:<br><br>
+                        - Customer names and contact information<br>
+                        - Account numbers (unencrypted)<br>
+                        - Recent transaction amounts and dates<br>
+                        - Internal notes about account status<br>
+                        - Credit scores<br><br>
+                        The email explains that this information is needed for a quarterly review of high-value accounts.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>What is the correct classification for this spreadsheet?</td>
+                </tr>
+                <tr>
+                    <td><strong>Options</strong></td>
+                    <td>
+                        A. Restricted<br>
+                        B. Confidential<br>
+                        C. Internal<br>
+                        D. Public
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answer</strong></td>
+                    <td>A. Restricted</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>This spreadsheet contains unencrypted account numbers, which are classified as Restricted data in our framework. When a document contains data of different classification levels, it must be classified according to the highest level of data it contains. While customer information and transaction details would typically be Confidential, the presence of unencrypted account numbers elevates the entire document to Restricted classification.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Apply</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>3 (Difficult)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>data classification, Restricted, account numbers, customer data, application</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.56</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.51</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>267</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/10/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD2-OBJ2-SIM-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Simulation</td>
+                </tr>
+                <tr>
+                    <td><strong>Scenario</strong></td>
+                    <td>You are reviewing a collection of documents to ensure proper classification. You will be presented with five documents containing different types of information. Using the data classification decision tree, you must determine the proper classification for each document and apply the appropriate classification label.</td>
+                </tr>
+                <tr>
+                    <td><strong>Task Description</strong></td>
+                    <td>Review each document, apply the correct classification label by dragging it onto the document, and provide justification for your classification decision.</td>
+                </tr>
+                <tr>
+                    <td><strong>Documents</strong></td>
+                    <td>
+                        1. Upcoming marketing campaign details not yet publicly announced<br>
+                        2. Customer credit card numbers and authentication data<br>
+                        3. Employee directory with names, departments, and office phone numbers<br>
+                        4. Strategic plan for expanding services to new markets<br>
+                        5. Press release approved for distribution tomorrow
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Scoring</strong></td>
+                    <td>
+                        • Correct classification: 1 point per document (5 points possible)<br>
+                        • Correct justification: 1 point per document (5 points possible)<br>
+                        • Total: 10 points possible
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answers</strong></td>
+                    <td>
+                        1. Internal - Contains non-public business information but no sensitive customer or security data<br>
+                        2. Restricted - Contains authentication data and unencrypted payment card information<br>
+                        3. Internal - Contains employee information intended for internal use only<br>
+                        4. Confidential - Contains strategic business information that could harm competitive advantage if disclosed<br>
+                        5. Public - Explicitly approved for public release
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Apply</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>3 (Difficult)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>data classification, simulation, application, decision tree, justification</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.64</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.42</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>203</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/10/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Learning Objective 2.3: Select appropriate handling procedures based on classification</h3>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD2-OBJ3-MC-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Multiple Choice</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>You need to share a document classified as Confidential with an external auditor. What is the appropriate procedure?</td>
+                </tr>
+                <tr>
+                    <td><strong>Options</strong></td>
+                    <td>
+                        A. Encrypt the document, verify the recipient's identity, and send via secure file transfer<br>
+                        B. Obtain approval from the Information Security Officer before sending<br>
+                        C. Print the document and send via certified mail only<br>
+                        D. Reclassify the document as Internal before sharing
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answer</strong></td>
+                    <td>A. Encrypt the document, verify the recipient's identity, and send via secure file transfer</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>Confidential information may be shared externally for legitimate business purposes but requires encryption during transmission and verification of the recipient. ISO approval is only required for Restricted data, not Confidential. Physical shipping without encryption does not provide adequate protection. Reclassification is inappropriate as it would bypass security controls.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Apply</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>Confidential, data handling, encryption, external sharing, auditor</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.49</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.65</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>276</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/15/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD2-OBJ3-SC-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Scenario-Based</td>
+                </tr>
+                <tr>
+                    <td><strong>Scenario</strong></td>
+                    <td>
+                        You're working from home and need to access and store several documents to complete an urgent project:<br><br>
+                        Document A: Restricted - Network security assessment<br>
+                        Document B: Confidential - Customer transaction reports<br>
+                        Document C: Internal - Department process guidelines<br>
+                        Document D: Public - Published industry regulations
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>For each document, select the appropriate storage and handling procedure when working remotely.</td>
+                </tr>
+                <tr>
+                    <td><strong>Subtasks</strong></td>
+                    <td>
+                        1. Document A (Restricted)<br>
+                        2. Document B (Confidential)<br>
+                        3. Document C (Internal)<br>
+                        4. Document D (Public)
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Options for Each</strong></td>
+                    <td>
+                        a. May be stored on any device, no encryption required<br>
+                        b. Must be accessed through VPN, stored on encrypted company-managed device only<br>
+                        c. Must be accessed through VPN, may be temporarily stored on personal device if encrypted<br>
+                        d. May be accessed directly, must be stored with standard access controls
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answers</strong></td>
+                    <td>1-b, 2-c, 3-d, 4-a</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>Restricted data (Document A) requires the highest level of protection: must be accessed only through VPN and stored only on encrypted company-managed devices. Confidential data (Document B) requires encryption but can be temporarily stored on personal devices if encrypted and accessed through VPN. Internal data (Document C) requires standard access controls but direct access is acceptable. Public data (Document D) has minimal restrictions on storage and access.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Apply</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>3 (Difficult)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>data handling, remote work, storage requirements, classification, access controls</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.58</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.47</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>229</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/15/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Module 3 -->
+        <h2>Module 3: Threat Recognition</h2>
+        
+        <h3>Learning Objective 3.1: Identify common security threat indicators</h3>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD3-OBJ1-MC-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Multiple Choice</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Which of the following is NOT a common indicator of a phishing attempt?</td>
+                </tr>
+                <tr>
+                    <td><strong>Options</strong></td>
+                    <td>
+                        A. Urgent calls for immediate action<br>
+                        B. Minor spelling and grammatical errors<br>
+                        C. Request for personal or financial information<br>
+                        D. Email sent from a colleague's corporate email account
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answer</strong></td>
+                    <td>D. Email sent from a colleague's corporate email account</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>While emails from legitimate corporate email accounts can still contain malicious content (if the account is compromised), this alone is not a common indicator of phishing. The other options are classic phishing indicators: creating urgency (A), containing errors (B), and requesting sensitive information (C). However, any suspicious content from any source should still be verified.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Remember</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>phishing, threat indicators, email security, social engineering</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.45</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.62</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>325</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/20/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD3-OBJ1-HIT-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Hotspot Identification</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Identify all indicators of a potential phishing attempt in this email by clicking on the suspicious elements.</td>
+                </tr>
+                <tr>
+                    <td><strong>Image Description</strong></td>
+                    <td>
+                        Email displaying several phishing indicators:<br>
+                        1. Mismatched sender name and email address<br>
+                        2. Generic greeting ("Dear Valued Customer")<br>
+                        3. Urgent call to action ("Immediate attention required")<br>
+                        4. Suspicious link (hover text shows different URL than displayed text)<br>
+                        5. Request for account credentials<br>
+                        6. Poor grammar and spelling errors<br>
+                        7. Threatening language about account suspension
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answers</strong></td>
+                    <td>All 7 suspicious elements should be identified</td>
+                </tr>
+                <tr>
+                    <td><strong>Scoring</strong></td>
+                    <td>
+                        • 7 correct identifications: 100%<br>
+                        • 5-6 correct: 80%<br>
+                        • 3-4 correct: 60%<br>
+                        • 1-2 correct: 30%<br>
+                        • 0 correct: 0%
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>All highlighted elements are common indicators of phishing attempts: mismatched sender information, generic greetings, urgency, suspicious links (where display text doesn't match actual URL), requests for credentials, poor grammar/spelling, and threatening consequences for inaction.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Apply</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>phishing, threat indicators, email security, identification, visual recognition</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.53</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.71</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>284</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/20/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Learning Objective 3.2: Distinguish between various types of social engineering attacks</h3>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD3-OBJ2-MAT-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Matching</td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Match each social engineering attack type with its description.</td>
+                </tr>
+                <tr>
+                    <td><strong>Items</strong></td>
+                    <td>
+                        1. Phishing<br>
+                        2. Spear Phishing<br>
+                        3. Vishing<br>
+                        4. Smishing<br>
+                        5. Pretexting<br>
+                        6. Baiting<br>
+                        7. Tailgating
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Matches</strong></td>
+                    <td>
+                        A. Creating a fabricated scenario to obtain information<br>
+                        B. Following authorized personnel into secure areas<br>
+                        C. Voice calls claiming to be from legitimate organizations<br>
+                        D. Mass emails impersonating legitimate organizations<br>
+                        E. Targeted emails using specific personal information<br>
+                        F. Offering something enticing to download malware<br>
+                        G. Text messages containing malicious links
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answers</strong></td>
+                    <td>1-D, 2-E, 3-C, 4-G, 5-A, 6-F, 7-B</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>Phishing uses mass emails impersonating legitimate organizations. Spear phishing is targeted with personal information. Vishing uses voice calls. Smishing uses text messages. Pretexting creates fictional scenarios. Baiting offers enticing items. Tailgating involves physical access by following authorized personnel.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Understand</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>2 (Moderate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Knowledge</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>social engineering, phishing, vishing, smishing, pretexting, baiting, tailgating</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.47</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.68</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>256</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/25/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD3-OBJ2-SC-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Scenario-Based</td>
+                </tr>
+                <tr>
+                    <td><strong>Scenario</strong></td>
+                    <td>
+                        You receive the following communications in one week:<br><br>
+                        1. An email claiming to be from your CEO, using their correct name but sent from an external Gmail account, asking you to purchase gift cards for a client event<br><br>
+                        2. A text message appearing to be from your bank about suspicious activity, asking you to click a link to verify your identity<br><br>
+                        3. A phone call from someone claiming to be from IT support who needs your password to fix an urgent system issue<br><br>
+                        4. A LinkedIn message from someone claiming to be a recruiter who wants to send you a document with job details
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Question Stem</strong></td>
+                    <td>Identify the type of social engineering attack represented in each communication.</td>
+                </tr>
+                <tr>
+                    <td><strong>Matching Items</strong></td>
+                    <td>
+                        1. CEO email<br>
+                        2. Bank text message<br>
+                        3. IT support call<br>
+                        4. LinkedIn message
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Options</strong></td>
+                    <td>
+                        A. Phishing<br>
+                        B. Spear Phishing<br>
+                        C. Vishing<br>
+                        D. Smishing<br>
+                        E. Whaling<br>
+                        F. Pretexting
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Answers</strong></td>
+                    <td>1-B (Spear Phishing), 2-D (Smishing), 3-C (Vishing), 4-F (Pretexting)</td>
+                </tr>
+                <tr>
+                    <td><strong>Rationale</strong></td>
+                    <td>The CEO email is spear phishing as it targets you specifically with personalized information. The bank text message is smishing (SMS phishing). The IT support call is vishing (voice phishing). The LinkedIn message is pretexting, creating a fictional scenario (recruiter) to entice you to download potentially malicious content.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Analyze</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>3 (Difficult)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>social engineering, attack types, identification, scenarios, spear phishing, smishing, vishing, pretexting</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.59</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.53</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>231</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>02/25/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Module 4 -->
+        <h2>Module 4: Security Protocols</h2>
+        
+        <h3>Learning Objective 4.1: Demonstrate proper implementation of encryption protocols</h3>
+        
+        <div class="item-container">
+            <div class="item-header">
+                <h4>Item ID: MOD4-OBJ1-SIM-001</h4>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Question Type</strong></td>
+                    <td>Simulation</td>
+                </tr>
+                <tr>
+                    <td><strong>Scenario</strong></td>
+                    <td>You need to send a file containing customer financial data to an external auditor. The simulation will guide you through the proper steps for secure file transmission according to organizational encryption protocols.</td>
+                </tr>
+                <tr>
+                    <td><strong>Task Description</strong></td>
+                    <td>Complete the encryption and secure transmission process by selecting the appropriate actions in the correct sequence.</td>
+                </tr>
+                <tr>
+                    <td><strong>Interface Description</strong></td>
+                    <td>
+                        Interactive simulation of the file encryption and transmission system with available actions:<br>
+                        - Select file for encryption<br>
+                        - Choose encryption method<br>
+                        - Generate/select encryption key<br>
+                        - Encrypt file<br>
+                        - Select transmission method<br>
+                        - Verify recipient identity<br>
+                        - Transmit file<br>
+                        - Transmit decryption key<br>
+                        - Document transmission
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Correct Process</strong></td>
+                    <td>
+                        1. Select file for encryption<br>
+                        2. Classify data as Confidential<br>
+                        3. Choose AES-256 encryption<br>
+                        4. Generate unique encryption key<br>
+                        5. Encrypt file<br>
+                        6. Select secure file transfer protocol<br>
+                        7. Verify recipient identity via corporate directory<br>
+                        8. Transmit encrypted file<br>
+                        9. Transmit decryption key via separate channel<br>
+                        10. Document transmission in security log
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Scoring</strong></td>
+                    <td>
+                        • Correct actions in correct sequence: 100%<br>
+                        • Correct actions but minor sequence errors: 80%<br>
+                        • Missing 1-2 critical steps: 50%<br>
+                        • Missing >2 critical steps or major sequence errors: 0%
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Cognitive Level</strong></td>
+                    <td>Apply</td>
+                </tr>
+                <tr>
+                    <td><strong>Difficulty</strong></td>
+                    <td>3 (Difficult)</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Domain</strong></td>
+                    <td>Skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Keywords</strong></td>
+                    <td>encryption, secure transmission, file transfer, protocol, simulation</td>
+                </tr>
+                <tr>
+                    <td><strong>Discrimination Index</strong></td>
+                    <td>0.62</td>
+                </tr>
+                <tr>
+                    <td><strong>P-Value</strong></td>
+                    <td>0.48</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage Count</strong></td>
+                    <td>195</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Review Date</strong></td>
+                    <td>03/01/2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Status</strong></td>
+                    <td class="status-approved">Approved</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

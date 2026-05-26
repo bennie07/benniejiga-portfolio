@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #f8f9fa;
+            --accent-color: #4285f4;
+            --text-color: #202124;
+            --border-color: #dadce0;
+        }
+        
+        .course-design-doc {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .doc-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .doc-header h1 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .doc-header p {
+            margin: 5px 0;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: var(--secondary-color);
+            font-weight: bold;
+            text-align: left;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f7f9fc;
+        }
+        
+        .learning-path {
+            background-color: #f7f9fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            white-space: pre-wrap;
+            font-family: monospace;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--border-color);
+            font-style: italic;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .course-design-doc {
+                padding: 10px;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+            
+            table, th, td {
+                font-size: 0.8em;
+                padding: 8px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="course-design-doc">
+        <div class="doc-header">
+            <h1>Comprehensive Course Design Document</h1>
+            <h2>Data Security Compliance Training</h2>
+            <p><strong>Designer:</strong> Bennie Ejiga</p>
+            <p><strong>Client:</strong> Financial Services Organization</p>
+            <p><strong>Date:</strong> March 24, 2025</p>
+            <p><strong>Version:</strong> 1.0</p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">1. Executive Summary</h2>
+            <p>This course design document outlines a comprehensive data security compliance training program for financial services professionals. The program addresses critical regulatory requirements while providing practical skills for protecting sensitive customer information. Using a blended learning approach with scenario-based activities, the training will ensure employees understand compliance requirements and can apply security protocols effectively in their daily work.</p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">2. Business Need and Performance Gap Analysis</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Business Need</th>
+                        <th>Current State</th>
+                        <th>Desired State</th>
+                        <th>Performance Gap</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Regulatory Compliance</strong></td>
+                        <td>78% compliance with data security requirements in recent audit</td>
+                        <td>100% compliance with all data security regulations</td>
+                        <td>22% gap in regulatory compliance performance</td>
+                        <td>Potential regulatory fines of $50,000+ per violation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Breach Prevention</strong></td>
+                        <td>12 security incidents in past 6 months requiring investigation</td>
+                        <td>Zero preventable security incidents</td>
+                        <td>Inconsistent application of security protocols</td>
+                        <td>Average cost of $420 per compromised record</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Customer Trust</strong></td>
+                        <td>Customer trust rating of 72% regarding data protection</td>
+                        <td>90%+ customer trust rating</td>
+                        <td>Gap in customer perception of data security practices</td>
+                        <td>Customer retention impact of approximately $1.2M annually</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Employee Confidence</strong></td>
+                        <td>65% of employees report confidence in handling sensitive data correctly</td>
+                        <td>95% employee confidence in security procedures</td>
+                        <td>30% gap in employee security confidence</td>
+                        <td>Hesitation in workflow impacting productivity</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Root Cause Analysis</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Root Cause Category</th>
+                        <th>Specific Issues Identified</th>
+                        <th>Data Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Knowledge Gaps</strong></td>
+                        <td>• Lack of understanding of latest regulations (47% failed knowledge check)<br>
+                            • Confusion about which protocol applies to different data types (62% of help desk tickets)<br>
+                            • Limited awareness of breach reporting requirements (83% missed this on assessment)</td>
+                        <td>• Pre-training assessment<br>
+                            • Help desk query analysis<br>
+                            • Compliance audit findings</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Skill Deficiencies</strong></td>
+                        <td>• Inability to identify phishing attempts (37% failed simulation test)<br>
+                            • Inconsistent application of encryption protocols (52% of document audits)<br>
+                            • Poor password management practices (67% using weak passwords)</td>
+                        <td>• Security simulation results<br>
+                            • IT security audits<br>
+                            • System administrator reports</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Process Issues</strong></td>
+                        <td>• Unclear escalation procedures (73% report confusion)<br>
+                            • Inconsistent documentation standards (varies by department)<br>
+                            • Outdated security verification workflows (4 extra steps)</td>
+                        <td>• Employee survey<br>
+                            • Process documentation review<br>
+                            • Workflow analysis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Environmental Factors</strong></td>
+                        <td>• Legacy systems with security limitations (43% of applications)<br>
+                            • Mobile work creating new vulnerability points<br>
+                            • Third-party integration security concerns</td>
+                        <td>• IT infrastructure assessment<br>
+                            • Security consultant report<br>
+                            • Risk management evaluation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">3. Target Audience Analysis</h2>
+            
+            <h3>Demographic Profile</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Audience Segment</th>
+                        <th>Size</th>
+                        <th>Role Description</th>
+                        <th>Prior Knowledge</th>
+                        <th>Technical Proficiency</th>
+                        <th>Motivation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Customer-Facing Staff</strong></td>
+                        <td>340</td>
+                        <td>Direct contact with customers and their data</td>
+                        <td>Basic understanding of data privacy</td>
+                        <td>Moderate (3/5)</td>
+                        <td>Job requirement + avoiding customer issues</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Back-Office Processors</strong></td>
+                        <td>215</td>
+                        <td>Handle bulk customer data processing</td>
+                        <td>Familiar with data handling procedures</td>
+                        <td>High (4/5)</td>
+                        <td>Process efficiency + avoiding errors</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Department Managers</strong></td>
+                        <td>48</td>
+                        <td>Oversee team compliance and reporting</td>
+                        <td>General compliance awareness</td>
+                        <td>Moderate (3/5)</td>
+                        <td>Departmental compliance metrics + avoiding audit findings</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IT Support Staff</strong></td>
+                        <td>27</td>
+                        <td>Implement and support security systems</td>
+                        <td>Strong technical knowledge of systems</td>
+                        <td>Very High (5/5)</td>
+                        <td>Technical accuracy + system integrity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>New Employees</strong></td>
+                        <td>~60 annually</td>
+                        <td>Various roles in orientation phase</td>
+                        <td>Minimal organizational knowledge</td>
+                        <td>Varies (2-4/5)</td>
+                        <td>Successful onboarding + job performance</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Learning Preferences and Constraints</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Consideration</th>
+                        <th>Description</th>
+                        <th>Design Implications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Time Availability</strong></td>
+                        <td>• Average of 2 hours per week available for training<br>
+                            • Preference for sessions under 30 minutes<br>
+                            • Need flexibility for customer-facing staff</td>
+                        <td>• Microlearning modules (15-20 minutes each)<br>
+                            • Mobile-accessible content<br>
+                            • Asynchronous design with schedule flexibility</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning Environment</strong></td>
+                        <td>• 65% at dedicated workstations<br>
+                            • 35% use shared workspaces<br>
+                            • 40% sometimes work remotely<br>
+                            • Varied noise levels and distractions</td>
+                        <td>• Responsive design for multiple devices<br>
+                            • Audio content with transcript/captioning<br>
+                            • Bookmarking functionality<br>
+                            • Content structured for potential interruptions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Accessibility Needs</strong></td>
+                        <td>• 7% with identified visual accommodations<br>
+                            • 3% with hearing accommodations<br>
+                            • 12% non-native English speakers</td>
+                        <td>• WCAG 2.1 AA compliance<br>
+                            • Closed captioning on all videos<br>
+                            • Plain language approach<br>
+                            • Visual and textual reinforcement of key concepts</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Motivation Factors</strong></td>
+                        <td>• Concern about compliance errors (74%)<br>
+                            • Interest in protecting customer data (68%)<br>
+                            • Desire for more efficient processes (52%)<br>
+                            • Need for performance recognition (46%)</td>
+                        <td>• Real-world scenarios with consequences<br>
+                            • Customer-impact messaging<br>
+                            • Efficiency-focused job aids<br>
+                            • Certification and recognition elements</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">4. Program Learning Objectives</h2>
+            
+            <h3>Terminal Objectives</h3>
+            <p>By the end of this training program, learners will be able to:</p>
+            <ol>
+                <li>Implement all required data security protocols in their daily work activities with 100% compliance, as measured by security audits.</li>
+                <li>Identify and respond appropriately to potential data security threats according to organizational procedures, with 95% accuracy in simulation exercises.</li>
+                <li>Apply appropriate data handling procedures based on data classification, with zero critical errors in process application.</li>
+                <li>Report potential security incidents following the established process, with all required elements included within required timeframes.</li>
+            </ol>
+            
+            <h3>Enabling Objectives by Module</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Enabling Objectives</th>
+                        <th>Bloom's Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Regulatory Landscape</strong></td>
+                        <td>1.1 Identify the key regulations governing financial data security<br>
+                            1.2 Explain the organization's compliance obligations under each regulation<br>
+                            1.3 Describe potential consequences of non-compliance<br>
+                            1.4 Recognize personal responsibilities in maintaining compliance</td>
+                        <td>Remember<br>Understand<br>Understand<br>Remember</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Data Classification</strong></td>
+                        <td>2.1 Differentiate between the four levels of data classification<br>
+                            2.2 Classify example data accurately using the organization's framework<br>
+                            2.3 Select appropriate handling procedures based on classification<br>
+                            2.4 Justify classification decisions using regulatory guidelines</td>
+                        <td>Analyze<br>Apply<br>Apply<br>Evaluate</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Threat Recognition</strong></td>
+                        <td>3.1 Identify common security threat indicators<br>
+                            3.2 Distinguish between various types of social engineering attacks<br>
+                            3.3 Evaluate suspicious activities using the threat assessment framework<br>
+                            3.4 Determine appropriate responses to different threat types</td>
+                        <td>Remember<br>Analyze<br>Evaluate<br>Apply</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Security Protocols</strong></td>
+                        <td>4.1 Demonstrate proper implementation of encryption protocols<br>
+                            4.2 Implement appropriate access control measures<br>
+                            4.3 Execute secure data transfer procedures<br>
+                            4.4 Maintain compliant documentation of security activities</td>
+                        <td>Apply<br>Apply<br>Apply<br>Apply</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Incident Response</strong></td>
+                        <td>5.1 Identify situations that qualify as security incidents<br>
+                            5.2 Execute the incident response procedure correctly<br>
+                            5.3 Complete incident documentation with all required elements<br>
+                            5.4 Escalate incidents according to severity framework</td>
+                        <td>Remember<br>Apply<br>Apply<br>Apply</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">5. Content Overview and Sequencing</h2>
+            
+            <h3>Learning Path and Prerequisite Structure</h3>
+            <div class="learning-path">
+Module 1: Regulatory Landscape (Prerequisite for all modules)
+  ↓
+Module 2: Data Classification ← → Module 3: Threat Recognition
+  ↓                                     ↓
+Module 4: Security Protocols (Requires Modules 2 and 3)
+  ↓
+Module 5: Incident Response (Requires Module 4)
+  ↓
+Certification Assessment
+            </div>
+            
+            <h3>Detailed Module Breakdown</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Core Topics</th>
+                        <th>Key Concepts</th>
+                        <th>Estimated Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Regulatory Landscape</strong></td>
+                        <td>• Financial data protection regulations<br>
+                            • Compliance requirements overview<br>
+                            • Consequences of non-compliance<br>
+                            • Roles and responsibilities</td>
+                        <td>• GDPR, PCI-DSS, GLBA, state regulations<br>
+                            • Rights of data subjects<br>
+                            • Disclosure requirements<br>
+                            • Audit preparedness</td>
+                        <td>30 minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Data Classification</strong></td>
+                        <td>• Data classification framework<br>
+                            • Identifying sensitive data<br>
+                            • Classification procedures<br>
+                            • Classification-based handling requirements</td>
+                        <td>• Public, Internal, Confidential, Restricted classifications<br>
+                            • PII identification<br>
+                            • Classification decision tree<br>
+                            • Handling procedures by class</td>
+                        <td>45 minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Threat Recognition</strong></td>
+                        <td>• Common threat vectors<br>
+                            • Social engineering techniques<br>
+                            • Digital threat indicators<br>
+                            • Physical security concerns</td>
+                        <td>• Phishing/vishing/smishing<br>
+                            • Malware indicators<br>
+                            • Suspicious access patterns<br>
+                            • Social engineering red flags</td>
+                        <td>45 minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Security Protocols</strong></td>
+                        <td>• Encryption requirements<br>
+                            • Access control implementation<br>
+                            • Secure data transfer<br>
+                            • Documentation standards</td>
+                        <td>• Encryption types and applications<br>
+                            • Principle of least privilege<br>
+                            • Secure transfer protocols<br>
+                            • Chain of custody documentation</td>
+                        <td>60 minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Incident Response</strong></td>
+                        <td>• Incident identification<br>
+                            • Response procedures<br>
+                            • Documentation requirements<br>
+                            • Escalation framework</td>
+                        <td>• Severity classification<br>
+                            • Immediate action steps<br>
+                            • Reporting timelines<br>
+                            • Communication protocols</td>
+                        <td>40 minutes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">6. Instructional Strategies and Learning Activities</h2>
+            
+            <h3>Instructional Approach by Module</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Primary Instructional Strategies</th>
+                        <th>Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Regulatory Landscape</strong></td>
+                        <td>• Microlearning videos<br>
+                            • Interactive infographics<br>
+                            • Knowledge checks<br>
+                            • Expert interviews</td>
+                        <td>• Break down complex regulatory information<br>
+                            • Visualize regulatory relationships<br>
+                            • Reinforce key compliance requirements<br>
+                            • Provide real-world context from compliance officers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Data Classification</strong></td>
+                        <td>• Scenario-based classification exercises<br>
+                            • Interactive decision trees<br>
+                            • Sorting activities<br>
+                            • Case study analysis</td>
+                        <td>• Apply classification criteria to realistic examples<br>
+                            • Practice decision-making process<br>
+                            • Reinforce categories through active sorting<br>
+                            • Analyze complex classification scenarios</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Threat Recognition</strong></td>
+                        <td>• Simulated phishing examples<br>
+                            • Interactive threat indicators<br>
+                            • Video scenarios with decision points<br>
+                            • Pattern recognition activities</td>
+                        <td>• Recognize actual threat techniques<br>
+                            • Practice identifying suspicious elements<br>
+                            • Apply threat response decision-making<br>
+                            • Develop threat pattern recognition skills</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Security Protocols</strong></td>
+                        <td>• Guided simulation exercises<br>
+                            • Interactive workflow demonstrations<br>
+                            • Procedural practice activities<br>
+                            • Protocol decision scenarios</td>
+                        <td>• Practice applying procedures in realistic context<br>
+                            • Visualize complex security workflows<br>
+                            • Build procedural competence through practice<br>
+                            • Develop situational decision-making skills</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Incident Response</strong></td>
+                        <td>• Branching scenarios<br>
+                            • Timed response simulations<br>
+                            • Documentation practice<br>
+                            • Role-based response exercises</td>
+                        <td>• Experience consequence-based decision trees<br>
+                            • Build response time efficiency<br>
+                            • Develop accurate documentation habits<br>
+                            • Practice role-specific response actions</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Detailed Learning Activities</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Activity</th>
+                        <th>Description</th>
+                        <th>Objective Alignment</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Regulatory Matching Game</td>
+                        <td>Interactive drag-and-drop matching key regulations to their requirements and violation consequences</td>
+                        <td>1.1, 1.2, 1.3</td>
+                        <td>5 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Compliance Role Identification</td>
+                        <td>Scenario-based activity identifying specific compliance responsibilities for different roles</td>
+                        <td>1.4</td>
+                        <td>7 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Classification Challenge</td>
+                        <td>Series of data examples requiring learners to apply classification criteria and select appropriate category</td>
+                        <td>2.1, 2.2</td>
+                        <td>10 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Handling Procedure Selection</td>
+                        <td>Scenario-based activity requiring selection of correct handling procedures based on classification</td>
+                        <td>2.3, 2.4</td>
+                        <td>8 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Phishing Detection</td>
+                        <td>Interactive email analysis requiring identification of phishing indicators</td>
+                        <td>3.1, 3.2</td>
+                        <td>8 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Threat Response Scenarios</td>
+                        <td>Branching scenarios requiring evaluation and response to potential security threats</td>
+                        <td>3.3, 3.4</td>
+                        <td>12 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Encryption Application Simulation</td>
+                        <td>Interactive workflow requiring correct application of encryption protocols to different data types</td>
+                        <td>4.1</td>
+                        <td>10 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Access Control Implementation</td>
+                        <td>Simulation requiring implementation of appropriate access controls based on scenarios</td>
+                        <td>4.2</td>
+                        <td>12 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Incident Identification Challenge</td>
+                        <td>Scenario evaluation requiring correct identification of security incidents</td>
+                        <td>5.1</td>
+                        <td>7 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Incident Response Simulation</td>
+                        <td>Timed simulation of incident response procedures with documentation requirements</td>
+                        <td>5.2, 5.3, 5.4</td>
+                        <td>15 min</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">7. Assessment Strategy</h2>
+            
+            <h3>Assessment Plan by Objective</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Learning Objective</th>
+                        <th>Assessment Method</th>
+                        <th>Success Criteria</th>
+                        <th>When Assessed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1.1 Identify key regulations</strong></td>
+                        <td>Multiple-choice knowledge check</td>
+                        <td>90% accuracy</td>
+                        <td>End of Module 1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.2-1.3 Explain compliance obligations and consequences</strong></td>
+                        <td>Scenario-based assessment</td>
+                        <td>Correct explanation of 4/5 scenarios</td>
+                        <td>End of Module 1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1.4 Recognize personal responsibilities</strong></td>
+                        <td>Role-matching assessment</td>
+                        <td>100% accuracy on critical role responsibilities</td>
+                        <td>End of Module 1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2.1-2.2 Differentiate and classify data</strong></td>
+                        <td>Data classification exercise</td>
+                        <td>Correct classification of 15/20 examples</td>
+                        <td>End of Module 2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2.3-2.4 Select and justify handling procedures</strong></td>
+                        <td>Scenario-based decision assessment</td>
+                        <td>Correct handling selection and justification for 8/10 scenarios</td>
+                        <td>End of Module 2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3.1-3.2 Identify threats and distinguish attack types</strong></td>
+                        <td>Threat identification assessment</td>
+                        <td>Correct identification of 9/10 threat indicators</td>
+                        <td>End of Module 3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3.3-3.4 Evaluate and respond to threats</strong></td>
+                        <td>Threat response simulation</td>
+                        <td>Appropriate response selection for 8/10 scenarios</td>
+                        <td>End of Module 3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4.1-4.4 Implement security protocols</strong></td>
+                        <td>Procedural simulation assessment</td>
+                        <td>Successful execution of all critical steps in security protocol implementation</td>
+                        <td>End of Module 4</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5.1-5.4 Execute incident response procedures</strong></td>
+                        <td>Incident response simulation</td>
+                        <td>Complete and accurate response to 3/4 incident scenarios within time limit</td>
+                        <td>End of Module 5</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Terminal Objectives 1-4</strong></td>
+                        <td>Comprehensive certification assessment</td>
+                        <td>Minimum 85% overall score with no critical errors</td>
+                        <td>End of Program</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Certification Assessment Design</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Section</th>
+                        <th>Format</th>
+                        <th>Components</th>
+                        <th>Time Allocation</th>
+                        <th>Weighting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Knowledge Verification</strong></td>
+                        <td>Multiple-choice and matching questions</td>
+                        <td>• Regulatory requirements<br>
+                            • Classification criteria<br>
+                            • Security protocol elements<br>
+                            • Incident response procedures</td>
+                        <td>15 minutes</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Classification Assessment</strong></td>
+                        <td>Data classification exercise</td>
+                        <td>• 10 complex data samples requiring classification<br>
+                            • Selection of appropriate handling procedures</td>
+                        <td>15 minutes</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Threat Response Simulation</strong></td>
+                        <td>Interactive scenario</td>
+                        <td>• Identification of threat indicators<br>
+                            • Selection of appropriate responses<br>
+                            • Implementation of security measures</td>
+                        <td>20 minutes</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Incident Response Scenario</strong></td>
+                        <td>Branching scenario simulation</td>
+                        <td>• Incident identification<br>
+                            • Response procedure execution<br>
+                            • Documentation completion<br>
+                            • Appropriate escalation</td>
+                        <td>20 minutes</td>
+                        <td>25%</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Formative Assessment Strategy</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Assessment Type</th>
+                        <th>Purpose</th>
+                        <th>Implementation</th>
+                        <th>Feedback Approach</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Knowledge Checks</strong></td>
+                        <td>• Verify understanding of key concepts<br>
+                            • Identify knowledge gaps<br>
+                            • Reinforce important information</td>
+                        <td>• 3-5 questions after key concepts<br>
+                            • Variety of question types<br>
+                            • Aligned to specific learning objectives</td>
+                        <td>• Immediate feedback<br>
+                            • Explanation of correct answers<br>
+                            • Links to review material if needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Practice Activities</strong></td>
+                        <td>• Build skill application<br>
+                            • Provide risk-free practice<br>
+                            • Develop confidence</td>
+                        <td>• Guided simulations<br>
+                            • Scenario-based practice<br>
+                            • Procedural rehearsal</td>
+                        <td>• Coaching feedback<br>
+                            • Guided correction<br>
+                            • Performance improvement tips</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reflection Questions</strong></td>
+                        <td>• Promote critical thinking<br>
+                            • Encourage application planning<br>
+                            • Build self-assessment skills</td>
+                        <td>• Application planning prompts<br>
+                            • Self-assessment questions<br>
+                            • Commitment to action items</td>
+                        <td>• Self-evaluation guided prompts<br>
+                            • Example reflections<br>
+                            • Planning templates</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">8. Learning Environment and Technology</h2>
+            
+            <h3>Delivery Modalities</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modality</th>
+                        <th>Components</th>
+                        <th>Benefits</th>
+                        <th>Technical Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>eLearning Modules</strong></td>
+                        <td>• Interactive content<br>
+                            • Video demonstrations<br>
+                            • Knowledge checks<br>
+                            • Simulations</td>
+                        <td>• Consistent delivery<br>
+                            • On-demand access<br>
+                            • Progress tracking<br>
+                            • Standardized assessment</td>
+                        <td>• LMS access<br>
+                            • HTML5 compatible browser<br>
+                            • Minimum bandwidth: 1.5 Mbps<br>
+                            • Audio capability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Virtual Workshops</strong></td>
+                        <td>• Expert-led discussions<br>
+                            • Group activities<br>
+                            • Q&A sessions<br>
+                            • Case study analysis</td>
+                        <td>• Direct interaction with experts<br>
+                            • Peer learning opportunities<br>
+                            • Complex question resolution<br>
+                            • Application to specific cases</td>
+                        <td>• Video conferencing platform<br>
+                            • Webcam and microphone<br>
+                            • Stable internet connection<br>
+                            • Collaborative tools access</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile Microlearning</strong></td>
+                        <td>• Short video refreshers<br>
+                            • Key point summaries<br>
+                            • Quick reference guides<br>
+                            • Practice quizzes</td>
+                        <td>• Just-in-time access<br>
+                            • Reinforcement of key points<br>
+                            • Performance support<br>
+                            • Continuous learning</td>
+                        <td>• Mobile device (iOS/Android)<br>
+                            • Mobile LMS app<br>
+                            • Minimum 4G connection<br>
+                            • 100MB available storage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>On-the-Job Tools</strong></td>
+                        <td>• Decision support tools<br>
+                            • Process checklists<br>
+                            • Reference guides<br>
+                            • Documentation templates</td>
+                        <td>• Performance support<br>
+                            • Workflow integration<br>
+                            • Application reinforcement<br>
+                            • Consistent implementation</td>
+                        <td>• Document access (PDF/Digital)<br>
+                            • Intranet access<br>
+                            • Printing capability (optional)<br>
+                            • Digital tool access</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Technology Infrastructure</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Requirements</th>
+                        <th>Considerations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Learning Management System</strong></td>
+                        <td>• SCORM 1.2/2004 compliance<br>
+                            • Completion tracking<br>
+                            • Assessment capability<br>
+                            • Reporting functions</td>
+                        <td>• Single sign-on integration<br>
+                            • Mobile responsiveness<br>
+                            • Certificate generation<br>
+                            • Manager reporting access</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Virtual Classroom Platform</strong></td>
+                        <td>• Video conferencing capacity<br>
+                            • Breakout room functionality<br>
+                            • Screen sharing capability<br>
+                            • Interactive tools</td>
+                        <td>• Recording capabilities<br>
+                            • Attendance tracking<br>
+                            • Enterprise security compliance<br>
+                            • Integration with scheduling</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content Development</strong></td>
+                        <td>• HTML5 compatibility<br>
+                            • Responsive design<br>
+                            • Interactive capabilities<br>
+                            • Simulation functionality</td>
+                        <td>• Accessibility compliance<br>
+                            • Bandwidth optimization<br>
+                            • Cross-browser compatibility<br>
+                            • Version control</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Security Requirements</strong></td>
+                        <td>• Secure access protocols<br>
+                            • Data encryption<br>
+                            • Compliance with organizational security<br>
+                            • Audit trail capabilities</td>
+                        <td>• Regulatory compliance verification<br>
+                            • PII handling limitations<br>
+                            • Access restriction capabilities<br>
+                            • Security certification requirements</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">9. Instructional Materials and Resources</h2>
+            
+            <h3>Learning Materials by Module</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Core Materials</th>
+                        <th>Supplementary Resources</th>
+                        <th>Job Aids</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Regulatory Landscape</strong></td>
+                        <td>• Regulatory overview video (8 min)<br>
+                            • Interactive compliance map<br>
+                            • Regulation comparison table<br>
+                            • Role responsibility matrix</td>
+                        <td>• Full regulatory text references<br>
+                            • Compliance officer interviews<br>
+                            • Recent violation case studies<br>
+                            • Regulatory update schedule</td>
+                        <td>• Regulatory quick reference guide<br>
+                            • Compliance requirement checklist<br>
+                            • Audit preparation checklist</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Data Classification</strong></td>
+                        <td>• Classification framework video (6 min)<br>
+                            • Interactive classification decision tree<br>
+                            • Classification examples gallery<br>
+                            • Handling procedure guide</td>
+                        <td>• Detailed classification guidelines<br>
+                            • Industry-specific examples<br>
+                            • Edge case analysis document<br>
+                            • Classification evolution history</td>
+                        <td>• Data classification decision aid<br>
+                            • Handling procedure quick reference<br>
+                            • Classification verification checklist</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Threat Recognition</strong></td>
+                        <td>• Threat indicator video series (4 × 3 min)<br>
+                            • Interactive phishing examples<br>
+                            • Threat scenario simulations<br>
+                            • Social engineering techniques gallery</td>
+                        <td>• Recent threat intelligence reports<br>
+                            • Attack anatomy breakdowns<br>
+                            • Security expert interviews<br>
+                            • Emerging threat briefings</td>
+                        <td>• Threat indicator pocket guide<br>
+                            • Email validation checklist<br>
+                            • Suspicious activity reporting form<br>
+                            • First response action cards</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Security Protocols</strong></td>
+                        <td>• Protocol demonstration videos (5 × 4 min)<br>
+                            • Interactive protocol simulations<br>
+                            • Procedural workflow guides<br>
+                            • Documentation samples</td>
+                        <td>• Technical security white papers<br>
+                            • System-specific protocol guides<br>
+                            • Security tool deep dives<br>
+                            • Implementation case studies</td>
+                        <td>• Protocol quick reference guides<br>
+                            • Implementation checklists<br>
+                            • Documentation templates<br>
+                            • Verification worksheets</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Incident Response</strong></td>
+                        <td>• Incident response video (7 min)<br>
+                            • Interactive response simulations<br>
+                            • Documentation guide<br>
+                            • Escalation decision tree</td>
+                        <td>• Detailed incident response plan<br>
+                            • Case study response analysis<br>
+                            • Response team interviews<br>
+                            • Post-incident review examples</td>
+                        <td>• Incident identification guide<br>
+                            • Response procedure cards<br>
+                            • Documentation templates<br>
+                            • Contact and escalation list</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Material Development Specifications</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material Type</th>
+                        <th>Format</th>
+                        <th>Development Specifications</th>
+                        <th>Review Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Videos</strong></td>
+                        <td>• MP4 format<br>
+                            • 720p minimum resolution<br>
+                            • Closed captioning required</td>
+                        <td>• Professional narration<br>
+                            • 150-180 words per minute<br>
+                            • Visual reinforcement of key points<br>
+                            • Consistent branding elements</td>
+                        <td>• SME technical review<br>
+                            • Compliance officer approval<br>
+                            • Accessibility verification<br>
+                            • User experience testing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interactive Elements</strong></td>
+                        <td>• HTML5/JavaScript<br>
+                            • SCORM compliant<br>
+                            • Responsive design</td>
+                        <td>• Clear user instructions<br>
+                            • Progress indicators<br>
+                            • Meaningful feedback<br>
+                            • Performance tracking</td>
+                        <td>• Functionality testing<br>
+                            • User interface review<br>
+                            • Mobile compatibility testing<br>
+                            • Performance optimization</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Job Aids</strong></td>
+                        <td>• PDF format<br>
+                            • Print-optimized design<br>
+                            • Digital interactive version</td>
+                        <td>• Concise, action-oriented content<br>
+                            • Visual organization<br>
+                            • Consistent formatting<br>
+                            • Version/date control</td>
+                        <td>• Field testing verification<br>
+                            • Usability review<br>
+                            • Technical accuracy check<br>
+                            • Regular update schedule</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reference Materials</strong></td>
+                        <td>• HTML/PDF formats<br>
+                            • Searchable content<br>
+                            • Indexed for reference</td>
+                        <td>• Comprehensive coverage<br>
+                            • Clear organization structure<br>
+                            • Cross-referencing<br>
+                            • Source attribution</td>
+                        <td>• Technical accuracy verification<br>
+                            • Legal/compliance review<br>
+                            • Periodic update review<br>
+                            • User feedback integration</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">10. Implementation Plan</h2>
+            
+            <h3>Development Timeline</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Activities</th>
+                        <th>Duration</th>
+                        <th>Dependencies</th>
+                        <th>Deliverables</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Analysis & Planning</strong></td>
+                        <td>• Needs analysis<br>
+                            • Audience assessment<br>
+                            • Content scoping<br>
+                            • Stakeholder alignment</td>
+                        <td>3 weeks</td>
+                        <td>• Stakeholder availability<br>
+                            • Access to performance data<br>
+                            • Audience access</td>
+                        <td>• Course design document<br>
+                            • Project plan<br>
+                            • Stakeholder sign-off</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Design</strong></td>
+                        <td>• Learning objectives development<br>
+                            • Assessment strategy<br>
+                            • Content outline<br>
+                            • Activity design</td>
+                        <td>4 weeks</td>
+                        <td>• SME availability<br>
+                            • Compliance guidelines<br>
+                            • Completion of analysis</td>
+                        <td>• Detailed content outline<br>
+                            • Storyboards<br>
+                            • Activity specifications<br>
+                            • Assessment design</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Development</strong></td>
+                        <td>• Content creation<br>
+                            • Interactive development<br>
+                            • Video production<br>
+                            • Assessment building</td>
+                        <td>8 weeks</td>
+                        <td>• Design approval<br>
+                            • Asset availability<br>
+                            • Technical specifications</td>
+                        <td>• eLearning modules<br>
+                            • Videos<br>
+                            • Assessments<br>
+                            • Job aids and references</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Testing</strong></td>
+                        <td>• Technical testing<br>
+                            • Content review<br>
+                            • Pilot implementation<br>
+                            • Revision integration</td>
+                        <td>3 weeks</td>
+                        <td>• Development completion<br>
+                            • Tester availability<br>
+                            • LMS environment readiness</td>
+                        <td>• Test results<br>
+                            • Revision documentation<br>
+                            • Final production files</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Implementation</strong></td>
+                        <td>• LMS integration<br>
+                            • Enrollment setup<br>
+                            • Communication plan execution<br>
+                            • Launch support</td>
+                        <td>2 weeks</td>
+                        <td>• Testing completion<br>
+                            • LMS readiness<br>
+                            • Communication approval</td>
+                        <td>• Deployed training<br>
+                            • User guides<br>
+                            • Support documentation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Evaluation</strong></td>
+                        <td>• Level 1-2 evaluation<br>
+                            • Initial effectiveness analysis<br>
+                            • Support adjustment<br>
+                            • Early impact indicators</td>
+                        <td>Ongoing</td>
+                        <td>• Learner completion<br>
+                            • Assessment data<br>
+                            • Feedback mechanisms</td>
+                        <td>• Initial evaluation report<br>
+                            • Support recommendations<br>
+                            • Early impact indicators</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Rollout Strategy</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Target Group</th>
+                        <th>Timeline</th>
+                        <th>Special Considerations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pilot</strong></td>
+                        <td>• 15-20 representatives across all roles<br>
+                            • Mix of technical proficiency levels<br>
+                            • Geographic distribution</td>
+                        <td>Week 1-2</td>
+                        <td>• Detailed feedback collection<br>
+                            • Observation sessions<br>
+                            • Daily debrief meetings<br>
+                            • Rapid adjustment capability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 1</strong></td>
+                        <td>• IT Support Staff (27)<br>
+                            • Department Managers (48)</td>
+                        <td>Week 3-4</td>
+                        <td>• Technical troubleshooting focus<br>
+                            • Support role preparation<br>
+                            • Management communication materials</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 2</strong></td>
+                        <td>• Back-Office Processors (215)</td>
+                        <td>Week 5-7</td>
+                        <td>• Department-specific examples<br>
+                            • Process integration focus<br>
+                            • Staggered scheduling</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 3</strong></td>
+                        <td>• Customer-Facing Staff (340)</td>
+                        <td>Week 8-12</td>
+                        <td>• Limited time availability<br>
+                            • Customer scenario emphasis<br>
+                            • Performance support tools focus</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ongoing</strong></td>
+                        <td>• New Employees</td>
+                        <td>Monthly</td>
+                        <td>• Integration with onboarding<br>
+                            • Buddy system support<br>
+                            • Accelerated timeline</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">11. Evaluation Strategy</h2>
+            
+            <h3>Kirkpatrick Model Implementation</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Measures</th>
+                        <th>Methods</th>
+                        <th>Timeline</th>
+                        <th>Success Indicators</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Level 1: Reaction</strong></td>
+                        <td>• Satisfaction with learning experience<br>
+                            • Perceived relevance and value<br>
+                            • Learning environment effectiveness<br>
+                            • Instructor/content quality</td>
+                        <td>• Post-module surveys<br>
+                            • Focus group discussions<br>
+                            • LMS rating systems<br>
+                            • Open feedback channels</td>
+                        <td>Immediate post-completion</td>
+                        <td>• Satisfaction score ≥4.2/5<br>
+                            • Relevance rating ≥85%<br>
+                            • 90% would recommend<br>
+                            • Positive qualitative feedback</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Level 2: Learning</strong></td>
+                        <td>• Knowledge acquisition<br>
+                            • Skill development<br>
+                            • Confidence improvement<br>
+                            • Attitude changes</td>
+                        <td>• Pre/post assessments<br>
+                            • Knowledge checks<br>
+                            • Simulation performance<br>
+                            • Certification results</td>
+                        <td>During and immediately after completion</td>
+                        <td>• 85% certification pass rate<br>
+                            • 40% average knowledge increase<br>
+                            • 90% simulation success rate<br>
+                            • 95% critical concept mastery</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Level 3: Behavior</strong></td>
+                        <td>• Protocol implementation<br>
+                            • Security practice adoption<br>
+                            • Incident reporting accuracy<br>
+                            • Classification accuracy</td>
+                        <td>• Manager observations<br>
+                            • Performance monitoring<br>
+                            • System audit trails<br>
+                            • Mystery shopping</td>
+                        <td>30, 60, 90 days post-training</td>
+                        <td>• 90% protocol compliance<br>
+                            • 100% of incidents properly reported<br>
+                            • 95% classification accuracy<br>
+                            • Consistent security behaviors</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Level 4: Results</strong></td>
+                        <td>• Security incident reduction<br>
+                            • Audit compliance improvement<br>
+                            • Customer trust metrics<br>
+                            • Risk reduction measurements</td>
+                        <td>• Security incident tracking<br>
+                            • Compliance audit results<br>
+                            • Customer satisfaction surveys<br>
+                            • Risk assessment scores</td>
+                        <td>Quarterly for 1 year</td>
+                        <td>• 50% reduction in preventable incidents<br>
+                            • 100% audit compliance<br>
+                            • 15% increase in trust metrics<br>
+                            • 40% reduction in high-risk behaviors</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ROI</strong></td>
+                        <td>• Cost-benefit analysis<br>
+                            • Training efficiency metrics<br>
+                            • Risk avoidance valuation</td>
+                        <td>• Financial impact analysis<br>
+                            • Cost comparison studies<br>
+                            • Productivity measurements</td>
+                        <td>6-12 months post-implementation</td>
+                        <td>• 3:1 minimum ROI<br>
+                            • $250K cost avoidance<br>
+                            • 30% efficiency increase in security processes</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Continuous Improvement Process</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Activities</th>
+                        <th>Timing</th>
+                        <th>Outputs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Data Collection</strong></td>
+                        <td>• Assessment results analysis<br>
+                            • Learner feedback compilation<br>
+                            • Behavior observation data<br>
+                            • Performance metrics gathering</td>
+                        <td>Ongoing with quarterly review</td>
+                        <td>• Consolidated data report<br>
+                            • Performance gap analysis<br>
+                            • Learner experience summary</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analysis</strong></td>
+                        <td>• Trend identification<br>
+                            • Gap analysis<br>
+                            • Root cause determination<br>
+                            • Impact assessment</td>
+                        <td>Quarterly</td>
+                        <td>• Improvement opportunity report<br>
+                            • Prioritized enhancement list<br>
+                            • Root cause analysis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Planning</strong></td>
+                        <td>• Enhancement prioritization<br>
+                            • Solution design<br>
+                            • Implementation planning<br>
+                            • Stakeholder alignment</td>
+                        <td>Quarterly following analysis</td>
+                        <td>• Enhancement plan<br>
+                            • Implementation timeline<br>
+                            • Resource requirements<br>
+                            • Approval documentation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Implementation</strong></td>
+                        <td>• Enhancement development<br>
+                            • Change implementation<br>
+                            • Communication delivery<br>
+                            • Support adjustment</td>
+                        <td>Based on enhancement scope</td>
+                        <td>• Updated training components<br>
+                            • Change documentation<br>
+                            • Communication materials</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Verification</strong></td>
+                        <td>• Effectiveness assessment<br>
+                            • User experience validation<br>
+                            • Performance impact checking<br>
+                            • Stakeholder feedback</td>
+                        <td>30-60 days post-enhancement</td>
+                        <td>• Verification report<br>
+                            • Further adjustment needs<br>
+                            • Success measurement<br>
+                            • Lessons learned</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">12. Budget and Resource Requirements</h2>
+            
+            <h3>Development Budget Estimate</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Items</th>
+                        <th>Estimated Cost</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Analysis & Design</strong></td>
+                        <td>• Needs analysis<br>
+                            • Instructional design<br>
+                            • Storyboarding<br>
+                            • Prototype development</td>
+                        <td>$32,000</td>
+                        <td>• 160 hours @ $200/hr<br>
+                            • Includes stakeholder meetings<br>
+                            • Covers all modules and assessment design</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content Development</strong></td>
+                        <td>• Script writing<br>
+                            • Interactive development<br>
+                            • Assessment creation<br>
+                            • Material production</td>
+                        <td>$78,000</td>
+                        <td>• 520 hours @ $150/hr<br>
+                            • 5 modules with interactions<br>
+                            • Certification assessment<br>
+                            • Job aids and references</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Media Production</strong></td>
+                        <td>• Video recording<br>
+                            • Audio narration<br>
+                            • Animation development<br>
+                            • Graphics creation</td>
+                        <td>$45,000</td>
+                        <td>• 15 videos (total 60 min)<br>
+                            • Professional narration<br>
+                            • Interactive simulations<br>
+                            • Custom graphics package</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LMS & Technology</strong></td>
+                        <td>• LMS setup and configuration<br>
+                            • Testing and troubleshooting<br>
+                            • Integration services<br>
+                            • Technical support</td>
+                        <td>$15,000</td>
+                        <td>• SCORM package integration<br>
+                            • Reporting setup<br>
+                            • User enrollment configuration<br>
+                            • Initial technical support</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Management</strong></td>
+                        <td>• Project coordination<br>
+                            • Stakeholder communication<br>
+                            • Quality assurance<br>
+                            • Timeline management</td>
+                        <td>$24,000</td>
+                        <td>• 160 hours @ $150/hr<br>
+                            • Spans entire project lifecycle<br>
+                            • Includes status reporting<br>
+                            • Change management</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SME & Review Time</strong></td>
+                        <td>• Content review sessions<br>
+                            • Accuracy verification<br>
+                            • Compliance validation<br>
+                            • Pilot feedback integration</td>
+                        <td>$30,000</td>
+                        <td>• 150 hours @ $200/hr<br>
+                            • Multiple review cycles<br>
+                            • Legal/compliance review<br>
+                            • Technical accuracy verification</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contingency</strong></td>
+                        <td>• Scope adjustments<br>
+                            • Unforeseen requirements<br>
+                            • Technical challenges<br>
+                            • Timeline extensions</td>
+                        <td>$22,400</td>
+                        <td>• 10% of project total<br>
+                            • Available for approved changes<br>
+                            • Covers unexpected costs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Estimated Budget</strong></td>
+                        <td></td>
+                        <td>$246,400</td>
+                        <td>• Timeline: 20 weeks<br>
+                            • All modules and materials<br>
+                            • Complete implementation</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Resource Requirements</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Resource Type</th>
+                        <th>Requirements</th>
+                        <th>Availability</th>
+                        <th>Acquisition Plan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Personnel</strong></td>
+                        <td>• Instructional Designer (1 FTE)<br>
+                            • eLearning Developer (2 FTE)<br>
+                            • Project Manager (0.5 FTE)<br>
+                            • SMEs (multiple, part-time)<br>
+                            • Media Specialist (1 FTE)</td>
+                        <td>• Instructional Designer: Internal<br>
+                            • eLearning Developers: 1 internal, 1 contract<br>
+                            • Project Manager: Internal<br>
+                            • SMEs: Internal<br>
+                            • Media Specialist: Contract</td>
+                        <td>• Internal resource allocation approvals<br>
+                            • Contract resources secured by project initiation<br>
+                            • SME time allocation agreements with departments</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technology</strong></td>
+                        <td>• eLearning authoring tools<br>
+                            • LMS with SCORM/xAPI support<br>
+                            • Video production equipment<br>
+                            • Testing environments<br>
+                            • Simulation software</td>
+                        <td>• Authoring tools: Current licenses<br>
+                            • LMS: Current system<br>
+                            • Video equipment: Partial availability<br>
+                            • Testing: Available<br>
+                            • Simulation: New acquisition</td>
+                        <td>• New software licenses procured 2 weeks before need<br>
+                            • Video equipment rental scheduled for production phase<br>
+                            • LMS test environment configured pre-development</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Facilities</strong></td>
+                        <td>• Meeting spaces<br>
+                            • Recording studio<br>
+                            • Testing rooms<br>
+                            • Development workspace</td>
+                        <td>• Meeting spaces: Available<br>
+                            • Recording studio: Limited availability<br>
+                            • Testing rooms: Available<br>
+                            • Workspace: Available</td>
+                        <td>• Recording studio schedule secured 4 weeks in advance<br>
+                            • Meeting rooms booked for key milestone reviews<br>
+                            • Development workspace allocated for full project duration</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">13. Risk Management Plan</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Risk</th>
+                        <th>Probability</th>
+                        <th>Impact</th>
+                        <th>Mitigation Strategy</th>
+                        <th>Contingency Plan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SME availability constraints</strong></td>
+                        <td>High</td>
+                        <td>Medium</td>
+                        <td>• Early scheduling with buffer time<br>
+                            • Multiple SME identification<br>
+                            • Structured input methods with clear timelines</td>
+                        <td>• Content development in modular approach allowing for prioritization<br>
+                            • Template-based input collection requiring minimal time<br>
+                            • Escalation process for critical SME needs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technology integration issues</strong></td>
+                        <td>Medium</td>
+                        <td>High</td>
+                        <td>• Early testing on target platforms<br>
+                            • Technical requirements documentation<br>
+                            • Phased development with integration checkpoints</td>
+                        <td>• Simplified backup delivery option defined<br>
+                            • Support team engagement protocol<br>
+                            • Alternative delivery method ready if needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content complexity exceeds learner capacity</strong></td>
+                        <td>Medium</td>
+                        <td>High</td>
+                        <td>• Progressive complexity design<br>
+                            • Frequent usability testing<br>
+                            • Cognitive load analysis in design phase</td>
+                        <td>• Content simplification strategy identified<br>
+                            • Additional support resources ready<br>
+                            • Microlearning conversion approach defined</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regulatory changes during development</strong></td>
+                        <td>Medium</td>
+                        <td>Very High</td>
+                        <td>• Regulatory monitoring process<br>
+                            • Flexible design approach<br>
+                            • Modular content structure</td>
+                        <td>• Rapid update process defined<br>
+                            • Version control and update distribution plan<br>
+                            • Change impact assessment template</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learner resistance to training</strong></td>
+                        <td>Medium</td>
+                        <td>Medium</td>
+                        <td>• WIIFM messaging strategy<br>
+                            • Manager engagement in communication<br>
+                            • Performance support emphasis</td>
+                        <td>• Success stories and peer advocacy plan<br>
+                            • Targeted follow-up for non-completion<br>
+                            • Manager toolkit for resistance management</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Timeline compression from stakeholders</strong></td>
+                        <td>High</td>
+                        <td>Medium</td>
+                        <td>• Clear timeline dependencies documented<br>
+                            • Early expectation setting<br>
+                            • Phased delivery approach</td>
+                        <td>• Module prioritization strategy<br>
+                            • Minimum viable product definition<br>
+                            • Resource scaling options identified</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">14. Project Governance</h2>
+            
+            <h3>Key Stakeholders and Roles</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Stakeholder</th>
+                        <th>Role</th>
+                        <th>Responsibilities</th>
+                        <th>Communication Cadence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Chief Compliance Officer</strong></td>
+                        <td>Executive Sponsor</td>
+                        <td>• Final approval authority<br>
+                            • Resource allocation support<br>
+                            • Organizational alignment</td>
+                        <td>• Bi-weekly status updates<br>
+                            • Major milestone reviews<br>
+                            • Final approval meetings</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Information Security Director</strong></td>
+                        <td>Technical SME Lead</td>
+                        <td>• Content accuracy verification<br>
+                            • Technical requirements definition<br>
+                            • Performance standards approval</td>
+                        <td>• Weekly SME coordination meetings<br>
+                            • Content review sessions<br>
+                            • Technical validation reviews</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning & Development Manager</strong></td>
+                        <td>Project Owner</td>
+                        <td>• Overall project oversight<br>
+                            • Interdepartmental coordination<br>
+                            • Design approach approval</td>
+                        <td>• Weekly project status meetings<br>
+                            • Design review participation<br>
+                            • Resource coordination calls</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Department Managers</strong></td>
+                        <td>Implementation Partners</td>
+                        <td>• Learner time allocation<br>
+                            • Department-specific requirements<br>
+                            • Implementation support</td>
+                        <td>• Bi-weekly implementation planning<br>
+                            • Rollout coordination meetings<br>
+                            • Feedback collection calls</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compliance Training Specialist</strong></td>
+                        <td>Project Manager</td>
+                        <td>• Day-to-day project management<br>
+                            • Timeline and budget management<br>
+                            • Stakeholder communication</td>
+                        <td>• Daily team standups<br>
+                            • Weekly status reporting<br>
+                            • Issue resolution coordination</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Approval Process</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project Phase</th>
+                        <th>Deliverables</th>
+                        <th>Approvers</th>
+                        <th>Approval Criteria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Analysis</strong></td>
+                        <td>• Needs analysis report<br>
+                            • Audience profiles<br>
+                            • Performance objectives</td>
+                        <td>• Learning & Development Manager<br>
+                            • Information Security Director<br>
+                            • Chief Compliance Officer</td>
+                        <td>• Business need alignment<br>
+                            • Comprehensive audience coverage<br>
+                            • Measurable objectives<br>
+                            • Regulatory requirement inclusion</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Design</strong></td>
+                        <td>• Course design document<br>
+                            • Content outline<br>
+                            • Assessment strategy</td>
+                        <td>• Learning & Development Manager<br>
+                            • Information Security Director<br>
+                            • Compliance Department Representative</td>
+                        <td>• Learning objective alignment<br>
+                            • Comprehensive content coverage<br>
+                            • Valid assessment approach<br>
+                            • Instructional strategy effectiveness</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Development</strong></td>
+                        <td>• Storyboards<br>
+                            • Prototype/sample module<br>
+                            • Assessment items</td>
+                        <td>• Learning & Development Manager<br>
+                            • Information Security Director<br>
+                            • Legal/Compliance Department</td>
+                        <td>• Content accuracy<br>
+                            • Instructional effectiveness<br>
+                            • Brand/style compliance<br>
+                            • Regulatory compliance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Testing</strong></td>
+                        <td>• Test results report<br>
+                            • Revision recommendations<br>
+                            • Pilot feedback summary</td>
+                        <td>• Learning & Development Manager<br>
+                            • Information Security Director<br>
+                            • Pilot participant representatives</td>
+                        <td>• Technical functionality<br>
+                            • User experience quality<br>
+                            • Learning effectiveness<br>
+                            • Implementation readiness</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Implementation</strong></td>
+                        <td>• Rollout plan<br>
+                            • Communication materials<br>
+                            • Support documentation</td>
+                        <td>• Learning & Development Manager<br>
+                            • Department Managers<br>
+                            • Communications Department</td>
+                        <td>• Operational feasibility<br>
+                            • Communication clarity<br>
+                            • Support adequacy<br>
+                            • Timeline reasonableness</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">15. Maintenance and Sustainability Plan</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Approach</th>
+                        <th>Responsibility</th>
+                        <th>Timeline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Content Currency</strong></td>
+                        <td>• Regulatory monitoring process<br>
+                            • SME review schedule<br>
+                            • Feedback monitoring<br>
+                            • Update triggering criteria</td>
+                        <td>• Compliance Training Specialist<br>
+                            • Information Security Director<br>
+                            • Departmental SMEs</td>
+                        <td>• Quarterly regulatory review<br>
+                            • Annual comprehensive review<br>
+                            • Ad-hoc critical updates as needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technical Maintenance</strong></td>
+                        <td>• LMS compatibility monitoring<br>
+                            • Browser/device testing<br>
+                            • Link and resource verification<br>
+                            • Performance optimization</td>
+                        <td>• Learning Technology Specialist<br>
+                            • IT Support Team<br>
+                            • eLearning Developer</td>
+                        <td>• Monthly technical checks<br>
+                            • Quarterly compatibility testing<br>
+                            • Bi-annual performance optimization</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance Monitoring</strong></td>
+                        <td>• Effectiveness metrics tracking<br>
+                            • Assessment item analysis<br>
+                            • Completion and certification rates<br>
+                            • Impact measurement</td>
+                        <td>• Learning Analytics Specialist<br>
+                            • Compliance Training Specialist<br>
+                            • Department Managers</td>
+                        <td>• Monthly performance dashboard<br>
+                            • Quarterly effectiveness analysis<br>
+                            • Annual impact assessment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Continuous Improvement</strong></td>
+                        <td>• Learner feedback collection<br>
+                            • Performance gap analysis<br>
+                            • Best practice incorporation<br>
+                            • Enhancement prioritization</td>
+                        <td>• Learning & Development Manager<br>
+                            • Compliance Training Specialist<br>
+                            • Learner representatives</td>
+                        <td>• Ongoing feedback collection<br>
+                            • Quarterly improvement planning<br>
+                            • Annual major enhancement cycle</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">16. References and Supporting Documentation</h2>
+            
+            <h3>Regulatory Requirements</h3>
+            <ul>
+                <li>Financial Industry Regulatory Authority (FINRA) Rule 2090 ("Know Your Customer")</li>
+                <li>Gramm-Leach-Bliley Act (GLBA) requirements on financial privacy</li>
+                <li>Payment Card Industry Data Security Standard (PCI DSS) v4.0</li>
+                <li>State data breach notification requirements</li>
+                <li>General Data Protection Regulation (GDPR) for EU customer data</li>
+                <li>Organization's Data Security Policy, v3.2 (March 2024)</li>
+            </ul>
+            
+            <h3>Learning Design References</h3>
+            <ul>
+                <li>Clark, R. C., & Mayer, R. E. (2016). e-Learning and the Science of Instruction (4th ed.)</li>
+                <li>Horton, W. (2011). e-Learning by Design (2nd ed.)</li>
+                <li>Association for Talent Development (ATD) Competency Model</li>
+                <li>Organization's Learning Design Standards, v2.1 (January 2025)</li>
+                <li>Industry Compliance Training Best Practices Report (Financial Services Compliance Association, 2024)</li>
+            </ul>
+            
+            <h3>Organizational Context</h3>
+            <ul>
+                <li>Annual Security Incident Report (2024)</li>
+                <li>Customer Trust Survey Results (Q4 2024)</li>
+                <li>Information Security Audit Findings (December 2024)</li>
+                <li>Employee Security Awareness Assessment Results (January 2025)</li>
+                <li>Regulatory Compliance Gap Analysis (February 2025)</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>Document prepared by: Bennie Ejiga, Senior Instructional Designer</p>
+            <p>Last updated: March 24, 2025</p>
+            <p>Version: 1.0</p>
+            
+        </div>
+    </div>
+</body>
+</html>

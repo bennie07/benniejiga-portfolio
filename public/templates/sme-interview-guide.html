@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SME Interview Guide</title>
+    <style>
+        /* Base Styles */
+        .sme-guide-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .sme-guide-container h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .sme-guide-container h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        .sme-guide-container h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        
+        .sme-guide-container p {
+            margin-bottom: 15px;
+        }
+        
+        .sme-guide-container strong {
+            font-weight: 600;
+        }
+        
+        .sme-guide-container .meta-info {
+            text-align: center;
+            margin-bottom: 30px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        .sme-guide-container .separator {
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* Table Styles */
+        .sme-guide-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        .sme-guide-container th, 
+        .sme-guide-container td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .sme-guide-container th {
+            background-color: #f2f6f9;
+            font-weight: 600;
+        }
+        
+        .sme-guide-container tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .sme-guide-container ul {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+        }
+        
+        .sme-guide-container li {
+            margin-bottom: 3px;
+        }
+        
+        /* Checkbox style */
+        .checkbox {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sme-guide-container table, 
+            .sme-guide-container thead, 
+            .sme-guide-container tbody, 
+            .sme-guide-container th, 
+            .sme-guide-container td, 
+            .sme-guide-container tr {
+                display: block;
+            }
+            
+            .sme-guide-container thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            
+            .sme-guide-container tr {
+                border: 1px solid #ddd;
+                margin-bottom: 15px;
+            }
+            
+            .sme-guide-container td {
+                border: none;
+                border-bottom: 1px solid #ddd;
+                position: relative;
+                padding-left: 50%;
+            }
+            
+            .sme-guide-container td:before {
+                position: absolute;
+                top: 12px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                content: attr(data-label);
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .sme-guide-container {
+                width: 100%;
+                font-size: 12pt;
+            }
+            
+            .sme-guide-container h1 {
+                font-size: 18pt;
+            }
+            
+            .sme-guide-container h2 {
+                font-size: 16pt;
+            }
+            
+            .sme-guide-container h3 {
+                font-size: 14pt;
+            }
+            
+            .sme-guide-container table {
+                page-break-inside: avoid;
+            }
+            
+            .sme-guide-container .separator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sme-guide-container">
+        <h1>Subject Matter Expert Interview Guide</h1>
+        <h2>Framework for Effective Knowledge Extraction</h2>
+        
+        <div class="meta-info">
+            <p><strong>Designer:</strong> Bennie Ejiga<br>
+            <strong>Date:</strong> March 28, 2025<br>
+            <strong>Version:</strong> 1.0</p>
+        </div>
+        
+        <div class="separator"></div>
+        
+        <h2>Purpose of This Guide</h2>
+        <p>This comprehensive interview guide provides a structured framework for extracting critical knowledge from Subject Matter Experts (SMEs) during the instructional design process. It serves to:</p>
+        <ul>
+            <li>Optimize limited SME time through structured, purposeful interactions</li>
+            <li>Ensure comprehensive content coverage aligned with learning objectives</li>
+            <li>Extract both explicit and tacit knowledge from experts</li>
+            <li>Document critical information in a consistent, usable format</li>
+            <li>Establish productive collaborative relationships with SMEs</li>
+            <li>Transform specialized expertise into learner-appropriate content</li>
+        </ul>
+        <p>This guide can be customized for different content domains, project types, and SME availability constraints.</p>
+        
+        <div class="separator"></div>
+        
+        <h2>Preparation for SME Interviews</h2>
+        
+        <h3>Pre-Interview Planning Checklist</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Planning Activity</th>
+                    <th>Completed</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Planning Activity">Research SME's background, expertise, and experience</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Review existing documentation and content</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Define specific learning objectives to be addressed</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Develop tailored interview questions</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Create content capture templates</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Schedule appropriate interview length and format</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Share agenda and expectations with SME</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Prepare necessary tools (recording equipment, etc.)</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Obtain necessary permissions and confidentiality agreements</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Planning Activity">Arrange suitable interview environment</td>
+                    <td data-label="Completed"><input type="checkbox" class="checkbox"></td>
+                    <td data-label="Notes"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Initial SME Information Profile</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Information Category</th>
+                    <th>Details to Collect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Information Category"><strong>Professional Background</strong></td>
+                    <td data-label="Details to Collect">
+                        <ul>
+                            <li>Years of experience in the field</li>
+                            <li>Current role and responsibilities</li>
+                            <li>Previous relevant positions</li>
+                            <li>Special certifications or credentials</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Information Category"><strong>Expertise Areas</strong></td>
+                    <td data-label="Details to Collect">
+                        <ul>
+                            <li>Primary areas of specialization</li>
+                            <li>Secondary knowledge domains</li>
+                            <li>Recent projects or achievements</li>
+                            <li>Known strengths and limitations</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Information Category"><strong>Teaching Experience</strong></td>
+                    <td data-label="Details to Collect">
+                        <ul>
+                            <li>Previous experience as instructor/mentor</li>
+                            <li>Training materials previously developed</li>
+                            <li>Comfort level with explaining concepts</li>
+                            <li>Preferred communication style</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Information Category"><strong>Availability Constraints</strong></td>
+                    <td data-label="Details to Collect">
+                        <ul>
+                            <li>Best times for interviews</li>
+                            <li>Preferred contact methods</li>
+                            <li>Time zone considerations</li>
+                            <li>Maximum session duration</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Information Category"><strong>Content Ownership</strong></td>
+                    <td data-label="Details to Collect">
+                        <ul>
+                            <li>Authority to approve final content</li>
+                            <li>Required review processes</li>
+                            <li>Additional SMEs to consult</li>
+                            <li>Organizational approval requirements</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <h2>Interview Structure Framework</h2>
+        
+        <h3>Opening Phase (5-10 minutes)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Purpose</th>
+                    <th>Sample Script/Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Step"><strong>Welcome and appreciation</strong></td>
+                    <td data-label="Purpose">Establish positive rapport</td>
+                    <td data-label="Sample Script/Questions">"Thank you for sharing your expertise with us. Your knowledge is critical to developing effective training."</td>
+                </tr>
+                <tr>
+                    <td data-label="Step"><strong>Project overview refresh</strong></td>
+                    <td data-label="Purpose">Ensure shared understanding of purpose</td>
+                    <td data-label="Sample Script/Questions">"As a quick reminder, we're developing training for [audience] to help them [performance goal]."</td>
+                </tr>
+                <tr>
+                    <td data-label="Step"><strong>Set expectations for session</strong></td>
+                    <td data-label="Purpose">Create structure and clarity</td>
+                    <td data-label="Sample Script/Questions">"Today we'll focus specifically on [topic areas]. We have [time] scheduled, and I'll be guiding us through specific questions."</td>
+                </tr>
+                <tr>
+                    <td data-label="Step"><strong>Explain knowledge capture process</strong></td>
+                    <td data-label="Purpose">Ensure comfort with methods</td>
+                    <td data-label="Sample Script/Questions">"I'll be taking notes and recording our session to ensure I capture your expertise accurately. Everything will be shared with you for review."</td>
+                </tr>
+                <tr>
+                    <td data-label="Step"><strong>Address any initial questions</strong></td>
+                    <td data-label="Purpose">Resolve concerns</td>
+                    <td data-label="Sample Script/Questions">"Do you have any questions about our process or what we're trying to accomplish before we begin?"</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Core Content Extraction (30-60 minutes)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Content Category</th>
+                    <th>Purpose</th>
+                    <th>Sample Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Content Category"><strong>Conceptual Foundation</strong></td>
+                    <td data-label="Purpose">Establish fundamental knowledge framework</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"What are the most essential concepts someone needs to understand about [topic]?"</li>
+                            <li>"How would you explain [concept] to someone completely new to this field?"</li>
+                            <li>"What are common misconceptions about [topic] that we should address?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Content Category"><strong>Procedural Knowledge</strong></td>
+                    <td data-label="Purpose">Document processes and workflows</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"What are the specific steps involved in [process]?"</li>
+                            <li>"What decision points occur during this process?"</li>
+                            <li>"How do you know when each step is completed correctly?"</li>
+                            <li>"What variations exist in how this procedure might be performed?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Content Category"><strong>Contextual Application</strong></td>
+                    <td data-label="Purpose">Understand real-world implementation</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"In what situations would someone need to apply this knowledge?"</li>
+                            <li>"What environmental factors affect how this is implemented?"</li>
+                            <li>"How does the application of this change based on [variables]?"</li>
+                            <li>"What real-world constraints impact this process?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Content Category"><strong>Critical Thinking/Decision Making</strong></td>
+                    <td data-label="Purpose">Extract expert judgment processes</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"How do you determine which approach to use when [situation]?"</li>
+                            <li>"What factors do you consider when making decisions about [topic]?"</li>
+                            <li>"What subtle cues or indicators influence your choices?"</li>
+                            <li>"Walk me through your thought process for a challenging scenario."</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Content Category"><strong>Troubleshooting/Problem Solving</strong></td>
+                    <td data-label="Purpose">Capture diagnostic expertise</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"What are the most common problems encountered with [topic/process]?"</li>
+                            <li>"How do you identify the root cause of [problem]?"</li>
+                            <li>"What solutions work best for [specific issue]?"</li>
+                            <li>"What preventative measures should be taken?"</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Scenario and Example Elicitation (15-20 minutes)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Example Type</th>
+                    <th>Purpose</th>
+                    <th>Elicitation Techniques</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Example Type"><strong>Success Cases</strong></td>
+                    <td data-label="Purpose">Illustrate ideal application</td>
+                    <td data-label="Elicitation Techniques">
+                        <ul>
+                            <li>"Can you describe a situation where you've seen this done exceptionally well?"</li>
+                            <li>"What specific actions or decisions led to success in that case?"</li>
+                            <li>"What measurable outcomes demonstrated success?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Example Type"><strong>Failure Examples</strong></td>
+                    <td data-label="Purpose">Highlight common pitfalls</td>
+                    <td data-label="Elicitation Techniques">
+                        <ul>
+                            <li>"What are typical mistakes people make when learning this?"</li>
+                            <li>"Can you share an anonymized example of when this went wrong?"</li>
+                            <li>"What early warning signs might indicate potential problems?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Example Type"><strong>Edge Cases</strong></td>
+                    <td data-label="Purpose">Explore boundary conditions</td>
+                    <td data-label="Elicitation Techniques">
+                        <ul>
+                            <li>"What unusual situations might require adapting the standard approach?"</li>
+                            <li>"How do you handle exceptions to the normal process?"</li>
+                            <li>"What rare but important scenarios should learners be aware of?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Example Type"><strong>Before/After Comparisons</strong></td>
+                    <td data-label="Purpose">Show transformation</td>
+                    <td data-label="Elicitation Techniques">
+                        <ul>
+                            <li>"How does performance typically change after mastering this skill?"</li>
+                            <li>"What specific differences would you observe between a novice and expert approach?"</li>
+                            <li>"How have you seen individuals or teams transform after learning this?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Example Type"><strong>Visual Examples</strong></td>
+                    <td data-label="Purpose">Capture visual knowledge</td>
+                    <td data-label="Elicitation Techniques">
+                        <ul>
+                            <li>"Could you sketch/diagram how this looks when done correctly?"</li>
+                            <li>"What visual cues indicate [condition/state]?"</li>
+                            <li>"Are there existing visual examples we could reference?"</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Performance Standards Clarification (10-15 minutes)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Standard Component</th>
+                    <th>Purpose</th>
+                    <th>Sample Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Standard Component"><strong>Success Criteria</strong></td>
+                    <td data-label="Purpose">Define acceptable performance</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"How do you know when someone has performed this task correctly?"</li>
+                            <li>"What specific standards must be met?"</li>
+                            <li>"What measurable outcomes indicate competence?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Standard Component"><strong>Evaluation Methods</strong></td>
+                    <td data-label="Purpose">Establish assessment approach</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"How is proficiency currently evaluated?"</li>
+                            <li>"What performance indicators are most meaningful?"</li>
+                            <li>"What testing methods would authentically assess capability?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Standard Component"><strong>Common Errors</strong></td>
+                    <td data-label="Purpose">Identify critical mistakes</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"What errors are most frequent among beginners?"</li>
+                            <li>"Which mistakes have the most serious consequences?"</li>
+                            <li>"What near-misses might appear correct but aren't?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Standard Component"><strong>Proficiency Levels</strong></td>
+                    <td data-label="Purpose">Differentiate expertise stages</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"How would you distinguish between basic, intermediate, and advanced performance?"</li>
+                            <li>"What capabilities differentiate an expert from a competent performer?"</li>
+                            <li>"What developmental milestones indicate progress?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Standard Component"><strong>Constraints and Conditions</strong></td>
+                    <td data-label="Purpose">Clarify performance context</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"Under what conditions must this performance occur?"</li>
+                            <li>"What time, accuracy, or resource constraints apply?"</li>
+                            <li>"What environmental factors affect acceptable performance?"</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Resources and Tools Identification (5-10 minutes)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Resource Type</th>
+                    <th>Purpose</th>
+                    <th>Sample Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Resource Type"><strong>Reference Materials</strong></td>
+                    <td data-label="Purpose">Identify supporting documentation</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"What reference materials do you consult regularly?"</li>
+                            <li>"Are there manuals, guides, or standards we should incorporate?"</li>
+                            <li>"What documentation would be helpful for learners?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Resource Type"><strong>Tools and Technology</strong></td>
+                    <td data-label="Purpose">Capture required implements</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"What specific tools or technologies are used in this process?"</li>
+                            <li>"Are there preferred tools vs. acceptable alternatives?"</li>
+                            <li>"What technology limitations might learners encounter?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Resource Type"><strong>Job Aids</strong></td>
+                    <td data-label="Purpose">Identify performance support</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"What checklists or quick references would support this task?"</li>
+                            <li>"Are there existing job aids we could adapt?"</li>
+                            <li>"What information is most critical during performance?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Resource Type"><strong>Practice Opportunities</strong></td>
+                    <td data-label="Purpose">Identify skill development methods</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"How do people typically practice and develop this skill?"</li>
+                            <li>"What safe environments exist for experimentation?"</li>
+                            <li>"What simulations or scenarios would be valuable?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Resource Type"><strong>Expert Networks</strong></td>
+                    <td data-label="Purpose">Map human resources</td>
+                    <td data-label="Sample Questions">
+                        <ul>
+                            <li>"Who else has expertise in this area?"</li>
+                            <li>"Where do practitioners go for help or advice?"</li>
+                            <li>"What communities of practice exist around this topic?"</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Closing and Next Steps (5-10 minutes)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Purpose</th>
+                    <th>Sample Script/Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Step"><strong>Summary review</strong></td>
+                    <td data-label="Purpose">Confirm understanding</td>
+                    <td data-label="Sample Script/Questions">"To summarize what we've covered today: [key points]. Have I captured your insights accurately?"</td>
+                </tr>
+                <tr>
+                    <td data-label="Step"><strong>Gap identification</strong></td>
+                    <td data-label="Purpose">Identify missing information</td>
+                    <td data-label="Sample Script/Questions">"What important aspects of this topic haven't we addressed yet?"</td>
+                </tr>
+                <tr>
+                    <td data-label="Step"><strong>Follow-up planning</strong></td>
+                    <td data-label="Purpose">Establish next interactions</td>
+                    <td data-label="Sample Script/Questions">"I'd like to schedule our next session to focus on [topics]. How does [date/time] work for you?"</td>
+                </tr>
+                <tr>
+                    <td data-label="Step"><strong>Content review expectations</strong></td>
+                    <td data-label="Purpose">Set review process</td>
+                    <td data-label="Sample Script/Questions">"I'll send you notes and draft content from our session by [date]. Could you review them by [deadline]?"</td>
+                </tr>
+                <tr>
+                    <td data-label="Step"><strong>Express appreciation</strong></td>
+                    <td data-label="Purpose">Maintain relationship</td>
+                    <td data-label="Sample Script/Questions">"Your expertise has been incredibly valuable. Thank you for your time and insights today."</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <h2>Specialized Questioning Techniques</h2>
+        
+        <h3>Knowledge Elicitation Methods</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technique</th>
+                    <th>When to Use</th>
+                    <th>Process</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Technique"><strong>Critical Incident Technique</strong></td>
+                    <td data-label="When to Use">To extract tacit knowledge from significant experiences</td>
+                    <td data-label="Process">Ask SME to recall specific incidents that were particularly challenging or illustrative</td>
+                    <td data-label="Example">"Can you tell me about a time when you faced an unusual challenge with this system? What happened, what did you do, and what was the outcome?"</td>
+                </tr>
+                <tr>
+                    <td data-label="Technique"><strong>Cognitive Task Analysis</strong></td>
+                    <td data-label="When to Use">To understand expert thought processes</td>
+                    <td data-label="Process">Have SME think aloud while solving problems or making decisions</td>
+                    <td data-label="Example">"As you work through this example, please verbalize your thinking process—what you're noticing, considering, and deciding at each step."</td>
+                </tr>
+                <tr>
+                    <td data-label="Technique"><strong>Concept Mapping</strong></td>
+                    <td data-label="When to Use">To visualize knowledge structure and relationships</td>
+                    <td data-label="Process">Collaboratively create diagram showing concepts and their connections</td>
+                    <td data-label="Example">"Let's create a map showing how these concepts relate to each other. What would be the central concept, and what connects directly to it?"</td>
+                </tr>
+                <tr>
+                    <td data-label="Technique"><strong>Repertory Grid Technique</strong></td>
+                    <td data-label="When to Use">To identify distinctions experts make that novices miss</td>
+                    <td data-label="Process">Present examples and ask how some are similar but different from others</td>
+                    <td data-label="Example">"Looking at these three scenarios, how are two of them similar but different from the third in terms of how you would approach them?"</td>
+                </tr>
+                <tr>
+                    <td data-label="Technique"><strong>Process Tracing</strong></td>
+                    <td data-label="When to Use">To capture detailed procedural knowledge</td>
+                    <td data-label="Process">Have SME walk through process while you document each step and decision point</td>
+                    <td data-label="Example">"Please walk me through this process from start to finish, highlighting each step, decision point, and what you're looking for along the way."</td>
+					</tr>
+            </tbody>
+        </table>
+        
+        <h3>Probing Questions for Deeper Insights</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Question Type</th>
+                    <th>Purpose</th>
+                    <th>Example Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Question Type"><strong>Clarification Probes</strong></td>
+                    <td data-label="Purpose">Ensure understanding of terminology and concepts</td>
+                    <td data-label="Example Questions">
+                        <ul>
+                            <li>"When you say [term], could you define exactly what that means?"</li>
+                            <li>"How would you explain [concept] to someone new to the field?"</li>
+                            <li>"Could you give an example of what you mean by [term]?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Question Type"><strong>Elaboration Probes</strong></td>
+                    <td data-label="Purpose">Expand on incomplete information</td>
+                    <td data-label="Example Questions">
+                        <ul>
+                            <li>"Could you tell me more about [aspect]?"</li>
+                            <li>"What else should I know about this that we haven't discussed?"</li>
+                            <li>"Could you expand on why that approach is effective?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Question Type"><strong>Contrast Probes</strong></td>
+                    <td data-label="Purpose">Identify boundaries and distinctions</td>
+                    <td data-label="Example Questions">
+                        <ul>
+                            <li>"How is [approach A] different from [approach B]?"</li>
+                            <li>"What distinguishes an effective versus ineffective approach here?"</li>
+                            <li>"How does this process change under different conditions?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Question Type"><strong>Process Probes</strong></td>
+                    <td data-label="Purpose">Uncover steps and sequences</td>
+                    <td data-label="Example Questions">
+                        <ul>
+                            <li>"What happens before this step?"</li>
+                            <li>"What comes next in the process?"</li>
+                            <li>"Are there any preparatory steps that need to happen?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Question Type"><strong>Rationale Probes</strong></td>
+                    <td data-label="Purpose">Understand underlying reasoning</td>
+                    <td data-label="Example Questions">
+                        <ul>
+                            <li>"Why is this step necessary?"</li>
+                            <li>"What's the purpose behind this requirement?"</li>
+                            <li>"How did this best practice develop?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Question Type"><strong>Consequence Probes</strong></td>
+                    <td data-label="Purpose">Explore impacts and outcomes</td>
+                    <td data-label="Example Questions">
+                        <ul>
+                            <li>"What happens if this step is performed incorrectly?"</li>
+                            <li>"How does this decision affect downstream processes?"</li>
+                            <li>"What are the long-term implications of this approach?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Question Type"><strong>Exception Probes</strong></td>
+                    <td data-label="Purpose">Identify boundaries and special cases</td>
+                    <td data-label="Example Questions">
+                        <ul>
+                            <li>"When would you NOT use this approach?"</li>
+                            <li>"Are there situations where the standard process doesn't apply?"</li>
+                            <li>"What exceptions have you encountered?"</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <h2>Content Documentation Framework</h2>
+        
+        <h3>Core Knowledge Capture Templates</h3>
+        
+        <h4>Concept Definition Template</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Element"><strong>Concept Name</strong></td>
+                    <td data-label="Description">Official terminology</td>
+                    <td data-label="Example">Multifactor Authentication (MFA)</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Simple Definition</strong></td>
+                    <td data-label="Description">Learner-friendly explanation</td>
+                    <td data-label="Example">A security process requiring users to verify their identity in two or more ways before gaining access</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Importance/Relevance</strong></td>
+                    <td data-label="Description">Why it matters to learners</td>
+                    <td data-label="Example">Critical defense against unauthorized access even when passwords are compromised</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Key Characteristics</strong></td>
+                    <td data-label="Description">Essential attributes</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>Requires multiple verification types</li>
+                            <li>Typically combines knowledge, possession, and inherence factors</li>
+                            <li>Provides layered security approach</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Examples</strong></td>
+                    <td data-label="Description">Concrete instances</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>Password + smartphone verification code</li>
+                            <li>Password + fingerprint scan</li>
+                            <li>Password + security token</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Non-Examples</strong></td>
+                    <td data-label="Description">What it is not</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>Using only a password (single factor)</li>
+                            <li>Two passwords (same factor type)</li>
+                            <li>Security questions (still knowledge factor)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Related Concepts</strong></td>
+                    <td data-label="Description">Connected ideas</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>Password policies</li>
+                            <li>Security tokens</li>
+                            <li>Biometric authentication</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Common Misconceptions</strong></td>
+                    <td data-label="Description">Typical misunderstandings</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>Myth: MFA is inconvenient and slows productivity</li>
+                            <li>Myth: MFA is infallible and cannot be bypassed</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h4>Procedure Documentation Template</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Element"><strong>Procedure Name</strong></td>
+                    <td data-label="Description">Official process title</td>
+                    <td data-label="Example">Account Lockout Resolution Procedure</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Purpose</strong></td>
+                    <td data-label="Description">Why this procedure exists</td>
+                    <td data-label="Example">To securely restore access to locked user accounts while maintaining security protocols</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>When to Use</strong></td>
+                    <td data-label="Description">Triggering conditions</td>
+                    <td data-label="Example">When a user reports inability to log in due to multiple failed password attempts</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Prerequisites</strong></td>
+                    <td data-label="Description">Required conditions/resources</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>User identity verification process</li>
+                            <li>Account management system access</li>
+                            <li>Authorization to modify account status</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Step-by-Step Process</strong></td>
+                    <td data-label="Description">Detailed procedure steps</td>
+                    <td data-label="Example">
+                        <ol>
+                            <li>Verify user identity using approved verification protocol</li>
+                            <li>Access account management system</li>
+                            <li>Locate user account using employee ID</li>
+                            <li>Check account status and confirm lockout</li>
+                            <li>Document verification method used</li>
+                            <li>Reset account status to active</li>
+                            <li>Request user to create new password</li>
+                            <li>Document incident in security log</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Decision Points</strong></td>
+                    <td data-label="Description">Choices during process</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>If identity cannot be verified: Escalate to supervisor</li>
+                            <li>If lockout is suspicious: Initiate security investigation protocol</li>
+                            <li>If multiple lockouts exist: Review for potential security incident</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Completion Criteria</strong></td>
+                    <td data-label="Description">How to know it's done correctly</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>User can successfully log in</li>
+                            <li>New password established</li>
+                            <li>Incident properly documented</li>
+                            <li>No security alerts triggered</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Common Issues</strong></td>
+                    <td data-label="Description">Typical problems</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>User fails secondary verification</li>
+                            <li>System shows different lockout cause</li>
+                            <li>User immediate lockout recurrence</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Troubleshooting</strong></td>
+                    <td data-label="Description">Solutions to problems</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>For verification failure: Use alternate verification method</li>
+                            <li>For system discrepancy: Cross-check with security logs</li>
+                            <li>For repeated lockouts: Check for keystroke issues or malware</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h4>Case Example Template</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Element"><strong>Scenario Title</strong></td>
+                    <td data-label="Description">Descriptive name</td>
+                    <td data-label="Example">Resolving Critical System Failure During Peak Usage</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Context</strong></td>
+                    <td data-label="Description">Setting and background</td>
+                    <td data-label="Example">Major financial processing system failure occurred during end-of-quarter processing with thousands of transactions pending</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Initial Situation</strong></td>
+                    <td data-label="Description">Starting problem state</td>
+                    <td data-label="Example">System showing database connection errors and transaction failures; users reporting multiple error messages</td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Challenges</strong></td>
+                    <td data-label="Description">Specific difficulties</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>High transaction volume pending</li>
+                            <li>End-of-quarter financial deadline</li>
+                            <li>Limited diagnostic information</li>
+                            <li>Remote team members</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Actions Taken</strong></td>
+                    <td data-label="Description">Step-by-step response</td>
+                    <td data-label="Example">
+                        <ol>
+                            <li>Assembled cross-functional response team</li>
+                            <li>Implemented emergency communication protocol</li>
+                            <li>Deployed backup system for critical transactions</li>
+                            <li>Isolated database connection issue</li>
+                            <li>Applied targeted fix to connection pooling configuration</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Decision Rationale</strong></td>
+                    <td data-label="Description">Why specific choices were made</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>Chose to use backup system immediately rather than troubleshoot primary first due to business deadline criticality</li>
+                            <li>Prioritized customer-facing transactions over internal processes based on impact assessment</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Outcome</strong></td>
+                    <td data-label="Description">Results of actions</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>System restored within 45 minutes</li>
+                            <li>96% of transactions processed before deadline</li>
+                            <li>Remaining transactions processed with manual override</li>
+                            <li>Root cause identified and permanent fix implemented</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Key Lessons</strong></td>
+                    <td data-label="Description">Learning points</td>
+                    <td data-label="Example">
+                        <ul>
+                            <li>Early escalation to cross-functional team accelerated resolution</li>
+                            <li>Database connection pool monitoring added to preventative measures</li>
+                            <li>Communication protocol effectiveness validated</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Element"><strong>Application for Learners</strong></td>
+                    <td data-label="Description">How to apply this example</td>
+                    <td data-label="Example">Demonstrates importance of: rapid response protocols, business impact prioritization, cross-functional collaboration, and root cause remediation</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <h2>Remote and Virtual SME Interview Considerations</h2>
+        
+        <h3>Virtual Interview Preparation</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Consideration</th>
+                    <th>Best Practices</th>
+                    <th>Tools/Resources</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Consideration"><strong>Platform Selection</strong></td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Choose familiar, reliable video conferencing</li>
+                            <li>Ensure screen sharing capabilities</li>
+                            <li>Confirm recording functionality</li>
+                            <li>Test collaboration features</li>
+                        </ul>
+                    </td>
+                    <td data-label="Tools/Resources">
+                        <ul>
+                            <li>Zoom</li>
+                            <li>Microsoft Teams</li>
+                            <li>Google Meet</li>
+                            <li>Webex</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Consideration"><strong>Technical Setup</strong></td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Test audio/video quality</li>
+                            <li>Prepare backup communication method</li>
+                            <li>Optimize internet connection</li>
+                            <li>Set up proper lighting</li>
+                        </ul>
+                    </td>
+                    <td data-label="Tools/Resources">
+                        <ul>
+                            <li>External microphone</li>
+                            <li>Headset</li>
+                            <li>Ring light</li>
+                            <li>Internet speed test</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Consideration"><strong>Materials Distribution</strong></td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Send materials 24-48 hours in advance</li>
+                            <li>Use cloud sharing for large files</li>
+                            <li>Confirm receipt of materials</li>
+                            <li>Provide offline backup options</li>
+                        </ul>
+                    </td>
+                    <td data-label="Tools/Resources">
+                        <ul>
+                            <li>SharePoint</li>
+                            <li>Google Drive</li>
+                            <li>Dropbox</li>
+                            <li>Email</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Consideration"><strong>Time Zone Management</strong></td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Clearly communicate in specific time zones</li>
+                            <li>Choose reasonable hours for SME</li>
+                            <li>Consider recording for asynchronous review</li>
+                            <li>Plan shorter sessions if outside working hours</li>
+                        </ul>
+                    </td>
+                    <td data-label="Tools/Resources">
+                        <ul>
+                            <li>World Clock Meeting Planner</li>
+                            <li>Calendar with time zone display</li>
+                            <li>Scheduling tools with time zone conversion</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Virtual Engagement Techniques</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Challenge</th>
+                    <th>Technique</th>
+                    <th>Implementation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Challenge"><strong>Building Rapport Remotely</strong></td>
+                    <td data-label="Technique">Active engagement strategies</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Start with brief personal connection</li>
+                            <li>Use SME's name frequently</li>
+                            <li>Acknowledge expertise genuinely</li>
+                            <li>Show attentive listening with video on</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Challenge"><strong>Maintaining Attention</strong></td>
+                    <td data-label="Technique">Session structuring for focus</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Limit sessions to 60-90 minutes</li>
+                            <li>Take breaks every 30 minutes</li>
+                            <li>Vary question types and activities</li>
+                            <li>Use collaborative tools for interaction</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Challenge"><strong>Capturing Whiteboard Thinking</strong></td>
+                    <td data-label="Technique">Virtual collaboration tools</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Use digital whiteboard for concept mapping</li>
+                            <li>Share screen for diagram creation</li>
+                            <li>Use annotation tools for highlighting</li>
+                            <li>Consider tablet input for sketching</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Challenge"><strong>Handling Technical Issues</strong></td>
+                    <td data-label="Technique">Contingency planning</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Establish backup communication channel</li>
+                            <li>Have alternative meeting link ready</li>
+                            <li>Prepare to continue via phone if needed</li>
+                            <li>Know how to access technical support</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Challenge"><strong>Following Up Effectively</strong></td>
+                    <td data-label="Technique">Post-session documentation</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Send session recording promptly</li>
+                            <li>Provide summary notes within 24 hours</li>
+                            <li>Clearly mark items requiring SME action</li>
+                            <li>Schedule next session before concluding</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <h2>Challenging SME Situations</h2>
+        
+        <h3>Common Challenges and Solutions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Challenge</th>
+                    <th>Possible Causes</th>
+                    <th>Solutions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Challenge"><strong>Highly Technical SME</strong></td>
+                    <td data-label="Possible Causes">
+                        <ul>
+                            <li>Expertise gap between SME and ID</li>
+                            <li>SME used to technical audiences</li>
+                            <li>Assumption of background knowledge</li>
+                        </ul>
+                    </td>
+                    <td data-label="Solutions">
+                        <ul>
+                            <li>Do advance research on basic concepts</li>
+                            <li>Ask for explanations of technical terms</li>
+                            <li>Use "explain it to a novice" technique</li>
+                            <li>Focus on application before technical details</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Challenge"><strong>Limited Availability</strong></td>
+                    <td data-label="Possible Causes">
+                        <ul>
+                            <li>SME time constraints</li>
+                            <li>Competing priorities</li>
+                            <li>Insufficient project allocation</li>
+                        </ul>
+                    </td>
+                    <td data-label="Solutions">
+                        <ul>
+                            <li>Thoroughly prepare to maximize session time</li>
+                            <li>Break into shorter, focused sessions</li>
+                            <li>Provide questions in advance</li>
+                            <li>Consider asynchronous methods (surveys, recordings)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Challenge"><strong>Difficulty Articulating Knowledge</strong></td>
+                    <td data-label="Possible Causes">
+                        <ul>
+                            <li>Tacit knowledge challenges</li>
+                            <li>Limited teaching experience</li>
+                            <li>Lack of self-awareness about expertise</li>
+                        </ul>
+                    </td>
+                    <td data-label="Solutions">
+                        <ul>
+                            <li>Use scenario-based questions</li>
+                            <li>Apply cognitive task analysis techniques</li>
+                            <li>Use visual mapping and comparisons</li>
+                            <li>Ask for examples rather than explanations</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Challenge"><strong>Resistance to Simplification</strong></td>
+                    <td data-label="Possible Causes">
+                        <ul>
+                            <li>Concern about oversimplification</li>
+                            <li>Pride in technical complexity</li>
+                            <li>Fear of dumbing down content</li>
+                        </ul>
+                    </td>
+                    <td data-label="Solutions">
+                        <ul>
+                            <li>Emphasize learner needs and context</li>
+                            <li>Suggest layered approach (basics → complexity)</li>
+                            <li>Use concept of "progressive disclosure"</li>
+                            <li>Assure technical details will be preserved where needed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Challenge"><strong>Content Scope Expansion</strong></td>
+                    <td data-label="Possible Causes">
+                        <ul>
+                            <li>Enthusiasm for subject matter</li>
+                            <li>Difficulty prioritizing content</li>
+                            <li>Desire to include everything</li>
+                        </ul>
+                    </td>
+                    <td data-label="Solutions">
+                        <ul>
+                            <li>Continually reference learning objectives</li>
+                            <li>Use prioritization exercises</li>
+                            <li>Create "parking lot" for future content</li>
+                            <li>Discuss constraints (time, cognitive load)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Advanced Facilitation Techniques for Challenging Situations</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Situation</th>
+                    <th>Technique</th>
+                    <th>Implementation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Situation"><strong>SME Contradicts Earlier Information</strong></td>
+                    <td data-label="Technique">Constructive reconciliation</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Note the discrepancy without judgment</li>
+                            <li>Ask for clarification on apparent contradiction</li>
+                            <li>Explore contextual differences that explain both perspectives</li>
+                            <li>Document the nuance and conditions for each approach</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Situation"><strong>Multiple SMEs Disagree</strong></td>
+                    <td data-label="Technique">Productive resolution</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Acknowledge different valid approaches may exist</li>
+                            <li>Ask each SME to explain their reasoning</li>
+                            <li>Focus on contexts where each approach is optimal</li>
+                            <li>Document decision criteria for learners where appropriate</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Situation"><strong>SME Reluctant to Share "Secret Sauce"</strong></td>
+                    <td data-label="Technique">Trust building</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Acknowledge proprietary nature of expertise</li>
+                            <li>Clarify how information will be used and protected</li>
+                            <li>Discuss benefits of knowledge transfer</li>
+                            <li>Offer review rights and attribution</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Situation"><strong>SME Overwhelms with Information</strong></td>
+                    <td data-label="Technique">Strategic focusing</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Use timeboxing for topics</li>
+                            <li>Create progressive topic lists</li>
+                            <li>Employ "top three" prioritization technique</li>
+                            <li>Use parking lot for tangential information</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Situation"><strong>SME Has Limited Expression Skills</strong></td>
+                    <td data-label="Technique">Structured extraction</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Provide visual frameworks and templates</li>
+                            <li>Use direct observation of performance</li>
+                            <li>Offer multiple-choice options rather than open questions</li>
+                            <li>Use examples and ask for comparison/critique</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <h2>Interview Documentation Best Practices</h2>
+        
+        <h3>Recording and Note-Taking Framework</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Documentation Type</th>
+                    <th>Purpose</th>
+                    <th>Best Practices</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Documentation Type"><strong>Interview Notes</strong></td>
+                    <td data-label="Purpose">Capture key points during session</td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Use standardized templates with predefined sections</li>
+                            <li>Focus on critical information rather than transcription</li>
+                            <li>Note SME emphasis, concerns, and uncertainties</li>
+                            <li>Mark items requiring clarification or follow-up</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Documentation Type"><strong>Audio/Video Recording</strong></td>
+                    <td data-label="Purpose">Preserve exact information for later reference</td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Always obtain permission before recording</li>
+                            <li>Test recording setup before beginning</li>
+                            <li>Use backup recording method when possible</li>
+                            <li>Inform SME when recording starts and stops</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Documentation Type"><strong>Process Documentation</strong></td>
+                    <td data-label="Purpose">Capture workflows and procedures</td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Use numbered steps for sequences</li>
+                            <li>Document decision points and variables</li>
+                            <li>Note exceptions and alternative approaches</li>
+                            <li>Validate accuracy with SME during session</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Documentation Type"><strong>Visual Documentation</strong></td>
+                    <td data-label="Purpose">Capture diagrams, models, and examples</td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Use digital whiteboard or drawing tools</li>
+                            <li>Take screenshots of SME-created visuals</li>
+                            <li>Ask SME to verify visual accuracy</li>
+                            <li>Label all components clearly</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Documentation Type"><strong>Follow-up Summary</strong></td>
+                    <td data-label="Purpose">Confirm understanding and next steps</td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Send within 24 hours of interview</li>
+                            <li>Highlight key insights and discoveries</li>
+                            <li>List specific follow-up questions</li>
+                            <li>Include clear action items with deadlines</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Content Verification Process</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Stage</th>
+                    <th>Purpose</th>
+                    <th>Process</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Stage"><strong>Initial Verification</strong></td>
+                    <td data-label="Purpose">Confirm basic accuracy during interview</td>
+                    <td data-label="Process">
+                        <ul>
+                            <li>Restate key points for confirmation</li>
+                            <li>Ask clarifying questions about uncertain areas</li>
+                            <li>Summarize complex information to verify understanding</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Stage"><strong>Post-Interview Review</strong></td>
+                    <td data-label="Purpose">Validate interview documentation</td>
+                    <td data-label="Process">
+                        <ul>
+                            <li>Send organized notes/summary within 48 hours</li>
+                            <li>Request specific feedback on accuracy</li>
+                            <li>Highlight areas needing particular attention</li>
+                            <li>Provide clear response deadline</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Stage"><strong>Content Development Validation</strong></td>
+                    <td data-label="Purpose">Verify transformed instructional content</td>
+                    <td data-label="Process">
+                        <ul>
+                            <li>Show how expert knowledge was translated into learning content</li>
+                            <li>Request specific feedback on accuracy and completeness</li>
+                            <li>Distinguish must-have corrections from preferences</li>
+                            <li>Document approval with version control</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Stage"><strong>Final Verification</strong></td>
+                    <td data-label="Purpose">Confirm finished product accuracy</td>
+                    <td data-label="Process">
+                        <ul>
+                            <li>Request focused review of final materials</li>
+                            <li>Provide simple feedback mechanism</li>
+                            <li>Document final approval</li>
+                            <li>Acknowledge SME contribution appropriately</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <h2>Ethics and Best Practices</h2>
+        
+        <h3>Ethical Considerations</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Consideration</th>
+                    <th>Guidelines</th>
+                    <th>Implementation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Consideration"><strong>Intellectual Property</strong></td>
+                    <td data-label="Guidelines">Respect ownership of knowledge</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Clarify IP ownership in advance</li>
+                            <li>Follow organizational policies on confidentiality</li>
+                            <li>Obtain permission for content use and attribution</li>
+                            <li>Document approved usage rights</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Consideration"><strong>Confidentiality</strong></td>
+                    <td data-label="Guidelines">Protect sensitive information</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Sign appropriate NDAs before discussions</li>
+                            <li>Clarify what information is restricted</li>
+                            <li>Use secure methods for sharing sensitive content</li>
+                            <li>Obtain approval before sharing examples</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Consideration"><strong>Accuracy Preservation</strong></td>
+                    <td data-label="Guidelines">Maintain integrity of SME knowledge</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Verify accuracy through review processes</li>
+                            <li>Avoid oversimplification that distorts meaning</li>
+                            <li>Preserve important nuances and context</li>
+                            <li>Distinguish fact from opinion clearly</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Consideration"><strong>SME Recognition</strong></td>
+                    <td data-label="Guidelines">Acknowledge contributions appropriately</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Credit SMEs according to organizational protocols</li>
+                            <li>Respect anonymity requests</li>
+                            <li>Provide SMEs with final materials</li>
+                            <li>Express genuine appreciation</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Consideration"><strong>Time Respect</strong></td>
+                    <td data-label="Guidelines">Honor SME time constraints</td>
+                    <td data-label="Implementation">
+                        <ul>
+                            <li>Schedule efficiently with clear agendas</li>
+                            <li>End sessions on time</li>
+                            <li>Be fully prepared for every interaction</li>
+                            <li>Consider SME workload when setting deadlines</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Relationship Management</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Relationship Aspect</th>
+                    <th>Best Practices</th>
+                    <th>Benefits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Relationship Aspect"><strong>Setting Expectations</strong></td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Clearly define roles and responsibilities</li>
+                            <li>Establish realistic timelines</li>
+                            <li>Communicate process transparently</li>
+                            <li>Agree on communication protocols</li>
+                        </ul>
+                    </td>
+                    <td data-label="Benefits">
+                        <ul>
+                            <li>Prevents misunderstandings</li>
+                            <li>Reduces friction</li>
+                            <li>Creates accountability</li>
+                            <li>Establishes trust</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Relationship Aspect"><strong>Demonstrating Value</strong></td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Show how input is being used</li>
+                            <li>Share positive feedback from stakeholders</li>
+                            <li>Highlight impact of their contribution</li>
+                            <li>Provide professional development recognition</li>
+                        </ul>
+                    </td>
+                    <td data-label="Benefits">
+                        <ul>
+                            <li>Increases engagement</li>
+                            <li>Builds commitment</li>
+                            <li>Enhances satisfaction</li>
+                            <li>Encourages future participation</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Relationship Aspect"><strong>Building Long-term Collaboration</strong></td>
+                    <td data-label="Best Practices">
+                        <ul>
+                            <li>Maintain contact between projects</li>
+                            <li>Respect boundaries and preferences</li>
+                            <li>Share relevant professional information</li>
+                            <li>Express genuine appreciation</li>
+                        </ul>
+                    </td>
+                    <td data-label="Benefits">
+                        <ul>
+                            <li>Creates SME network</li>
+                            <li>Streamlines future projects</li>
+                            <li>Builds institutional knowledge</li>
+                            <li>Improves content quality over time</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <h2>Toolkit Resources</h2>
+        
+        <h3>SME Interview Planning Template</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Interview Element</th>
+                    <th>Details</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Interview Element"><strong>Interview Topic</strong></td>
+                    <td data-label="Details">[Topic focus]</td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Interview Date/Time</strong></td>
+                    <td data-label="Details">[Date and time]</td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Duration</strong></td>
+                    <td data-label="Details">[Planned length]</td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Location/Platform</strong></td>
+                    <td data-label="Details">[Physical or virtual location]</td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>SME Information</strong></td>
+                    <td data-label="Details">
+                        <ul>
+                            <li>Name: [Name]</li>
+                            <li>Role: [Role]</li>
+                            <li>Expertise Areas: [Areas]</li>
+                            <li>Contact: [Contact info]</li>
+                        </ul>
+                    </td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Learning Objectives Addressed</strong></td>
+                    <td data-label="Details">
+                        <ul>
+                            <li>[Objective 1]</li>
+                            <li>[Objective 2]</li>
+                            <li>[Objective 3]</li>
+                        </ul>
+                    </td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Critical Questions</strong></td>
+                    <td data-label="Details">
+                        <ul>
+                            <li>[Priority question 1]</li>
+                            <li>[Priority question 2]</li>
+                            <li>[Priority question 3]</li>
+                        </ul>
+                    </td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Materials to Share in Advance</strong></td>
+                    <td data-label="Details">
+                        <ul>
+                            <li>[Document 1]</li>
+                            <li>[Document 2]</li>
+                            <li>[Document 3]</li>
+                        </ul>
+                    </td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Materials to Bring</strong></td>
+                    <td data-label="Details">
+                        <ul>
+                            <li>[Item 1]</li>
+                            <li>[Item 2]</li>
+                            <li>[Item 3]</li>
+                        </ul>
+                    </td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Recording Plan</strong></td>
+                    <td data-label="Details">[Recording method and permissions]</td>
+                    <td data-label="Notes"></td>
+                </tr>
+                <tr>
+                    <td data-label="Interview Element"><strong>Follow-up Plan</strong></td>
+                    <td data-label="Details">[Timeline and format for follow-up]</td>
+                    <td data-label="Notes"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Quick Reference: Question Starters by Knowledge Type</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Knowledge Type</th>
+                    <th>Effective Question Starters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Knowledge Type"><strong>Factual Knowledge</strong></td>
+                    <td data-label="Effective Question Starters">
+                        <ul>
+                            <li>"What are the key components of...?"</li>
+                            <li>"How would you define...?"</li>
+                            <li>"What are the critical specifications for...?"</li>
+                            <li>"What standards apply to...?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Knowledge Type"><strong>Conceptual Understanding</strong></td>
+                    <td data-label="Effective Question Starters">
+                        <ul>
+                            <li>"How would you explain the relationship between...?"</li>
+                            <li>"What underlying principles guide...?"</li>
+                            <li>"How do these concepts connect to each other?"</li>
+                            <li>"What analogies help explain this concept?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Knowledge Type"><strong>Procedural Knowledge</strong></td>
+                    <td data-label="Effective Question Starters">
+                        <ul>
+                            <li>"What steps are involved in...?"</li>
+                            <li>"How do you determine when to...?"</li>
+                            <li>"What happens if this step is skipped?"</li>
+                            <li>"How do you know when this process is complete?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Knowledge Type"><strong>Strategic Knowledge</strong></td>
+                    <td data-label="Effective Question Starters">
+                        <ul>
+                            <li>"How do you approach a situation where...?"</li>
+                            <li>"What factors influence your decision to...?"</li>
+                            <li>"How do you prioritize when faced with...?"</li>
+                            <li>"What trade-offs do you consider when...?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Knowledge Type"><strong>Troubleshooting Knowledge</strong></td>
+                    <td data-label="Effective Question Starters">
+                        <ul>
+                            <li>"What are common problems with...?"</li>
+                            <li>"How do you diagnose issues related to...?"</li>
+                            <li>"What patterns help you identify the cause of...?"</li>
+                            <li>"How do you determine the appropriate solution for...?"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Knowledge Type"><strong>Contextual Knowledge</strong></td>
+                    <td data-label="Effective Question Starters">
+                        <ul>
+                            <li>"How does this change in different situations?"</li>
+                            <li>"What environmental factors affect...?"</li>
+                            <li>"When would you modify this approach?"</li>
+                            <li>"How do organizational factors influence this?"</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="separator"></div>
+        
+        <p class="meta-info"><em>© 2025 Bennie Ejiga | Professional Instructional Designer</em></p>
+    </div>
+</body>
+</html>

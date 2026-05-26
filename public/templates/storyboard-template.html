@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Training Module</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #4a90e2;
+            --accent-color: #ff6b6b;
+            --background-color: #f5f7fa;
+            --text-color: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .module-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+        
+        .screen {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .screen-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .screen-id {
+            font-size: 0.9rem;
+            background-color: var(--secondary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .screen-time {
+            font-size: 0.9rem;
+        }
+        
+        .screen-content {
+            padding: 1.5rem;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .checklist-item:before {
+            content: "✓";
+            color: var(--secondary-color);
+            margin-right: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: 100%;
+        }
+        
+        .card-title {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        /* Visual Style Guide */
+        .style-guide {
+            margin-top: 2rem;
+        }
+        
+        .color-swatch {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 0.5rem;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .screen-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .screen-time {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="module-header">
+            <h1>E-Learning Storyboard</h1>
+            <h2>Module: Detecting and Responding to Phishing Attempts</h2>
+            <p><strong>Client:</strong> Financial Services Organization<br>
+            <strong>Designer:</strong> Bennie Ejiga<br>
+            <strong>Module Duration:</strong> 20-25 minutes<br>
+            <strong>Date:</strong> March 26, 2025<br>
+            <strong>Version:</strong> 1.0</p>
+        </div>
+        
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Module Overview</h3>
+            </div>
+            <div class="screen-content">
+                <p>This module teaches employees how to identify phishing attempts and respond appropriately to protect organizational data. Through interactive examples, realistic simulations, and practical guidelines, learners will develop the skills to recognize and properly handle suspicious emails and messages.</p>
+                
+                <h4>Learning Objectives:</h4>
+                <ul>
+                    <li>Identify at least 5 common indicators of phishing attempts with 100% accuracy</li>
+                    <li>Determine the appropriate response to different types of suspicious communications</li>
+                    <li>Execute the organization's reporting procedure for suspected phishing attempts</li>
+                    <li>Apply precautionary measures to prevent data compromise</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Screen 1: Title Screen -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 1: Title Screen</h3>
+                <span class="screen-id">ID: 1.0</span>
+                <span class="screen-time">Estimated Time: 5 seconds</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Background showing a professional office setting with a person looking at an email on their computer screen with a thoughtful expression. Subtle branded elements in the corners. Company logo in bottom right.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Title:</strong> Detecting and Responding to Phishing Attempts</p>
+                        <p><strong>Subtitle:</strong> Protecting Our Organization from Social Engineering</p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"Welcome to 'Detecting and Responding to Phishing Attempts.' In this module, you'll learn how to identify suspicious communications and take appropriate action to protect our organization's data."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <p>Auto-advances after narration completes. "Start" button appears if user wants to proceed before narration ends.</p>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Title fades in</li>
+                            <li>Subtitle appears after 2 seconds</li>
+                            <li>Subtle highlighting effect appears around the email on screen</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Use organization's approved intro music at low volume</li>
+                            <li>Ensure branding colors and fonts comply with style guide</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 2: Learning Objectives -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 2: Learning Objectives</h3>
+                <span class="screen-id">ID: 1.1</span>
+                <span class="screen-time">Estimated Time: 15 seconds</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Clean, minimalist design with a security shield icon and small representative icons next to each objective.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> In this module, you will:</p>
+                        <ul>
+                            <li>Identify common indicators of phishing attempts</li>
+                            <li>Determine the appropriate response to suspicious communications</li>
+                            <li>Execute the proper reporting procedure</li>
+                            <li>Apply precautionary measures to prevent data compromise</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"By the end of this module, you'll be able to identify common signs of phishing, determine how to respond to suspicious messages, follow our reporting procedures, and apply preventative measures to protect sensitive information."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>"Next" button to advance</li>
+                            <li>Optional "Module Menu" button in corner</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <p>Each bullet point appears with a subtle animation as it's mentioned in the narration</p>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <p>Objectives should match exactly with the approved learning objectives in the course design document</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 3: Phishing Overview -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 3: Phishing Overview</h3>
+                <span class="screen-id">ID: 1.2</span>
+                <span class="screen-time">Estimated Time: 45 seconds</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Split screen:<br>
+                        Left side: Illustration of a phishing concept with a hook catching data<br>
+                        Right side: Key points in clean text layout</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> What is Phishing?</p>
+                        <p><strong>Body Text:</strong><br>
+                        Phishing is a type of social engineering attack that attempts to steal sensitive information by disguising as a trustworthy entity.</p>
+                        <p><strong>Key Facts:</strong></p>
+                        <ul>
+                            <li>90% of data breaches involve phishing</li>
+                            <li>Costs organizations an average of $4.65 million per breach</li>
+                            <li>Increasingly sophisticated and targeted</li>
+                            <li>Everyone is a potential target</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"Phishing is a type of social engineering attack where criminals attempt to steal sensitive information by pretending to be trusted entities or individuals. These attacks remain one of the most common and effective methods for data theft. In fact, 90% of data breaches involve phishing elements, costing organizations an average of $4.65 million per breach. Modern phishing attempts are increasingly sophisticated and can target anyone in our organization, which is why it's essential for all of us to remain vigilant."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>"Next" and "Back" navigation buttons</li>
+                            <li>Optional click on key facts for additional information in pop-up</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Subtle animation of the phishing hook "catching" data elements</li>
+                            <li>Key facts appear with slight animation as mentioned in narration</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Statistics should be updated before final production with latest data</li>
+                            <li>Illustration should be professional, not cartoonish</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 4: Types of Phishing Attacks -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 4: Types of Phishing Attacks</h3>
+                <span class="screen-id">ID: 1.3</span>
+                <span class="screen-time">Estimated Time: 1:30 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Tab interface with 4 tabs. Each tab shows an illustration of the specific phishing type when selected.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Common Types of Phishing Attacks</p>
+                        <p><strong>Tab 1:</strong> Email Phishing<br>
+                        <strong>Tab 2:</strong> Spear Phishing<br>
+                        <strong>Tab 3:</strong> Smishing (SMS Phishing)<br>
+                        <strong>Tab 4:</strong> Vishing (Voice Phishing)</p>
+                        
+                        <p><strong>Tab 1 Content:</strong><br>
+                        Mass email campaigns designed to steal credentials or deliver malware. Often contain urgent messages, suspicious links, or attachments.</p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p><strong>Initial Audio:</strong> "Let's explore the common types of phishing attacks you might encounter. Select each tab to learn more."</p>
+                        <p><strong>Tab 1 Audio:</strong> "Email phishing is the most common type, where attackers send mass emails impersonating legitimate organizations. These typically create urgency and prompt the recipient to take immediate action."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>Clickable tabs that reveal content for each type</li>
+                            <li>Each tab plays its own audio when selected</li>
+                            <li>"Next" button enabled only after all tabs have been viewed</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Tab selection changes color and displays associated illustration</li>
+                            <li>Content area uses fade transition when switching between tabs</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Ensure each illustration clearly represents the specific phishing type</li>
+                            <li>Audio should automatically play when a new tab is selected</li>
+                            <li>Consider adding a small "viewed" indicator on tabs the learner has already explored</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 5: Phishing Indicators Interactive -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 5: Phishing Indicators Interactive</h3>
+                <span class="screen-id">ID: 1.4</span>
+                <span class="screen-time">Estimated Time: 2:30 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Realistic email mockup with multiple phishing indicators. Hotspot indicators subtly visible on the email.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Spot the Warning Signs</p>
+                        <p><strong>Instructions:</strong> Click on each suspicious element in this email to learn about phishing indicators.</p>
+                        <p><strong>Hotspot 1 (Sender):</strong> Suspicious sender address that doesn't match display name</p>
+                        <p><strong>Hotspot 2 (Urgency):</strong> Urgent language demanding immediate action</p>
+                        <p><strong>Hotspot 3 (Link):</strong> Hover text shows different URL than what appears in email</p>
+                        <p><strong>Hotspot 4 (Grammar):</strong> Poor grammar and spelling errors</p>
+                        <p><strong>Hotspot 5 (Greeting):</strong> Generic greeting instead of personalized one</p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p><strong>Initial Audio:</strong> "This email contains several red flags that indicate it's a phishing attempt. Click on each suspicious element to learn what to watch for."</p>
+                        <p><strong>Hotspot 1 Audio:</strong> "Always check the actual email address, not just the display name. In this case, while the display name shows as 'IT Support,' the actual email address is from an external domain that's not affiliated with our organization."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>5 clickable hotspots on the email</li>
+                            <li>Each hotspot reveals an information box with explanation</li>
+                            <li>Progress tracker shows how many indicators have been found</li>
+                            <li>"Next" button enabled after all hotspots are clicked</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Subtle pulse animation on hotspots to draw attention</li>
+                            <li>When clicked, area highlights and information box appears</li>
+                            <li>Found indicators are added to a checklist that builds at the side of the screen</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Email should look realistic but clearly contain all 5 indicators</li>
+                            <li>Consider having hotspots be slightly subtle to encourage active searching</li>
+                            <li>Information boxes should include visual examples of the specific indicator</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 6: Email Assessment Exercise -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 6: Email Assessment Exercise</h3>
+                <span class="screen-id">ID: 1.5</span>
+                <span class="screen-time">Estimated Time: 3 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Split screen:<br>
+                        Left: Example email display<br>
+                        Right: Decision interface with "Legitimate" and "Phishing" buttons and confidence slider</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Is This Email Legitimate or Phishing?</p>
+                        <p><strong>Instructions:</strong> Review this email carefully. Decide if it's legitimate or a phishing attempt, then rate your confidence level. You'll receive feedback on your decision.</p>
+                        <p><strong>Email Content:</strong> [Realistic email content that may be legitimate or phishing depending on scenario]</p>
+                        <p><strong>Decision:</strong> Legitimate or Phishing?</p>
+                        <p><strong>Confidence:</strong> Slider from "Not Sure" to "Very Confident"</p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"Now let's practice identifying phishing emails. Study this example carefully, looking for the indicators we just discussed. Is this a legitimate email or a phishing attempt? Make your selection and indicate how confident you are in your decision. You'll receive feedback afterward."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>"Legitimate" and "Phishing" buttons</li>
+                            <li>Confidence slider from 1-5</li>
+                            <li>"Submit" button to confirm answer</li>
+                            <li>"Zoom" button to enlarge email for closer inspection</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Email can be scrolled if longer than visible area</li>
+                            <li>Hover over email elements shows magnified view</li>
+                            <li>After submission, correct elements are highlighted with explanations</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Create 3 different email examples (1 legitimate, 2 phishing) randomly presented to each learner</li>
+                            <li>Feedback should be educational regardless of whether answer is correct</li>
+                            <li>If time permits, consider adding a timed element to simulate real-world pressure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 7: Response Protocol Flowchart -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 7: Response Protocol Flowchart</h3>
+                <span class="screen-id">ID: 1.6</span>
+                <span class="screen-time">Estimated Time: 1:30 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Clean, visual flowchart showing decision points and actions for responding to suspicious emails. Each step is numbered and color-coded.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Phishing Response Protocol</p>
+                        <p><strong>Flowchart Steps:</strong></p>
+                        <ol>
+                            <li>Identify Suspicious Communication</li>
+                            <li>Do Not Click Links or Open Attachments</li>
+                            <li>Do Not Reply or Forward (except to security)</li>
+                            <li>Report to Security Team via [specific method]</li>
+                            <li>Delete Email After Confirmation</li>
+                        </ol>
+                        <p><strong>Decision Point Text:</strong> "Is the sender verified AND content expected?"</p>
+                        <p><strong>Consequence Text:</strong> "Clicking links or attachments in phishing emails may install malware or compromise credentials"</p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"When you encounter a suspicious email, following the proper response protocol is critical. First, if you identify a potentially suspicious communication, do not click any links or open attachments. These could install malware or lead to credential theft. Next, don't reply to the sender or forward the email to colleagues. Instead, report it immediately to the security team using our [specific reporting method]. Only delete the email after receiving confirmation from security."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>Clickable steps in flowchart for additional details</li>
+                            <li>Optional "Download Protocol" button for PDF reference guide</li>
+                            <li>"Next" and "Back" navigation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Flowchart animates to build step by step with narration</li>
+                            <li>Path highlights to show flow of decision process</li>
+                            <li>When clicking a step, it enlarges with detailed information</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Ensure flowchart matches exactly with organization's approved protocol</li>
+                            <li>Use organization's color scheme for different action types</li>
+                            <li>Downloadable job aid should be approved by security team</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 8: Reporting Simulation -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 8: Reporting Simulation</h3>
+                <span class="screen-id">ID: 1.7</span>
+                <span class="screen-time">Estimated Time: 3 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Simulated email interface with suspicious email displayed. Reporting tool interface appears when "Report Phishing" option is selected.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Practice Reporting a Phishing Attempt</p>
+                        <p><strong>Instructions:</strong> Follow the correct procedure to report this phishing email. Use the email client interface to take the appropriate actions.</p>
+                        <p><strong>Email Content:</strong> [Suspicious email with clear phishing indicators]</p>
+                        <p><strong>Available Actions in Simulation:</strong></p>
+                        <ul>
+                            <li>Reply</li>
+                            <li>Forward</li>
+                            <li>Delete</li>
+                            <li>Report Phishing</li>
+                            <li>Open Attachment</li>
+                            <li>Click Link</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"Now let's practice the correct reporting procedure. You've received this suspicious email that shows several phishing indicators. Use the email interface to take the appropriate actions according to our organization's protocol. Remember to follow all the steps in the correct order."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>Fully interactive email client simulation</li>
+                            <li>Multiple action buttons that can be selected</li>
+                            <li>Reporting tool with form fields to complete</li>
+                            <li>Feedback provided based on actions taken</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Email client interface mimics real system</li>
+                            <li>Selection of "Report Phishing" opens reporting tool overlay</li>
+                            <li>Form fields validate for correct information</li>
+                            <li>Success/error animation based on choices</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Simulation should closely match organization's actual email system</li>
+                            <li>Reporting form should match actual security reporting procedure</li>
+                            <li>Include context-sensitive help if user gets stuck</li>
+                            <li>Provide meaningful feedback for both correct and incorrect actions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 9: Preventative Measures -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 9: Preventative Measures</h3>
+                <span class="screen-id">ID: 1.8</span>
+                <span class="screen-time">Estimated Time: 2 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Split-screen with preventative measures checklist on the left and supporting visuals on the right that change with each selected item.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Preventative Measures: Your Security Shield</p>
+                        <p><strong>Checklist Items:</strong></p>
+                        <div class="checklist-item">Keep software and systems updated</div>
+                        <div class="checklist-item">Use strong, unique passwords</div>
+                        <div class="checklist-item">Enable multi-factor authentication</div>
+                        <div class="checklist-item">Verify sender identity before taking action</div>
+                        <div class="checklist-item">Hover over links before clicking</div>
+                        <div class="checklist-item">Be suspicious of unexpected attachments</div>
+                        <div class="checklist-item">Report all suspicious communications</div>
+                        <p><strong>Details for each item appear when selected</strong></p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"While knowing how to identify and respond to phishing is essential, taking preventative measures creates a stronger security shield. Let's review key practices that help prevent successful phishing attacks. Select each item to learn more about these important preventative measures."</p>
+                    </div>
+                </div>
+				<div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>Clickable checklist items that reveal detailed information</li>
+                            <li>Each item shows supporting visual on right side when selected</li>
+                            <li>"Next" button enabled after all items have been viewed</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Items highlight when selected</li>
+                            <li>Information panel slides in with details</li>
+                            <li>Supporting visual transitions with each selection</li>
+                            <li>Checkmark animation when item is viewed</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Visuals should clearly illustrate each preventative measure</li>
+                            <li>Consider adding small "tips" icon for additional practical advice</li>
+                            <li>Information should include both "why" and "how" for each measure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 10: Common Phishing Scenarios -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 10: Common Phishing Scenarios</h3>
+                <span class="screen-id">ID: 1.9</span>
+                <span class="screen-time">Estimated Time: 2:30 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Card-based interface with scenario cards that can be flipped to reveal information. Realistic scenario images on front of each card.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Real-World Phishing Scenarios</p>
+                        <p><strong>Card Front Titles:</strong></p>
+                        <ol>
+                            <li>"Urgent: Password Reset Required"</li>
+                            <li>"Invoice Attached for Review"</li>
+                            <li>"Your Package Delivery Status"</li>
+                            <li>"HR: Update Your Benefits Information"</li>
+                            <li>"IT: Suspicious Activity Detected"</li>
+                        </ol>
+                        <p><strong>Card Back Content:</strong><br>
+                        Each card back includes:</p>
+                        <ul>
+                            <li>Scenario description</li>
+                            <li>Red flags to watch for</li>
+                            <li>Correct response actions</li>
+                            <li>Real-world consequences</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"Let's examine some common real-world phishing scenarios you might encounter. Each of these represents tactics frequently used by attackers. Flip each card to learn about the scenario, what red flags to watch for, and the appropriate response."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>Cards can be flipped by clicking</li>
+                            <li>Horizontal scroll/navigation between cards</li>
+                            <li>"View All" option to see all scenarios in grid view</li>
+                            <li>"Next" button enabled after all cards have been flipped</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Realistic 3D card flip animation</li>
+                            <li>Cards slightly raise on hover</li>
+                            <li>Card scales up slightly when selected for better readability</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Scenarios should be based on actual recent phishing attempts</li>
+                            <li>Consider adding difficulty ratings to each scenario</li>
+                            <li>Images should be high-quality and realistic</li>
+                            <li>Ensure mobile compatibility for card interactions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 11: Knowledge Check -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 11: Knowledge Check</h3>
+                <span class="screen-id">ID: 1.10</span>
+                <span class="screen-time">Estimated Time: 3 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Clean assessment interface with question display area and answer options. Progress indicator shows question number out of total.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Knowledge Check</p>
+                        <p><strong>Question 1:</strong><br>
+                        Which of the following is NOT a common indicator of a phishing attempt?<br>
+                        A. Misspelled domain name<br>
+                        B. Urgent call to action<br>
+                        C. Company logo in the email<br>
+                        D. Request for personal information</p>
+                        <p><strong>[Questions 2-5 with similar format]</strong></p>
+                        <p><strong>Feedback for Correct Answer:</strong><br>
+                        That's correct! While phishing emails often contain company logos to appear legitimate, the presence of a logo alone is not an indicator of phishing.</p>
+                        <p><strong>Feedback for Incorrect Answer:</strong><br>
+                        That's not correct. [Explanation of why the selected option is incorrect and why the correct answer is C]</p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p><strong>Initial Audio:</strong> "Let's check your understanding with a few questions. Select the best answer for each question."</p>
+                        <p><strong>No audio during question answering</strong></p>
+                        <p><strong>Correct Answer Audio:</strong> "That's right! Good job."</p>
+                        <p><strong>Incorrect Answer Audio:</strong> "That's not correct. Let's review why."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>Selectable answer options</li>
+                            <li>"Submit" button to confirm answer</li>
+                            <li>"Next Question" button after feedback</li>
+                            <li>Review screen after all questions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Selected answer highlights before submission</li>
+                            <li>Correct/incorrect feedback uses appropriate color coding</li>
+                            <li>Progress bar updates after each question</li>
+                            <li>Summary animation at end shows score</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Include 5 questions covering key concepts from all sections</li>
+                            <li>Questions should focus on application rather than just recall</li>
+                            <li>Allow review of all questions/answers at end</li>
+                            <li>Ensure feedback is educational, especially for incorrect answers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 12: Final Challenge Scenario -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 12: Final Challenge Scenario</h3>
+                <span class="screen-id">ID: 1.11</span>
+                <span class="screen-time">Estimated Time: 4 minutes</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Realistic office environment scene with email notification. Character appears concerned looking at computer screen. Dialogue/thought bubbles show the scenario unfolding.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Putting It All Together: Email Security Challenge</p>
+                        <p><strong>Scenario Introduction:</strong><br>
+                        It's Monday morning, and you've just received an urgent email appearing to be from the CFO asking for immediate wire transfer information. What do you do?</p>
+                        <p><strong>Decision Points:</strong><br>
+                        Multiple decision points presented as the scenario unfolds, with consequences for each choice.</p>
+                        <p><strong>Scenario Text:</strong><br>
+                        Changes based on learner decisions, showing consequences and next steps</p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"Now let's put everything you've learned into practice with a challenging scenario. You'll make decisions at key points, and the scenario will adapt based on your choices. Your goal is to correctly identify if this is a phishing attempt and respond appropriately according to our security protocols."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>Multiple decision points with 2-4 choices each</li>
+                            <li>Branching paths based on decisions</li>
+                            <li>Ability to see consequences of each decision</li>
+                            <li>Optional "Try Again" at critical failure points</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Character expressions change based on scenario</li>
+                            <li>Email display updates as scenario progresses</li>
+                            <li>Visual cues highlight important elements</li>
+                            <li>Success/failure animations at conclusion</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Create realistic high-pressure business scenario</li>
+                            <li>Include subtle clues that require careful attention</li>
+                            <li>Provide meaningful consequences for different paths</li>
+                            <li>Consider scoring mechanism based on security risk of choices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 13: Summary and Key Takeaways -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 13: Summary and Key Takeaways</h3>
+                <span class="screen-id">ID: 1.12</span>
+                <span class="screen-time">Estimated Time: 1 minute</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Clean summary screen with key points in visually distinct sections. Security shield graphic reinforces protection theme.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Protecting Our Organization: Key Takeaways</p>
+                        <p><strong>Key Points:</strong></p>
+                        <ul>
+                            <li>Phishing remains the most common attack vector</li>
+                            <li>Always verify sender identity and message legitimacy</li>
+                            <li>Never click suspicious links or open unexpected attachments</li>
+                            <li>Report all suspicious communications immediately</li>
+                            <li>Follow the security incident response procedure</li>
+                            <li>Stay vigilant - you are our first line of defense</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"Let's review what we've covered in this module. Remember that phishing continues to be the most common attack vector for data breaches. Always verify the identity of senders and the legitimacy of messages before taking action. Never click on suspicious links or open unexpected attachments. Report all suspicious communications immediately using our established procedures. By staying vigilant, you serve as our organization's first line of defense against these threats."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>"Resources" button for additional materials</li>
+                            <li>"Print" option for takeaway reference</li>
+                            <li>"Next" button to continue to conclusion</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Key points highlight sequentially with narration</li>
+                            <li>Shield graphic builds as points are made</li>
+                            <li>Final "complete" animation when all points are shown</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Ensure points align with main learning objectives</li>
+                            <li>Consider adding a motivational element about importance of security</li>
+                            <li>Visual design should emphasize memorability of key points</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 14: Resources and Conclusion -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Screen 14: Resources and Conclusion</h3>
+                <span class="screen-id">ID: 1.13</span>
+                <span class="screen-time">Estimated Time: 30 seconds</span>
+            </div>
+            <div class="screen-content">
+                <div class="content-grid">
+                    <div>
+                        <h4>Visual</h4>
+                        <p>Professional closing screen with resource links and completion message. Character showing confident expression. Optional certificate of completion graphic.</p>
+                    </div>
+                    <div>
+                        <h4>Text</h4>
+                        <p><strong>Heading:</strong> Congratulations! You've Completed the Module</p>
+                        <p><strong>Resources Section:</strong></p>
+                        <ul>
+                            <li>Security Incident Response Procedure</li>
+                            <li>Phishing Examples Gallery</li>
+                            <li>Quick Reference Guide (Downloadable)</li>
+                            <li>IT Security Team Contact Information</li>
+                            <li>Reporting Tool Link</li>
+                        </ul>
+                        <p><strong>Completion Message:</strong><br>
+                        You have successfully completed the Phishing Awareness training module. Remember, security is everyone's responsibility.</p>
+                    </div>
+                    <div>
+                        <h4>Audio</h4>
+                        <p>"Congratulations on completing the Phishing Awareness module! You now have the knowledge and skills to protect our organization from phishing attempts. Remember that additional resources are available if you need them, including our security procedures, reference guides, and the security team contact information. Thank you for your commitment to keeping our organization secure."</p>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div>
+                        <h4>Interaction</h4>
+                        <ul>
+                            <li>Clickable resource links</li>
+                            <li>"Download Certificate" button</li>
+                            <li>"Return to Course Menu" button</li>
+                            <li>"Give Feedback" option</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Animation</h4>
+                        <ul>
+                            <li>Resources appear with subtle entrance animation</li>
+                            <li>Completion indicator shows 100%</li>
+                            <li>Certificate generates with user name if selected</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Notes</h4>
+                        <ul>
+                            <li>Ensure all resource links are functional and up-to-date</li>
+                            <li>Certificate should include user name, date, and course information</li>
+                            <li>Consider adding social sharing option if appropriate for organization</li>
+                            <li>Feedback mechanism should be simple and quick to complete</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technical Requirements and Style Guide -->
+        <div class="screen">
+            <div class="screen-header">
+                <h3>Technical Requirements and Style Guide</h3>
+            </div>
+            <div class="screen-content">
+                <h4>Visual Style Guide</h4>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Specifications</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Color Scheme</strong></td>
+                                <td>
+                                    • Primary: #0056b3 (deep blue)<br>
+                                    • Secondary: #4a90e2 (medium blue)<br>
+                                    • Accent: #ff6b6b (alert red)<br>
+                                    • Background: #f5f7fa (light gray)<br>
+                                    • Text: #333333 (dark gray)
+                                </td>
+                                <td>
+                                    <span class="color-swatch" style="background-color: #0056b3;"></span> Primary<br>
+                                    <span class="color-swatch" style="background-color: #4a90e2;"></span> Secondary<br>
+                                    <span class="color-swatch" style="background-color: #ff6b6b;"></span> Accent<br>
+                                    <span class="color-swatch" style="background-color: #f5f7fa;"></span> Background<br>
+                                    <span class="color-swatch" style="background-color: #333333;"></span> Text
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Typography</strong></td>
+                                <td>
+                                    • Headings: Montserrat Bold, 24-32px<br>
+                                    • Body Text: Open Sans Regular, 16-18px<br>
+                                    • Captions: Open Sans Light Italic, 14px<br>
+                                    • Button Text: Montserrat SemiBold, 16px
+                                </td>
+                                <td>Sample text in each style</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Image Style</strong></td>
+                                <td>
+                                    • Professional photography and illustrations<br>
+                                    • Consistent lighting and color treatment<br>
+                                    • Diversity in represented people<br>
+                                    • Clear, uncluttered compositions
+                                </td>
+                                <td>Sample images showing style</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Icon Style</strong></td>
+                                <td>
+                                    • Flat design with subtle gradients<br>
+                                    • Consistent line weight (2px)<br>
+                                    • Rounded corners<br>
+                                    • Monochromatic with accent color options
+                                </td>
+                                <td>Sample icons in the style</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4>Audio Requirements</h4>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Specifications</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Narration</strong></td>
+                                <td>
+                                    • Professional voice talent<br>
+                                    • Clear pronunciation<br>
+                                    • Moderate pace (150-170 words per minute)<br>
+                                    • Natural, conversational tone
+                                </td>
+                                <td>Consider male and female voice options</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Audio Quality</strong></td>
+                                <td>
+                                    • 44.1 kHz sample rate<br>
+                                    • 16-bit depth<br>
+                                    • Clean recording without background noise<br>
+                                    • Normalized to -3dB
+                                </td>
+                                <td>Professional studio recording preferred</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Background Music</strong></td>
+                                <td>
+                                    • Subtle, non-distracting instrumental<br>
+                                    • Corporate/professional tone<br>
+                                    • Volume at 10-15% of narration<br>
+                                    • Fade in/out at transitions
+                                </td>
+                                <td>Only used in intro and conclusion</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sound Effects</strong></td>
+                                <td>
+                                    • Subtle feedback sounds for interactions<br>
+                                    • Consistent sound palette<br>
+                                    • Unique sounds for correct/incorrect responses<br>
+                                    • Adjustable volume or mute option
+                                </td>
+                                <td>Ensure all sounds have purpose</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4>Technical Requirements</h4>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Requirement</th>
+                                <th>Specification</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>File Format</strong></td>
+                                <td>SCORM 1.2 and 2004 compliant</td>
+                                <td>Test with organization's LMS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Screen Resolution</strong></td>
+                                <td>1280 x 720 minimum, responsive design</td>
+                                <td>Test on multiple device sizes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Browser Compatibility</strong></td>
+                                <td>Chrome, Firefox, Safari, Edge (latest versions)</td>
+                                <td>IE11 compatibility optional</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accessibility</strong></td>
+                                <td>WCAG 2.1 AA compliance</td>
+                                <td>Include alt text, keyboard navigation, etc.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bandwidth Optimization</strong></td>
+                                <td>Maximum module size: 15MB</td>
+                                <td>Optimize images and audio</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Loading Requirements</strong></td>
+                                <td>Pre-loader for assets, <3 second initial load</td>
+                                <td>Show progress indicator while loading</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Completion Tracking</strong></td>
+                                <td>Track slides viewed, interactions, assessment results</td>
+                                <td>Configure completion based on client requirements</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4>Production Notes</h4>
+                <ol>
+                    <li>
+                        <strong>SME Review Points:</strong>
+                        <ul>
+                            <li>Phishing indicators accuracy</li>
+                            <li>Protocol compliance with organization standards</li>
+                            <li>Realistic email examples</li>
+                            <li>Technical terminology accuracy</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>User Testing Focus Areas:</strong>
+                        <ul>
+                            <li>Clarity of phishing indicators</li>
+                            <li>Navigation intuitiveness</li>
+                            <li>Simulation realism</li>
+                            <li>Assessment difficulty level</li>
+                            <li>Resource usefulness</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Development Considerations:</strong>
+                        <ul>
+                            <li>Build scenario examples as separate reusable templates</li>
+                            <li>Create adaptive difficulty based on user role if possible</li>
+                            <li>Ensure all simulations function without audio for accessibility</li>
+                            <li>Plan for regular content updates as phishing tactics evolve</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Implementation Requirements:</strong>
+                        <ul>
+                            <li>Verify reporting tool links to actual organizational system</li>
+                            <li>Ensure resource links are maintained and updated</li>
+                            <li>Confirm security contact information is current</li>
+                            <li>Test completion tracking with organization's LMS</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <p class="copyright">© 2025 Bennie Ejiga | Professional Instructional Designer</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional: Add JavaScript for interactive features -->
+    <script>
+        // You could add JavaScript here for any interactive elements
+        // This would be a good place to add functionality for collapsible sections, etc.
+    </script>
+</body>
+</html>

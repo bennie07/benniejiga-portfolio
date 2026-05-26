@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #4361ee;
+  --color-secondary: #f72585;
+  --color-accent: #7209b7;
+  --color-text-dark: #1a202c;
+  --color-text-light: #718096;
+  --color-bg-alt: #f8fafc;
+  --color-navy: #050d1a;
+  --color-navy-light: #0f1f35;
+
+  --font-poppins: var(--font-poppins-var), sans-serif;
+  --font-raleway: var(--font-raleway-var), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins);
+  color: var(--color-text-dark);
+  cursor: none; /* hide default cursor — custom cursor replaces it */
+}
+
+/* Custom cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #4361ee;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease, background 0.2s;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(67, 97, 238, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.12s ease, width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+.cursor-ring.hovering {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(247, 37, 133, 0.6);
+}
+
+/* Flip card 3D */
+.perspective { perspective: 1000px; }
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.group:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+}
+.flip-card-back { transform: rotateY(180deg); }
+
+/* Section number watermark */
+.section-number {
+  font-size: clamp(80px, 12vw, 160px);
+  font-weight: 900;
+  color: rgba(67, 97, 238, 0.06);
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-raleway);
+}
+
+/* Glow ring animation for hero image */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 8s linear infinite; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #4361ee, #f72585);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Magnetic button hover area */
+.magnetic-btn {
+  display: inline-block;
+  transition: transform 0.2s ease;
 }

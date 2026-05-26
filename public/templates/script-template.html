@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Classification and Handling</title>
+    <style>
+        :root {
+            --restricted-color: #E63946;
+            --confidential-color: #F3722C;
+            --internal-color: #F9C74F;
+            --public-color: #90BE6D;
+            --main-font: 'Open Sans', sans-serif;
+            --heading-font: 'Montserrat', sans-serif;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --border-color: #ddd;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+        }
+
+        /* Base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--main-font);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--heading-font);
+            margin-bottom: var(--spacing-md);
+            color: #222;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: var(--spacing-lg);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Module specific styles */
+        .module-header {
+            background-color: #005A87;
+            color: white;
+            padding: var(--spacing-xl);
+            border-radius: 5px;
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+            position: relative;
+        }
+
+        .module-header h1 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .module-header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .module-header .logo {
+            position: absolute;
+            bottom: var(--spacing-md);
+            right: var(--spacing-md);
+            max-width: 100px;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .flex-container {
+            display: flex;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .col-6 {
+            flex: 1;
+        }
+
+        /* Classification pyramid */
+        .pyramid {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: var(--spacing-xl) auto;
+        }
+
+        .pyramid-level {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: var(--spacing-md);
+            margin: 0 auto;
+        }
+
+        .level-restricted {
+            width: 60%;
+            background-color: var(--restricted-color);
+            border-radius: 5px 5px 0 0;
+        }
+
+        .level-confidential {
+            width: 75%;
+            background-color: var(--confidential-color);
+        }
+
+        .level-internal {
+            width: 90%;
+            background-color: var(--internal-color);
+        }
+
+        .level-public {
+            width: 100%;
+            background-color: var(--public-color);
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* Classification deep dive */
+        .classification-card {
+            border-radius: 5px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            color: white;
+        }
+
+        .classification-card h3 {
+            color: white;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .restricted {
+            background-color: var(--restricted-color);
+        }
+
+        .confidential {
+            background-color: var(--confidential-color);
+        }
+
+        .internal {
+            background-color: var(--internal-color);
+            color: #333;
+        }
+
+        .internal h3 {
+            color: #333;
+        }
+
+        .public {
+            background-color: var(--public-color);
+            color: #333;
+        }
+
+        .public h3 {
+            color: #333;
+        }
+
+        .classification-content {
+            display: flex;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        .examples {
+            flex: 1;
+        }
+
+        .characteristics {
+            flex: 1;
+        }
+
+        ul, ol {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Handling matrix */
+        .handling-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .handling-matrix th {
+            background-color: #444;
+            color: white;
+            padding: var(--spacing-md);
+            text-align: left;
+        }
+
+        .handling-matrix td {
+            padding: var(--spacing-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .handling-matrix tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        /* Decision tree */
+        .decision-tree {
+            max-width: 800px;
+            margin: var(--spacing-lg) auto;
+            background-color: #f0f0f0;
+            padding: var(--spacing-lg);
+            border-radius: 5px;
+        }
+
+        /* Scenario boxes */
+        .scenario {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            background-color: #f9f9f9;
+        }
+
+        .scenario-email {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-radius: 3px;
+        }
+
+        .classification-options {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .option {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .option.correct {
+            box-shadow: 0 0 10px rgba(0,255,0,0.5);
+        }
+
+        /* Responsibilities */
+        .responsibilities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            justify-content: center;
+            margin: var(--spacing-xl) 0;
+        }
+
+        .responsibility {
+            flex: 1;
+            min-width: 200px;
+            background-color: white;
+            border-radius: 5px;
+            padding: var(--spacing-md);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+            color: #005A87;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #444;
+            color: white;
+            padding: var(--spacing-lg);
+            text-align: center;
+            margin-top: var(--spacing-xl);
+            border-radius: 5px;
+        }
+
+        .resources {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        .resources a {
+            color: #9ccef4;
+            text-decoration: none;
+        }
+
+        .resources a:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #005A87;
+            color: white;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: var(--spacing-md);
+        }
+
+        .button:hover {
+            background-color: #007ab3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            
+            .classification-content {
+                flex-direction: column;
+            }
+            
+            .responsibilities {
+                flex-direction: column;
+            }
+            
+            .responsibility {
+                min-width: 100%;
+            }
+            
+            .handling-matrix {
+                font-size: 14px;
+            }
+            
+            .module-header .logo {
+                position: static;
+                display: block;
+                margin: var(--spacing-md) auto 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Introduction Section -->
+        <div class="module-header">
+            <h1>Data Classification and Handling</h1>
+            <div class="subtitle">Protecting Sensitive Information in Financial Services</div>
+            <!-- Placeholder for company logo -->
+            <div class="logo">
+                <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="40" rx="5" fill="#ffffff"/>
+                    <path d="M20 10H60V30H20V10Z" fill="#005A87"/>
+                    <text x="40" y="24" font-family="Arial" font-size="12" fill="white" text-anchor="middle">LOGO</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Segment 1: The Importance of Data Classification -->
+        <div class="section">
+            <h2>The Importance of Data Classification</h2>
+            <div class="flex-container">
+                <div class="col-6">
+                    <h3>Why Classification Matters</h3>
+                    <p>In today's data-driven financial environment, properly classifying information is critical to our security posture. Studies show that approximately 60% of data breaches involve mishandled sensitive information that wasn't properly identified or protected.</p>
+                    <p>When we clearly classify our data, we enable consistent handling, appropriate security controls, and compliance with regulations that govern different information types.</p>
+                </div>
+                <div class="col-6">
+                    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 5px; height: 100%;">
+                        <h4>Data Breach Statistics</h4>
+                        <div style="background-color: #e0e0e0; height: 30px; width: 60%; position: relative; margin: 20px 0;">
+                            <div style="position: absolute; top: -25px; width: 100%; text-align: center;">60%</div>
+                            <div style="background-color: #E63946; height: 100%; width: 60%"></div>
+                        </div>
+                        <p style="text-align: center; font-size: 0.9rem;">Percentage of breaches involving mishandled sensitive data</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segment 2: Classification Framework Overview -->
+        <div class="section">
+            <h2>Classification Framework Overview</h2>
+            <p>Our organization uses a four-tier data classification framework that categorizes information based on sensitivity and potential impact if compromised.</p>
+            
+            <div class="pyramid">
+                <div class="pyramid-level level-restricted">Restricted</div>
+                <div class="pyramid-level level-confidential">Confidential</div>
+                <div class="pyramid-level level-internal">Internal</div>
+                <div class="pyramid-level level-public">Public</div>
+            </div>
+            
+            <p>At the top level, we have <strong>Restricted data</strong> – our most sensitive information that would cause significant harm if disclosed.</p>
+            <p>Next is <strong>Confidential data</strong> – sensitive information that must be protected but has slightly lower impact than Restricted data.</p>
+            <p><strong>Internal data</strong> is information not approved for public release but poses minimal risk if disclosed.</p>
+            <p>Finally, <strong>Public data</strong> has been explicitly approved for public release and requires no special handling.</p>
+        </div>
+
+        <!-- Segment 3: Restricted Data Deep Dive -->
+        <div class="section">
+            <h2>Classification Levels in Detail</h2>
+            
+            <div class="classification-card restricted">
+                <h3>Restricted Data</h3>
+                <div class="classification-content">
+                    <div class="characteristics">
+                        <h4>Characteristics:</h4>
+                        <ul>
+                            <li>Highest sensitivity level</li>
+                            <li>Severe impact if compromised</li>
+                            <li>Strictly limited access</li>
+                            <li>Maximum security controls</li>
+                        </ul>
+                    </div>
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <ul>
+                            <li>Customer authentication credentials</li>
+                            <li>Unencrypted account numbers</li>
+                            <li>Security infrastructure details</li>
+                            <li>Fraud investigation data</li>
+                        </ul>
+                        <p><strong>Warning:</strong> Legal and regulatory consequences for mishandling</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Segment 4: Confidential Data Deep Dive -->
+            <div class="classification-card confidential">
+                <h3>Confidential Data</h3>
+                <div class="classification-content">
+                    <div class="characteristics">
+                        <h4>Characteristics:</h4>
+                        <ul>
+                            <li>High sensitivity level</li>
+                            <li>Significant impact if compromised</li>
+                            <li>Limited access based on role</li>
+                            <li>Strong security controls</li>
+                        </ul>
+                    </div>
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <ul>
+                            <li>Customer financial records</li>
+                            <li>Employee personal information</li>
+                            <li>Business strategies</li>
+                            <li>Risk assessment findings</li>
+                        </ul>
+                        <p><strong>Note:</strong> Subject to regulatory protection requirements</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Segment 5: Internal Data Deep Dive -->
+            <div class="classification-card internal">
+                <h3>Internal Data</h3>
+                <div class="classification-content">
+                    <div class="characteristics">
+                        <h4>Characteristics:</h4>
+                        <ul>
+                            <li>Moderate sensitivity level</li>
+                            <li>Limited impact if compromised</li>
+                            <li>Generally available to employees</li>
+                            <li>Basic security controls</li>
+                        </ul>
+                    </div>
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <ul>
+                            <li>Organizational charts</li>
+                            <li>Internal announcements</li>
+                            <li>Process documentation</li>
+                            <li>Training materials</li>
+                        </ul>
+                        <p><strong>Note:</strong> Not approved for external sharing without review</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Segment 6: Public Data Deep Dive -->
+            <div class="classification-card public">
+                <h3>Public Data</h3>
+                <div class="classification-content">
+                    <div class="characteristics">
+                        <h4>Characteristics:</h4>
+                        <ul>
+                            <li>No sensitivity concerns</li>
+                            <li>No impact if shared widely</li>
+                            <li>Available to anyone</li>
+                            <li>Minimal security requirements</li>
+                        </ul>
+                    </div>
+                    <div class="examples">
+                        <h4>Examples:</h4>
+                        <ul>
+                            <li>Marketing materials</li>
+                            <li>Press releases</li>
+                            <li>Public financial reports</li>
+                            <li>Product information</li>
+                        </ul>
+                        <p><strong>Important:</strong> Must be explicitly approved for public release</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segment 7: Data Handling Requirements -->
+        <div class="section">
+            <h2>Data Handling Requirements</h2>
+            <p>Each data classification has specific handling requirements that must be followed. Review these requirements across key handling categories:</p>
+            
+            <table class="handling-matrix">
+                <thead>
+                    <tr>
+                        <th>Classification</th>
+                        <th>Storage</th>
+                        <th>Transmission</th>
+                        <th>Sharing</th>
+                        <th>Disposal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="background-color: #E63946; color: white;"><strong>Restricted</strong></td>
+                        <td>Encryption required, approved secure storage only, strict access controls</td>
+                        <td>Encryption required, secure channels only, verification of recipient</td>
+                        <td>Explicit approval required for each recipient, documented sharing</td>
+                        <td>Secure destruction with documentation, certified methods</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #F3722C; color: white;"><strong>Confidential</strong></td>
+                        <td>Encryption required, approved storage locations, access controls</td>
+                        <td>Encryption required, corporate channels only</td>
+                        <td>Need-to-know basis within organization, approval for external sharing</td>
+                        <td>Secure destruction methods, shredding/wiping required</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #F9C74F;"><strong>Internal</strong></td>
+                        <td>Standard access controls, corporate storage only</td>
+                        <td>Corporate channels only, no encryption requirement</td>
+                        <td>May be shared with all employees, no external sharing without review</td>
+                        <td>Standard disposal, no special requirements</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #90BE6D;"><strong>Public</strong></td>
+                        <td>No special storage requirements</td>
+                        <td>No special transmission requirements</td>
+                        <td>May be shared with anyone</td>
+                        <td>Standard disposal, no special requirements</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Segment 8: Classification Decision Framework -->
+        <div class="section">
+            <h2>Classification Decision Framework</h2>
+            <p>When working with data, you'll need to determine its proper classification. This decision tree can help guide your classification decisions:</p>
+            
+            <div class="decision-tree">
+                <h3>Decision Flow</h3>
+                <ol>
+                    <li>Does the information contain authentication credentials, security infrastructure details, or fraud investigation data?
+                        <ul><li>If YES → <span style="color: var(--restricted-color);"><strong>Restricted</strong></span></li></ul>
+                    </li>
+                    <li>Does it contain personal financial data, customer transaction details, or personally identifiable information (PII)?
+                        <ul><li>If YES → <span style="color: var(--confidential-color);"><strong>Confidential</strong></span></li></ul>
+                    </li>
+                    <li>Is the information intended only for use within our organization?
+                        <ul><li>If YES → <span style="color: var(--internal-color);"><strong>Internal</strong></span></li></ul>
+                    </li>
+                    <li>Has the information been explicitly approved for public release?
+                        <ul><li>If YES → <span style="color: var(--public-color);"><strong>Public</strong></span></li></ul>
+                    </li>
+                </ol>
+                <p style="font-weight: bold; text-align: center; margin-top: 20px;">When in doubt, classify at the higher level</p>
+            </div>
+        </div>
+
+        <!-- Segment 9 & 10: Classification in Practice - Scenarios -->
+        <div class="section">
+            <h2>Classification in Practice: Scenarios</h2>
+            
+            <!-- Scenario 1 -->
+            <h3>Scenario 1: Customer Email</h3>
+            <div class="scenario">
+                <div class="scenario-email">
+                    <p><strong>Subject:</strong> Account Review Results</p>
+                    <p><strong>To:</strong> Jones, Sarah</p>
+                    <p><strong>From:</strong> Financial Services Team</p>
+                    <hr>
+                    <p>Dear Ms. Jones,</p>
+                    <p>Please find below the information you requested regarding your account:</p>
+                    <p><strong>Name:</strong> Sarah Jones<br>
+                    <strong>Account Number:</strong> XXXX-XXXX-1234<br>
+                    <strong>Contact:</strong> 555-123-4567<br>
+                    <strong>Email:</strong> sjones@example.com</p>
+                    
+                    <p><strong>Account Summary:</strong><br>
+                    Current Balance: $34,560.78<br>
+                    Available Credit: $15,000.00<br>
+                    Last Statement Date: 03/15/2025</p>
+                    
+                    <p><strong>Recent Transactions:</strong><br>
+                    03/20/2025 - Amazon.com - $129.56<br>
+                    03/18/2025 - Grocery Store - $87.32<br>
+                    03/15/2025 - Monthly Payment - $500.00</p>
+                    
+                    <p><strong>Internal Notes:</strong> Customer is on automatic payment plan. Account in good standing.</p>
+                </div>
+                
+                <p><strong>Question:</strong> What is the proper classification for this email?</p>
+                
+                <div class="classification-options">
+                    <div class="option" style="background-color: var(--restricted-color);">Restricted</div>
+                    <div class="option correct" style="background-color: var(--confidential-color);">Confidential</div>
+                    <div class="option" style="background-color: var(--internal-color);">Internal</div>
+                </div>
+                
+                <p><strong>Analysis:</strong> This email contains customer personal information and financial data, including account summary and transaction history. While it doesn't contain authentication credentials or security information that would make it Restricted, it does include personal financial data that must be protected. Therefore, this should be classified as <strong>Confidential</strong>.</p>
+            </div>
+            
+            <!-- Scenario 2 -->
+            <h3>Scenario 2: Onboarding Process Document</h3>
+            <div class="scenario">
+                <div class="scenario-email">
+                    <p><strong>Document Title:</strong> New Employee Onboarding Process</p>
+                    <p><strong>Department:</strong> Human Resources</p>
+                    <hr>
+                    <p>This document outlines the standard process for onboarding new employees:</p>
+                    
+                    <p><strong>Process Workflow:</strong><br>
+                    1. HR creates employee record<br>
+                    2. Department prepares workstation<br>
+                    3. IT sets up accounts and permissions<br>
+                    4. Security issues building access<br>
+                    5. Training schedules first-day orientation</p>
+                    
+                    <p><strong>Department Responsibilities:</strong><br>
+                    - HR: Documentation collection, benefits enrollment<br>
+                    - IT: System access, equipment setup<br>
+                    - Security: Building access, ID badge<br>
+                    - Department: Workspace preparation, team introduction</p>
+                    
+                    <p><strong>Timeframe:</strong> Process begins 7 days prior to start date</p>
+                    
+                    <p><strong>HR Contact Information:</strong><br>
+                    HR Helpdesk: x5555<br>
+                    HR Email: hr@company.example</p>
+                </div>
+                
+                <p><strong>Question:</strong> What is the proper classification for this document?</p>
+                
+                <div class="classification-options">
+                    <div class="option" style="background-color: var(--confidential-color);">Confidential</div>
+                    <div class="option correct" style="background-color: var(--internal-color);">Internal</div>
+                    <div class="option" style="background-color: var(--public-color);">Public</div>
+                </div>
+                
+                <p><strong>Analysis:</strong> This document doesn't contain customer data, PII, or sensitive security information. However, it is intended only for use within the organization and has not been approved for public release. Therefore, it should be classified as <strong>Internal</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Segment 11: Your Classification Responsibilities -->
+        <div class="section">
+            <h2>Your Classification Responsibilities</h2>
+            
+            <div class="responsibilities">
+                <div class="responsibility">
+                    <div class="icon">📝</div>
+                    <h4>Classify at creation</h4>
+                    <p>Any document or data you generate should be appropriately classified from the start.</p>
+                </div>
+                
+                <div class="responsibility">
+                    <div class="icon">🛡️</div>
+                    <h4>Handle according to classification</h4>
+                    <p>Always follow all required security controls for each classification level.</p>
+                </div>
+                
+                <div class="responsibility">
+                    <div class="icon">✅</div>
+                    <h4>Verify before changing classification</h4>
+                    <p>Check with the owner or your supervisor before changing any classification.</p>
+                </div>
+                
+                <div class="responsibility">
+                    <div class="icon">⚠️</div>
+                    <h4>Report misclassification</h4>
+                    <p>Report any misclassified information you encounter to maintain security.</p>
+                </div>
+                
+                <div class="responsibility">
+                    <div class="icon">❓</div>
+                    <h4>When in doubt, ask</h4>
+                    <p>Consult your supervisor or the information security team when uncertain.</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; font-weight: bold; margin-top: 20px;">Classification is everyone's responsibility</p>
+        </div>
+
+        <!-- Segment 12: Conclusion and Next Steps -->
+        <div class="section">
+            <h2>Key Takeaways and Next Steps</h2>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>Four classification levels: Restricted, Confidential, Internal, Public</li>
+                    <li>Classify based on sensitivity and potential impact</li>
+                    <li>Follow handling requirements for each level</li>
+                    <li>Use decision framework when uncertain</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="button">Continue to Assessment</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer with Resources -->
+        <div class="footer">
+            <h3>Resources</h3>
+            <div class="resources">
+                <a href="#">Classification Quick Reference</a>
+                <a href="#">Handling Procedures</a>
+                <a href="#">Security Team Contact</a>
+            </div>
+            <p style="margin-top: 20px;">© 2025 Financial Services Organization</p>
+        </div>
+    </div>
+</body>
+</html>
