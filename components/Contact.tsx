@@ -29,10 +29,14 @@ export default function Contact() {
     e.preventDefault();
     setStatus('loading');
     try {
-      const res = await fetch('/api/contact', {
+      const body = new URLSearchParams({
+        'form-name': 'contact',
+        ...form,
+      });
+      const res = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
       });
       if (res.ok) {
         setStatus('success');
@@ -120,7 +124,8 @@ export default function Contact() {
 
           {/* Right — white form panel */}
           <div className="bg-white p-10 lg:p-14">
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5" data-netlify="true" name="contact">
+              <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label className="block text-sm font-medium text-text-dark mb-1.5" htmlFor="name">
                   Name
