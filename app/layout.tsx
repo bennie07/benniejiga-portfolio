@@ -6,22 +6,9 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bennie.pro'),
-  title: 'Benjamin Ejiga (Bennie) — Learning Experience Architect',
+  title: 'Benjamin Ejiga | Learning Experience Architect | bennie.pro',
   description:
-    'Official website of Benjamin Ejiga (Bennie). Learning Experience Architect helping organizations design learning ecosystems that build capability, improve performance, and turn strategy into measurable outcomes.',
-  keywords: [
-    'Benjamin Ejiga',
-    'Bennie Ejiga',
-    'Bennie',
-    'bennie.pro',
-    'Learning Experience Architect',
-    'Learning Strategy',
-    'Instructional Design',
-    'eLearning Development',
-    'Learning Technology',
-    'Skillieo LXP',
-    'Pinnacle Learning Design System',
-  ],
+    'Official website of Benjamin Ejiga, also known as Bennie. Learning Experience Architect helping organizations design learning ecosystems through strategy, experience design, and technology.',
   authors: [
     { name: 'Benjamin Ejiga', url: 'https://bennie.pro' },
     { name: 'Bennie Ejiga', url: 'https://bennie.pro' },
@@ -30,9 +17,9 @@ export const metadata: Metadata = {
     canonical: 'https://bennie.pro',
   },
   openGraph: {
-    title: 'Benjamin Ejiga (Bennie) — Learning Experience Architect',
+    title: 'Benjamin Ejiga | Learning Experience Architect | bennie.pro',
     description:
-      'Official website of Benjamin Ejiga (Bennie). Learning Experience Architect designing learning ecosystems that build capability and improve performance.',
+      'Official website of Benjamin Ejiga, also known as Bennie. Learning Experience Architect helping organizations design learning ecosystems through strategy, experience design, and technology.',
     url: 'https://bennie.pro',
     siteName: 'Benjamin Ejiga (bennie.pro)',
     locale: 'en_US',
@@ -40,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Benjamin Ejiga (Bennie) — Learning Experience Architect',
+    title: 'Benjamin Ejiga | Learning Experience Architect | bennie.pro',
     description:
-      'Official website of Benjamin Ejiga (Bennie). Learning Experience Architect designing learning ecosystems that build capability and improve performance.',
+      'Official website of Benjamin Ejiga, also known as Bennie. Learning Experience Architect helping organizations design learning ecosystems through strategy, experience design, and technology.',
   },
   icons: {
     icon: [
@@ -69,10 +56,12 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': 'https://bennie.pro/#person',
     name: 'Benjamin Ejiga',
     alternateName: ['Bennie Ejiga', 'Bennie'],
     url: 'https://bennie.pro',
     jobTitle: 'Learning Experience Architect',
+    image: 'https://bennie.pro/benjamin_ejiga_corp.jpg',
     sameAs: ['https://www.linkedin.com/in/ejiga/'],
   };
 
