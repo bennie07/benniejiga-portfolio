@@ -1,135 +1,132 @@
 'use client';
-import { motion } from 'framer-motion';
 
-const words = ['Crafting', 'Impactful', 'Learning', 'Experiences'];
-
-const stats = [
-  { value: '10+', label: 'Projects' },
-  { value: '4.8', label: 'Avg Rating' },
-  { value: '97%', label: 'Completion' },
-];
+import React from 'react';
+import Image from 'next/image';
 
 export default function Hero() {
+  const pillars = [
+    'Learning Strategy',
+    'Experience Design',
+    'Technology',
+    'Capability Development',
+    'Enterprise Learning',
+  ];
+
   return (
-    <section id="hero" className="relative min-h-screen flex items-center bg-navy overflow-hidden">
-      {/* Background mesh gradient */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/4 -left-1/4 w-3/4 h-3/4 bg-primary/20 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-1/4 -right-1/4 w-3/4 h-3/4 bg-secondary/10 rounded-full blur-[120px]" />
-      </div>
+    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+      {/* Background Subtle Mesh Gradient */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[var(--accent-sage)] opacity-[0.06] blur-[140px] rounded-full pointer-events-none" />
 
-      {/* Grid overlay */}
-      <div className="absolute inset-0" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-        backgroundSize: '60px 60px'
-      }} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Ruthlessly Focused Positioning */}
+          <div className="lg:col-span-7 space-y-8 text-left">
+            
+            {/* Signature Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider badge-sage">
+              <span className="w-2 h-2 rounded-full bg-[var(--accent-sage)] animate-pulse" />
+              <span>BENJAMIN EJIGA</span>
+              <span className="opacity-40">•</span>
+              <span className="font-mono text-xs">bennie.pro</span>
+            </div>
 
-      <div className="relative max-w-6xl mx-auto px-6 py-32 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Text */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/80 text-sm px-4 py-2 rounded-full mb-8 border border-white/10"
-            >
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              Available for freelance projects
-            </motion.div>
+            {/* Primary Hero Title & Value Proposition */}
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-main leading-tight">
+                Learning Experience <br />
+                <span className="text-[var(--accent-sage)]">Architect</span>
+              </h1>
+              
+              <p className="text-lg sm:text-2xl font-medium text-main max-w-2xl leading-relaxed">
+                I design learning ecosystems that help organizations build capability, improve performance, and turn strategy into measurable outcomes.
+              </p>
+            </div>
 
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold font-raleway leading-tight mb-6">
-              {words.map((word, i) => (
-                <motion.span
-                  key={word}
-                  className={`inline-block mr-4 ${i === 1 || i === 2 ? 'gradient-text' : 'text-white'}`}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 + i * 0.12 }}
-                >
-                  {word}
-                  {i === 1 && <br />}
-                </motion.span>
-              ))}
-            </h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-white/60 text-lg leading-relaxed mb-10 max-w-md"
-            >
-              Learning Experience Designer &amp; E-Learning Developer creating engaging, effective, and business-aligned learning solutions.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.75 }}
-              className="flex flex-wrap gap-4"
-            >
-              <a href="#projects" className="px-8 py-3.5 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition shadow-lg shadow-primary/30 magnetic-btn">
-                View Projects
-              </a>
-              <a href="#contact" className="px-8 py-3.5 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition magnetic-btn">
-                Get in Touch
-              </a>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="flex gap-8 mt-12 pt-8 border-t border-white/10"
-            >
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <div className="text-3xl font-bold text-white font-raleway">{s.value}</div>
-                  <div className="text-white/50 text-sm mt-0.5">{s.label}</div>
+            {/* Warm Personal Anecdote */}
+            <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] max-w-xl">
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-full bg-[var(--accent-sage-subtle)] text-[var(--accent-sage)] flex items-center justify-center flex-shrink-0 font-bold text-xs">
+                  B
                 </div>
-              ))}
-            </motion.div>
+                <div className="text-xs text-muted leading-relaxed pt-0.5">
+                  Hi, I&apos;m Benjamin Ejiga. Most people know me as Bennie—and that&apos;s the name behind <span className="font-mono text-[var(--accent-sage)] font-semibold">bennie.pro</span>.
+                </div>
+              </div>
+            </div>
+
+            {/* Action CTAs (Primary: Discuss Your Project, Secondary: Explore Engagements) */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+              <a
+                href="#contact"
+                className="btn-sage px-8 py-3.5 rounded-xl text-xs font-semibold tracking-wide uppercase shadow-md w-full sm:w-auto text-center"
+              >
+                Discuss Your Project
+              </a>
+              <a
+                href="#engagements"
+                className="btn-ghost-theme px-8 py-3.5 rounded-xl text-xs font-semibold tracking-wide uppercase w-full sm:w-auto text-center"
+              >
+                Explore Engagements <i className="fa-solid fa-arrow-down ml-2 text-xs" />
+              </a>
+            </div>
+
+            {/* Clean Capability Pills */}
+            <div className="pt-8 border-t border-[var(--border-color)] max-w-xl space-y-3">
+              <p className="text-[11px] uppercase font-semibold tracking-widest text-muted">
+                Core Disciplines
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {pillars.map((pillar) => (
+                  <span
+                    key={pillar}
+                    className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-[var(--bg-card)] border border-[var(--border-color)] text-main hover:border-[var(--accent-sage)] transition-colors"
+                  >
+                    {pillar}
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </div>
 
-          {/* Image with glow ring */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex justify-center"
-          >
-            <div className="relative w-72 h-72 lg:w-96 lg:h-96">
-              {/* Spinning gradient ring */}
-              <div className="absolute inset-0 rounded-full spin-slow" style={{
-                background: 'conic-gradient(from 0deg, #4361ee, #f72585, #7209b7, #4361ee)',
-                padding: '3px',
-              }}>
-                <div className="w-full h-full rounded-full bg-navy" />
+          {/* Right Column: Corporate Portrait Integration */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-sm rounded-2xl overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] shadow-xl group">
+              <div className="aspect-[4/5] relative w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900">
+                <Image
+                  src="/benjamin_ejiga_corp.jpg"
+                  alt="Benjamin Ejiga — Learning Experience Architect"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  priority
+                />
               </div>
-              {/* Glow */}
-              <div className="absolute inset-4 rounded-full bg-primary/20 blur-2xl" />
-              {/* Photo */}
-              <img
-                src="/bennie-benjamin-ejiga.png"
-                alt="Bennie Ejiga"
-                className="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-full object-cover"
-              />
+
+              {/* Portrait Info Overlay */}
+              <div className="p-5 bg-[var(--bg-primary)] border-t border-[var(--border-color)] flex items-center justify-between">
+                <div>
+                  <h3 className="text-base font-bold text-main">Benjamin Ejiga</h3>
+                  <p className="text-xs text-[var(--accent-sage)] font-semibold uppercase tracking-wider">
+                    Learning Experience Architect
+                  </p>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/ejiga/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] flex items-center justify-center text-muted hover:text-[var(--accent-sage)] hover:border-[var(--accent-sage)] transition-all"
+                  aria-label="LinkedIn Profile"
+                >
+                  <i className="fa-brands fa-linkedin-in text-sm" />
+                </a>
+              </div>
             </div>
-          </motion.div>
+          </div>
+
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40"
-      >
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent" />
-      </motion.div>
     </section>
   );
 }

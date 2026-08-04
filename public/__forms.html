@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netlify Forms Detector</title>
+</head>
+<body>
+  <!-- Main Contact Form Netlify Detector -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="bot-field" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="organization" />
+    <select name="topic">
+      <option value="Learning Strategy & Transformation">Learning Strategy & Transformation</option>
+      <option value="Learning Experience Architecture">Learning Experience Architecture</option>
+      <option value="Curriculum & Capability Design">Curriculum & Capability Design</option>
+      <option value="Learning Technology Consulting">Learning Technology Consulting</option>
+      <option value="Learning Design Systems">Learning Design Systems</option>
+      <option value="Learning Measurement & Assessment">Learning Measurement & Assessment</option>
+      <option value="Executive Advisory, Workshops & Speaking">Executive Advisory, Workshops & Speaking</option>
+      <option value="General Enquiry">General Enquiry</option>
+    </select>
+    <textarea name="message"></textarea>
+  </form>
+
+  <!-- Request Preview Lightbox Form Netlify Detector -->
+  <form name="request-preview" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="request-preview" />
+    <input type="text" name="bot-field" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="experience_title" />
+    <input type="text" name="experience_client" />
+  </form>
+</body>
+</html>

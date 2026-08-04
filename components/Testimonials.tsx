@@ -1,119 +1,82 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { testimonials } from '@/data/testimonials';
+import React from 'react';
 
 export default function Testimonials() {
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
-
-  const goTo = useCallback((index: number, dir: number) => {
-    setDirection(dir);
-    setCurrent(index);
-  }, []);
-
-  const next = useCallback(() => {
-    goTo((current + 1) % testimonials.length, 1);
-  }, [current, goTo]);
-
-  const prev = useCallback(() => {
-    goTo((current - 1 + testimonials.length) % testimonials.length, -1);
-  }, [current, goTo]);
-
-  useEffect(() => {
-    const timer = setInterval(next, 5000);
-    return () => clearInterval(timer);
-  }, [next]);
-
-  const t = testimonials[current];
+  const partners = [
+    {
+      title: 'Enterprise Learning & Talent',
+      tagline: 'Governing Quality & Scaling Capability',
+      description:
+        'Organizations needing to scale learning quality across dispersed teams, establish design systems, govern certification integrity, and transition from traditional training delivery to measurable performance outcomes.',
+      context: 'Common Areas of Support: Learning Strategy • Governance Frameworks • Learning Design Systems',
+      icon: 'fa-building-columns',
+    },
+    {
+      title: 'Learning Technology Teams',
+      tagline: 'Learning Technology & Ecosystem Architecture',
+      description:
+        'Learning platforms, startups, and institutions seeking to architect custom learning technology, build capability progression engines, and move beyond legacy LMS constraints.',
+      context: 'Common Areas of Support: Ecosystem Strategy • Tech Stack Architecture • Capability Mapping',
+      icon: 'fa-cubes',
+    },
+    {
+      title: 'NGOs, Universities & Mission-Driven Organizations',
+      tagline: 'Complex Domain Knowledge & Impact Journeys',
+      description:
+        'Development organizations, universities, and non-profits needing to translate complex technical or domain expertise into engaging, scalable learning programs across diverse global contexts.',
+      context: 'Common Areas of Support: Program Architecture • Competency Frameworks • Assessment Design',
+      icon: 'fa-globe',
+    },
+  ];
 
   return (
-    <section id="testimonials" className="py-28 bg-navy relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
-      </div>
-
-      <div className="relative max-w-4xl mx-auto px-6">
-        {/* Section header */}
-        <div className="relative mb-16 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-2">Kind words</p>
-            <h2 className="text-4xl font-bold text-white font-raleway">Client &amp; Learner Testimonials</h2>
-            <div className="w-12 h-1 bg-gradient-to-r from-primary to-secondary rounded mt-3 mx-auto" />
-          </motion.div>
+    <section id="who-i-help" className="py-20 md:py-28 bg-[var(--bg-primary)] border-t border-[var(--border-color)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        {/* Section Header */}
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider badge-sage">
+            Partnership & Alignment
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-main tracking-tight">
+            Who I Help
+          </h2>
+          <p className="text-base sm:text-lg text-muted leading-relaxed">
+            I work with organizations that see learning as more than training. Together, we design the strategies, systems, and experiences that help people build capability and improve performance.
+          </p>
         </div>
 
-        {/* Testimonial card */}
-        <div className="relative overflow-hidden">
-          {/* Large quote mark */}
-          <div className="absolute top-0 left-0 text-white/5 font-serif select-none pointer-events-none leading-none" style={{ fontSize: '200px', lineHeight: 1 }}>
-            &ldquo;
-          </div>
-
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={current}
-              custom={direction}
-              initial={{ opacity: 0, x: direction * 80 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: direction * -80 }}
-              transition={{ duration: 0.4 }}
-              className="relative z-10 pt-8 pb-4 px-4 text-center"
+        {/* 3 Audience Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {partners.map((item) => (
+            <div
+              key={item.title}
+              className="p-8 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] space-y-6 flex flex-col justify-between hover:border-[var(--accent-sage)] transition-all group"
             >
-              <p className="text-white text-xl lg:text-2xl italic leading-relaxed mb-10">
-                {t.quote}
-              </p>
-
-              <div className="flex items-center justify-center gap-4">
-                <img
-                  src={t.imageUrl}
-                  alt={t.author}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/40"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(t.author)}&background=4361ee&color=fff`;
-                  }}
-                />
-                <div className="text-left">
-                  <h4 className="font-bold text-white">{t.author}</h4>
-                  <p className="text-white/50 text-sm">{t.role}</p>
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-[var(--accent-sage-subtle)] text-[var(--accent-sage)] flex items-center justify-center text-lg">
+                  <i className={`fa-solid ${item.icon}`} />
                 </div>
+                <div className="space-y-1">
+                  <h3 className="text-xl font-bold text-main group-hover:text-[var(--accent-sage)] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs font-semibold text-[var(--accent-sage)] uppercase tracking-wider">
+                    {item.tagline}
+                  </p>
+                </div>
+                <p className="text-sm text-muted leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
 
-        {/* Controls */}
-        <div className="flex items-center justify-center gap-6 mt-10">
-          <button
-            onClick={prev}
-            className="w-10 h-10 border border-white/20 text-white rounded-full flex items-center justify-center hover:bg-white/10 transition"
-            aria-label="Previous testimonial"
-          >
-            <i className="fas fa-chevron-left text-sm" />
-          </button>
-
-          <div className="flex gap-2 items-center">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i, i > current ? 1 : -1)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  i === current ? 'bg-primary w-8' : 'bg-white/20 w-2.5'
-                }`}
-                aria-label={`Go to testimonial ${i + 1}`}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={next}
-            className="w-10 h-10 border border-white/20 text-white rounded-full flex items-center justify-center hover:bg-white/10 transition"
-            aria-label="Next testimonial"
-          >
-            <i className="fas fa-chevron-right text-sm" />
-          </button>
+              <div className="pt-4 border-t border-[var(--border-color)]">
+                <p className="text-xs text-main font-medium leading-relaxed">
+                  {item.context}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

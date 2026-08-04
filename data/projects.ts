@@ -6,10 +6,11 @@ export interface Project {
   category: string;
   tags: string[];
   description: string;
-  challenge: string;
-  solution: string[];
-  features: string[];
-  results: string[];
+  challenge: string; // Used for "The Situation"
+  realQuestion?: string; // New field for "The Real Question"
+  solution: string[]; // Used for "The Architecture" / "Intervention"
+  features: string[]; // Used for "Deliverables"
+  results: string[]; // Used for "Outcomes"
   tools: string[];
   demoUrl: string;
   imageUrl: string;
@@ -19,373 +20,243 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'project1',
-    title: 'Metso Outotec: Antitrust Law E-Learning',
-    client: 'Metso Outotec',
+    title: 'Architecting Skillieo',
+    client: 'Enterprise Innovation',
     year: '2023',
-    category: 'Compliance Training',
-    tags: ['Compliance Training', 'iSpring Suite', 'SCORM'],
+    category: 'Ecosystem Architecture',
+    tags: ['LXP', 'Platform Design', 'Enterprise'],
     description:
-      'Interactive e-learning module on Antitrust Competition Law ensuring employees understand compliance regulations and can apply them effectively in their daily work.',
+      'Designing a Capability Ecosystem Instead of Another LMS. Skillieo establishes the philosophy that better learning starts with better questions.',
     challenge:
-      'The client needed to transform complex legal content into engaging, practical training that employees would actually apply rather than just complete for compliance purposes. The training needed to be globally accessible and consistent while accounting for regional legal variations.',
+      'Organizations have plenty of Learning Management Systems that deliver training. But delivering training is not the same as building capability. The challenge was that existing systems were designed for administrators, not for the complex reality of how professionals actually learn and grow over time.',
+    realQuestion:
+      'How do we design a learning ecosystem that helps organizations turn knowledge into measurable performance?',
     solution: [
-      'Conducted a needs analysis to identify learning gaps and real-world application contexts',
-      'Collaborated with legal SMEs to distill complex regulations into practical guidelines',
-      'Developed a structured module using the ADDIE framework',
-      'Created a detailed storyboard mapping out interactions and assessments',
-      'Implemented scenario-based learning approaches to increase relevance',
-      'Utilized branching scenarios to demonstrate consequence awareness',
-      'Developed the course using iSpring Suite ensuring SCORM compliance',
+      'Designed a Learning Experience Platform (LXP) from the ground up using Rust for the backend and Next.js for the frontend.',
+      'Shifted the focus from course completion to capability progression.',
+      'Architected the system to support multiple delivery channels, integrating microlearning, performance support, and structured paths into a single ecosystem.'
     ],
     features: [
-      'Interactive decision-making scenarios',
-      'Role-specific case studies',
-      'Knowledge checks with remediation',
-      'Document reference library',
-      'Compliance certification tracking',
+      'Learning Experience Platform (LXP)',
+      'Capability Pathways',
+      'Performance Support Tools',
+      'Next.js Frontend Architecture',
+      'Rust Backend Microservices',
+      'Analytics Dashboard'
     ],
     results: [
-      '97% completion rate across global workforce',
-      '85% average assessment score (17% improvement over previous training)',
-      '92% of learners reported increased confidence in identifying antitrust issues',
-      'Reduction in compliance questions to legal department',
+      'Established a foundational philosophy for enterprise capability development.',
+      'Shifted organizational focus from "training delivery" to "measurable performance outcomes".'
     ],
-    tools: ['iSpring Suite', 'Adobe Photoshop', 'Adobe Illustrator', 'SCORM'],
-    demoUrl: '/demo/ispring/Antitrust_Law/',
+    tools: ['Next.js', 'Rust', 'Kubernetes', 'PostgreSQL', 'Figma'],
+    demoUrl: '',
     imageUrl: '/img/projects/project1.jpg',
     fullImageUrl: '/img/projects/project1.jpg',
   },
   {
     id: 'project2',
-    title: 'HippoHub: Respect in the Workplace',
-    client: 'HippoHub',
+    title: 'Pinnacle Learning Design System',
+    client: 'Enterprise Consulting',
     year: '2023',
-    category: 'DEI Training',
-    tags: ['DEI Training', 'iSpring Suite', 'Scenario-Based'],
+    category: 'Design Systems',
+    tags: ['Design System', 'Governance', 'Storyline'],
     description:
-      'Engaging module on workplace respect, diversity, and inclusion with scenario-based learning approaches to build practical skills.',
+      'Scaling quality without sacrificing creativity. A design system that standardizes thinking before it standardizes visuals.',
     challenge:
-      'The client needed to move beyond theoretical diversity training to create an experience that would change behaviors and foster a more inclusive workplace environment. Previous training had low engagement and minimal impact on workplace behaviors.',
+      'As learning teams grow, maintaining quality becomes increasingly difficult. New designers join projects with different styles and assumptions. Storyboards evolve independently. Interactions become inconsistent. Reviews become subjective. Development slows as every project reinvents decisions that have already been made.',
+    realQuestion:
+      'How do you scale quality, consistency, and efficiency without sacrificing creativity?',
     solution: [
-      'Developed a series of realistic workplace scenarios showing common inclusion challenges',
-      'Created branching scenarios where learners must make decisions and see consequences',
-      'Incorporated diverse perspectives through character-based narratives',
-      'Designed reflection activities to connect learning to personal experiences',
-      'Implemented microlearning segments to reinforce key concepts',
-      'Included practical tools and frameworks for addressing inclusion issues',
+      'Developed a Learning Design System that standardizes thinking before it standardizes visuals.',
+      'Designed four interconnected layers: Learning Philosophy > Design Principles > Reusable Design Patterns > Templates, Assets & Components.',
+      'Standardized recurring decisions to give designers more time to solve meaningful learning problems.'
     ],
     features: [
-      'Interactive branching scenarios',
-      'Diverse character narratives',
-      'Reflection and application activities',
-      'Practical frameworks and tools',
-      'Self-assessment components',
+      'Learning Design Principles',
+      'Visual Design Language',
+      'Storyline Master Templates',
+      'Storyboarding Framework',
+      'Interaction Pattern Library',
+      'Assessment Design Standards'
     ],
     results: [
-      '94% of learners rated the training as "highly relevant" to their work',
-      '78% increase in confidence addressing workplace inclusion issues',
-      '23% reduction in reported workplace inclusion incidents',
-      '89% of managers reported observing positive behavior changes',
+      'Design quality became more predictable and development became faster.',
+      'Designers spent less time solving recurring production problems and more time solving learning problems.',
+      'Gave teams the confidence to deliver consistently excellent learning experiences.'
     ],
-    tools: ['iSpring Suite', 'Adobe Photoshop', 'Camtasia', 'SCORM'],
-    demoUrl: '/demo/ispring/Respect_in_the_Workplace/',
+    tools: ['Figma', 'Storyline', 'Design Strategy', 'Consulting'],
+    demoUrl: '',
     imageUrl: '/img/projects/project2.jpg',
     fullImageUrl: '/img/projects/project2.jpg',
   },
   {
     id: 'project3',
-    title: 'Skillieo: PCI DSS Requirements',
-    client: 'Skillieo',
-    year: '2022',
-    category: 'Compliance Training',
-    tags: ['Compliance Training', 'Articulate Storyline', 'Interactive'],
+    title: 'Designing a Modern Learning Function',
+    client: 'Enterprise L&D',
+    year: '2023',
+    category: 'Learning Functions',
+    tags: ['Governance', 'Operating Model', 'Strategy'],
     description:
-      'Interactive module on PCI-DSS compliance for secure handling of cardholder data with practical applications and case studies.',
+      'Governing learning at enterprise scale for over 36,000 people across multiple training hubs.',
     challenge:
-      'The client needed to make complex PCI-DSS compliance requirements understandable and actionable for both technical and non-technical employees. The training needed to balance technical details with practical application across different roles.',
+      'The organization had reached a point where its existing approach to learning could no longer scale. Training was taking place across multiple centres. Different facilitators brought different teaching styles. Curriculum updates had to be coordinated. Scaling learning wasn’t simply about training more people. It was about governing quality across an increasingly complex ecosystem.',
+    realQuestion:
+      'How do you build a learning function that scales quality, consistency, and trust as the organization grows?',
     solution: [
-      'Conducted in-depth research on PCI-DSS compliance requirements',
-      'Developed role-specific learning paths for different employee groups',
-      'Created interactive case studies showing real-world application',
-      'Designed scenario-based assessments to verify understanding',
-      'Implemented knowledge checks with targeted remediation',
-      'Developed a compliance quick-reference guide as supporting material',
+      'Designed an operating model for Learning & Development itself.',
+      'Integrated Curriculum Management, Faculty Development, and Assessment Integrity under unified Learning Governance.',
+      'Treated curriculum, facilitation, assessment, and certification as interconnected parts of a single system.'
     ],
     features: [
-      'Role-based learning paths',
-      'Interactive compliance scenarios',
-      'Technical and non-technical explanations',
-      'Real-world case studies',
-      'Compliance reference tools',
+      'Learning Operating Model',
+      'Governance Framework',
+      'Curriculum Architecture',
+      'Faculty Development Framework',
+      'Assessment Governance Model'
     ],
     results: [
-      '98% pass rate on compliance certification assessment',
-      '86% of employees reported clearer understanding of their role in PCI compliance',
-      'Successful PCI audit with zero critical findings',
-      'Reduction in compliance-related security incidents',
+      'Reframed Learning & Development as an organizational capability rather than an administrative function.',
+      'Provided leadership with a framework for ensuring that learning quality could continue to scale alongside organizational growth.'
     ],
-    tools: ['Articulate Storyline', 'Adobe Illustrator', 'Camtasia', 'SCORM'],
-    demoUrl: '/demo/storyline/PCI-DSS/story.html',
+    tools: ['Consulting', 'Organizational Design', 'Strategy'],
+    demoUrl: '',
     imageUrl: '/img/projects/project3.jpg',
     fullImageUrl: '/img/projects/project3.jpg',
   },
   {
     id: 'project4',
-    title: 'Northwest Farm Credit: Scam USPS Delivery',
-    client: 'Northwest Farm Credit Services',
-    year: '2022',
-    category: 'Security Training',
-    tags: ['Security Training', 'Articulate Storyline', 'Microlearning'],
+    title: 'Personal & Professional Development Framework',
+    client: 'Capability Development',
+    year: '2023',
+    category: 'Learning Strategy',
+    tags: ['Learning Journey', 'Capability', 'Curriculum'],
     description:
-      'Security awareness training on identifying and avoiding delivery scams with interactive scenarios and practical identification tools.',
+      'From isolated training events to a lifelong capability journey based on progressive growth.',
     challenge:
-      'The client needed a targeted security awareness module addressing a specific threat vector that was affecting their organization: delivery scams targeting remote workers. The training needed to be brief but effective in helping employees identify and avoid these scams.',
+      'Employees attend workshops, complete eLearning, and participate in mentoring, but development often feels fragmented. One programme rarely connects to the next. Learners struggle to understand where they are on their development journey. The result isn\'t a lack of learning. It\'s a lack of progression.',
+    realQuestion:
+      'How do you design a learning journey that intentionally develops capability over time instead of delivering disconnected learning experiences?',
     solution: [
-      'Researched current delivery scam tactics and real-world examples',
-      'Designed interactive scenarios showing progressive sophistication of scams',
-      'Created a visual identification guide showing legitimate vs. fraudulent communications',
-      'Developed decision-making practice with immediate feedback',
-      'Incorporated real examples (with sensitive information removed)',
-      'Created a microlearning format that could be completed in under 15 minutes',
+      'Designed a framework around six interconnected phases of development: Foundation, Self Awareness, Professional Capability, Applied Practice, Leadership & Influence, Continuous Growth.',
+      'Each phase introduced new knowledge, reinforced previous learning, and prepared learners for increasingly complex challenges.',
+      'Shifted the focus from completing phases to progressively building capability.'
     ],
     features: [
-      'Interactive scam identification practice',
-      'Visual comparison guides',
-      'Decision-making scenarios',
-      'Reference resources',
-      'Mobile-friendly microlearning format',
+      'Six-Phase Curriculum Architecture',
+      'Competency Framework',
+      'Learning Pathways',
+      'Assessment Strategy',
+      'Reflection Activities'
     ],
     results: [
-      '100% completion rate within two weeks of launch',
-      '76% reduction in employees clicking suspicious delivery links',
-      '94% of employees able to correctly identify scam indicators post-training',
-      'Training shared as best practice across partner organizations',
+      'Transformed development from a series of disconnected activities into a structured capability journey.',
+      'Encouraged organizations to measure success by long-term growth and sustained development rather than programme completion.'
     ],
-    tools: ['Articulate Storyline', 'Adobe Photoshop', 'SCORM'],
-    demoUrl: '/demo/storyline/Scam-USPS/story.html',
+    tools: ['Consulting', 'Curriculum Architecture', 'Strategy'],
+    demoUrl: '',
     imageUrl: '/img/projects/project4.jpg',
     fullImageUrl: '/img/projects/project4.jpg',
   },
   {
     id: 'project5',
-    title: 'Mia: Speak Life Essentials',
-    client: 'Mia Communications',
-    year: '2022',
-    category: 'Soft Skills Training',
-    tags: ['Soft Skills', 'Articulate Storyline', 'Branching Scenarios'],
+    title: 'Programme That Builds Project Leaders',
+    client: 'Project Management',
+    year: '2023',
+    category: 'Learning Strategy',
+    tags: ['Simulation', 'Project Delivery', 'M&E'],
     description:
-      'Communication skills training focused on positive language and constructive feedback with practical workplace application scenarios.',
+      'Architecting learning for real-world project delivery instead of teaching textbook methodologies.',
     challenge:
-      'The client wanted to improve organizational communication culture by training employees on using positive, constructive language even in challenging situations. The goal was to create a training experience that would lead to lasting behavior change rather than just awareness.',
+      'Many project teams enter complex environments having learned project management primarily through theory. They understand the language, process groups, and templates. But translating that knowledge into effective project delivery remains challenging. The gap wasn\'t information. It was application.',
+    realQuestion:
+      'How do you prepare people to think, decide, and perform like project professionals before they are responsible for high-stakes projects?',
     solution: [
-      'Developed a communication framework based on positive psychology principles',
-      'Created interactive scenarios with multiple communication approaches',
-      'Designed practice activities for transforming negative statements',
-      'Incorporated real workplace examples from the client organization',
-      'Implemented spaced practice with follow-up reinforcement activities',
-      'Created manager toolkit for supporting skill application',
+      'Built the programme around the lifecycle of project delivery: Understanding Context, Planning & Design, Implementation, Monitoring, Evaluation, Reflection & Improvement.',
+      'Organized the experience around the kinds of decisions project professionals make every day.',
+      'Integrated project management, monitoring and evaluation, assessment, and authentic performance into one coherent experience.'
     ],
     features: [
-      'Communication transformation practice',
-      'Interactive workplace scenarios',
-      'Feedback and coaching simulations',
-      'Self-assessment tools',
-      'Practical application resources',
+      'Programme Strategy',
+      'Practical Project Activities',
+      'Interactive eLearning Experiences',
+      'Monitoring & Evaluation Framework',
+      'Competency-Based Rubrics'
     ],
     results: [
-      '92% of participants reported applying techniques within one week',
-      'Improvement in internal communication satisfaction scores (22% increase)',
-      'Reduction in escalated communication issues reported to HR',
-      'Adopted as part of onboarding for all new employees',
+      'Provided learners with a structured environment to develop both technical knowledge and professional judgement.',
+      'Produced a learning experience that emphasized capability over content and decision-making over memorization.'
     ],
-    tools: ['Articulate Storyline', 'Camtasia', 'Adobe Creative Suite', 'SCORM'],
-    demoUrl: '/demo/Mia/story.html',
+    tools: ['Consulting', 'Instructional Design', 'Assessment Design'],
+    demoUrl: '',
     imageUrl: '/img/projects/project5.jpg',
     fullImageUrl: '/img/projects/project5.jpg',
   },
   {
     id: 'project6',
-    title: 'Multiple POV Scenario',
-    client: 'Confidential',
+    title: 'Measurement & Assessment Architecture',
+    client: 'Enterprise Evaluation',
     year: '2023',
-    category: 'Scenario-Based Learning',
-    tags: ['Scenario-Based', 'Articulate Storyline', 'Perspective Taking'],
+    category: 'Measurement & Strategy',
+    tags: ['Analytics', 'Assessment', 'Evidence'],
     description:
-      'Innovative perspective-based learning scenario allowing learners to experience situations from different viewpoints for enhanced empathy and understanding.',
+      'Designing Evidence, Not Just Evaluation. Demonstrating that capability has actually changed.',
     challenge:
-      'The client needed to improve cross-functional collaboration by helping employees understand challenges from multiple perspectives. Traditional role-playing was not effective, and they wanted an immersive experience that would build genuine empathy.',
+      'Learning teams were collecting data. Leadership wanted evidence. Assessments measured knowledge. Dashboards measured completion. But very little demonstrated whether learning had actually improved performance. The organization wasn’t suffering from a lack of data; it was suffering from a lack of meaningful evidence.',
+    realQuestion:
+      'How do you design learning so that evidence of capability is generated naturally throughout the learner journey—not only at the end?',
     solution: [
-      'Developed a scenario-based approach showing the same situation from different perspectives',
-      'Created character-driven narratives with distinct viewpoints, priorities and challenges',
-      'Designed an interactive interface that allows users to switch between perspectives',
-      'Incorporated decision points with consequences visible from all perspectives',
-      'Included guided reflection activities to connect insights to workplace application',
-      'Created team discussion guides for group learning',
+      'Designed measurement into the learning architecture itself rather than treating assessment as a final step.',
+      'Focused on competency frameworks, performance indicators, and authentic assessments.',
+      'Established continuous feedback loops and a learning analytics strategy.'
     ],
     features: [
-      'Multi-perspective scenarios',
-      'Character-based narrative approach',
-      'Perspective-switching interface',
-      'Consequence visualization',
-      'Guided reflection activities',
+      'Competency Framework',
+      'Assessment Strategy & Rubrics',
+      'Performance Indicators',
+      'Learning Measurement Architecture',
+      'Learning Analytics Blueprint'
     ],
     results: [
-      '88% of learners reported increased understanding of other roles',
-      'Improved cross-functional collaboration metrics (35% improvement)',
-      'Reduction in cross-departmental escalations (42% decrease)',
-      'Adopted as standard training for all leadership positions',
+      'Standardized assessment quality and consistent evaluation across programmes.',
+      'Generated clearer evidence of capability growth and stronger alignment between learning and organizational outcomes.'
     ],
-    tools: ['Articulate Storyline', 'Adobe Creative Suite', 'SCORM'],
-    demoUrl: '/Multiple_POV_Scenario/story.html',
+    tools: ['Consulting', 'Data Strategy', 'Assessment Architecture'],
+    demoUrl: '',
     imageUrl: '/img/projects/project6.jpg',
     fullImageUrl: '/img/projects/project6.jpg',
   },
   {
     id: 'project7',
-    title: 'Smart Workplace: Tarping Flatbed Loads',
-    client: 'Smart Workplace',
-    year: '2022',
-    category: 'Safety Training',
-    tags: ['Safety Training', 'Articulate Storyline', 'Procedural Training'],
+    title: 'Designing Connected Learning Experiences',
+    client: 'Omnichannel Learning',
+    year: '2023',
+    category: 'Ecosystem Architecture',
+    tags: ['Blended Learning', 'Journey Mapping', 'Omnichannel'],
     description:
-      'Safety training module demonstrating proper techniques for securing and tarping flatbed loads to prevent accidents and ensure compliance with transportation regulations.',
+      'Creating one continuous learning experience across multiple delivery channels and touchpoints.',
     challenge:
-      'The client needed to reduce load-related incidents by ensuring drivers understood proper load securing techniques. Traditional training methods were not effective for this hands-on skill, and they needed a solution that would work for both new and experienced drivers.',
+      'Different learning experiences were being designed independently. Instructor-led training existed in one place, eLearning somewhere else, and videos in another platform. Each asset worked individually, but together they didn’t feel like one learning experience. Learners were expected to connect the pieces themselves.',
+    realQuestion:
+      'How do you design learning that feels like one continuous journey, regardless of how or where it is delivered?',
     solution: [
-      'Conducted field research to document actual tarping procedures with experienced drivers',
-      'Created detailed step-by-step visual demonstrations of proper techniques',
-      'Developed interactive decision points for various load and weather scenarios',
-      'Incorporated common mistake identification with corrective guidance',
-      'Designed mobile-compatible training for on-the-go reference',
-      'Included equipment inspection and maintenance guidelines',
+      'Started by designing the learner journey, not the delivery channels.',
+      'Determined the most appropriate medium for each learning experience only after understanding the moments that mattered.',
+      'Created a blended learning architecture where every delivery method had a clear purpose.'
     ],
     features: [
-      'Step-by-step visual demonstrations',
-      'Interactive decision scenarios',
-      'Safety checklist tools',
-      'Equipment inspection guides',
-      'Mobile-optimized reference materials',
+      'Learning Journey Maps',
+      'Blended Learning Strategy',
+      'Curriculum Architecture',
+      'Channel Selection Framework',
+      'Ecosystem Integration Strategy'
     ],
     results: [
-      '47% reduction in load-related incidents within six months',
-      '98% of drivers rated the training as "very practical"',
-      'Reduction in damaged freight claims by 32%',
-      'Adopted as standard onboarding for all new drivers',
+      'Transformed fragmented assets into a seamless learner journey.',
+      'Provided a strategic framework for future content delivery and channel selection.'
     ],
-    tools: ['Articulate Storyline', 'Adobe Photoshop', 'Camtasia', 'SCORM'],
-    demoUrl: '/demo/storyline/Tarping-flatbed-loads/story.html',
+    tools: ['Journey Mapping', 'Consulting', 'Ecosystem Architecture'],
+    demoUrl: '',
     imageUrl: '/img/projects/project7.jpg',
     fullImageUrl: '/img/projects/project7.jpg',
-  },
-  {
-    id: 'project8',
-    title: 'Smart Workplace: Hearing Protection',
-    client: 'Smart Workplace',
-    year: '2022',
-    category: 'Safety Training',
-    tags: ['Safety Training', 'Articulate Storyline', 'Interactive Assessment'],
-    description:
-      'Workplace safety training on proper hearing protection techniques and equipment usage in high-noise environments to prevent long-term hearing damage.',
-    challenge:
-      'The client experienced increasing rates of workplace hearing loss claims despite providing hearing protection equipment. They needed training that would focus on proper usage techniques and overcome common objections to wearing protection consistently.',
-    solution: [
-      'Researched common causes of protection failure through interviews with safety experts',
-      'Created interactive simulations demonstrating proper fitting techniques',
-      'Developed comparative scenarios showing consequences of improper usage',
-      'Designed equipment selection guides based on different workplace environments',
-      'Incorporated information on cumulative hearing damage to increase motivation',
-      'Included troubleshooting for common comfort and communication issues',
-    ],
-    features: [
-      'Interactive fitting simulations',
-      'Equipment selection guides',
-      'Hearing damage visualizations',
-      'Comfort and communication techniques',
-      'Workplace noise assessment tools',
-    ],
-    results: [
-      '82% increase in proper equipment usage during site inspections',
-      '91% of employees demonstrated correct fitting techniques in assessments',
-      '36% reduction in hearing protection-related complaints',
-      'Decrease in noise-induced hearing loss claims over following year',
-    ],
-    tools: ['Articulate Storyline', 'Adobe Illustrator', 'SCORM'],
-    demoUrl: '/demo/storyline/Hearing-Protection/story.html',
-    imageUrl: '/img/projects/project8.jpg',
-    fullImageUrl: '/img/projects/project8.jpg',
-  },
-  {
-    id: 'project9',
-    title: 'Anvil Media: Video e-Learning Demo',
-    client: 'Anvil Media',
-    year: '2023',
-    category: 'Product Training',
-    tags: ['Product Training', 'iSpring Suite', 'Video-Based Learning'],
-    description:
-      'Video-based e-learning demonstration module effectively showcasing product functionality to customers with engaging interactions and practical application examples.',
-    challenge:
-      "The client needed to transform technical software demonstrations into engaging, self-paced learning experiences for customers. Traditional video tutorials weren't providing enough engagement or retention, and in-person demos weren't scalable.",
-    solution: [
-      'Developed a structured learning path that builds from basic to advanced features',
-      'Created professionally produced video demonstrations with clear visual guidance',
-      'Integrated interactive practice activities between video segments',
-      'Implemented knowledge checks to verify understanding before progression',
-      'Designed scenario-based challenges to demonstrate practical application',
-      'Included downloadable quick reference guides for post-training support',
-    ],
-    features: [
-      'High-quality video demonstrations',
-      'Interactive practice activities',
-      'Progressive skill-building path',
-      'Scenario-based challenges',
-      'Downloadable reference resources',
-    ],
-    results: [
-      '64% improvement in customer onboarding satisfaction scores',
-      'Reduction in support tickets related to basic feature usage by 47%',
-      '78% of users completed the entire training (versus 23% for previous videos)',
-      'Format adopted as standard for all product training materials',
-    ],
-    tools: ['iSpring Suite', 'Adobe Premiere Pro', 'Adobe After Effects', 'SCORM'],
-    demoUrl: '/demo/ispring/video_elearning_demo/',
-    imageUrl: '/img/projects/project9.jpg',
-    fullImageUrl: '/img/projects/project9.jpg',
-  },
-  {
-    id: 'project10',
-    title: 'The Diversity Movement: DEI Fundamentals',
-    client: 'The Diversity Movement',
-    year: '2023',
-    category: 'DEI Training',
-    tags: ['DEI Training', 'Custom Development', 'Scenario-Based Learning'],
-    description:
-      'Comprehensive diversity, equity, and inclusion training program transformed from instructor-led to engaging e-learning format with interactive scenarios and reflection activities.',
-    challenge:
-      'The client needed to scale their highly effective instructor-led DEI training to reach more organizations without losing the personal impact and transformative nature of the in-person experience. Previous attempts at e-learning conversion had resulted in dry, compliance-focused content.',
-    solution: [
-      'Collaborated with DEI experts to identify key transformative moments from live training',
-      'Developed a narrative-based approach featuring diverse perspectives and experiences',
-      'Created interactive reflection activities to replace facilitated discussions',
-      'Designed scenario-based challenges with branching outcomes and feedback',
-      'Incorporated multimedia elements including video testimonials and case studies',
-      'Developed implementation guides for organizational leaders to support application',
-    ],
-    features: [
-      'Narrative-driven learning approach',
-      'Interactive reflection activities',
-      'Branching scenario challenges',
-      'Video testimonials and case studies',
-      'Implementation and discussion guides',
-    ],
-    results: [
-      'Expanded program reach from 12 to 87 organizations in first year',
-      '92% of participants rated the training as "very impactful"',
-      '84% reported taking specific actions based on training insights',
-      'Featured as a case study in HR industry publication for effective e-learning conversion',
-    ],
-    tools: ['Custom Development', 'Adobe Creative Suite', 'HTML5', 'SCORM'],
-    demoUrl: '/demo/DI/',
-    imageUrl: '/img/projects/project10.jpg',
-    fullImageUrl: '/img/projects/project10.jpg',
-  },
+  }
 ];
