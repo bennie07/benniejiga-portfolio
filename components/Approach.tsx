@@ -38,10 +38,9 @@ export default function Approach() {
   ];
 
   const toolsList = [
-    'Articulate Storyline',
-    'Figma',
-    'Next.js',
-    'Rust',
+    'eLearning Authoring',
+    'Product Design',
+    'Full Stack Development',
     'Instructional Design',
     'Cloud Architecture',
     'Learning Analytics',
@@ -164,7 +163,7 @@ export default function Approach() {
           </div>
 
           <p className="text-sm sm:text-base text-muted leading-relaxed">
-            To me, they&apos;re all part of the same system. That&apos;s why you&apos;ll often find me moving between Storyline, Figma, Next.js, Rust, instructional design, cloud architecture, and learning analytics in the same project. I choose the tools that best solve the problem—not the ones that define my role.
+            To me, they&apos;re all part of the same system. That&apos;s why you&apos;ll often find me moving between eLearning authoring, product design, full stack development, instructional design, cloud architecture, and learning analytics in the same project. I choose the tools that best solve the problem—not the ones that define my role.
           </p>
 
           <div className="flex flex-wrap gap-2 pt-2">
