@@ -44,7 +44,7 @@ export default function Footer() {
                 Learning Experience Architect
               </p>
               <p className="text-xs text-muted font-mono pt-1">
-                Digital Address: <span className="text-main font-semibold">bennie.pro</span>
+                Website: <span className="text-main font-semibold">bennie.pro</span>
               </p>
             </div>
           </div>

@@ -13,8 +13,8 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeMode>('auto');
-  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setThemeState] = useState<ThemeMode>('dark');
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('dark');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -22,6 +22,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const savedTheme = localStorage.getItem('bennie_theme') as ThemeMode | null;
     if (savedTheme && ['auto', 'light', 'dark'].includes(savedTheme)) {
       setThemeState(savedTheme);
+    } else {
+      setThemeState('dark');
     }
   }, []);
 
@@ -31,9 +33,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     
     const applyTheme = () => {
-      let active: 'light' | 'dark' = 'light';
+      let active: 'light' | 'dark' = 'dark';
       if (theme === 'auto') {
-        active = mediaQuery.matches ? 'dark' : 'light';
+        active = 'dark';
       } else {
         active = theme;
       }
