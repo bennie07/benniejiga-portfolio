@@ -76,13 +76,14 @@ export default function LearningExperiences() {
     try {
       const payload = new URLSearchParams({
         'form-name': 'request-preview',
+        'bot-field': '',
         name,
         email,
         experience_title: selectedExperience?.title || '',
         experience_client: selectedExperience?.client || '',
       }).toString();
 
-      await fetch('/', {
+      await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: payload,
@@ -274,6 +275,7 @@ export default function LearningExperiences() {
                     <form
                       name="request-preview"
                       method="POST"
+                      action="/__forms.html"
                       data-netlify="true"
                       netlify-honeypot="bot-field"
                       onSubmit={handleSubmit}

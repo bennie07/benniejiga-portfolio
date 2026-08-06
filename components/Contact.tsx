@@ -20,6 +20,7 @@ export default function Contact() {
     try {
       const payload = new URLSearchParams({
         'form-name': 'contact',
+        'bot-field': '',
         name: formData.name,
         email: formData.email,
         organization: formData.organization,
@@ -27,7 +28,7 @@ export default function Contact() {
         message: formData.message,
       }).toString();
 
-      await fetch('/', {
+      await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: payload,
@@ -130,6 +131,7 @@ export default function Contact() {
               <form
                 name="contact"
                 method="POST"
+                action="/__forms.html"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
